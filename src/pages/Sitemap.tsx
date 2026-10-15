@@ -38,7 +38,10 @@ export default function Sitemap() {
     { title: 'About Us', path: '/about', description: 'Learn about our standards, experience, and commitment to electrical safety.', icon: <Info className="w-5 h-5 text-electric-600" /> },
     { title: 'Contact', path: '/contact', description: 'Direct phone number, location, and service inquiry information.', icon: <Phone className="w-5 h-5 text-electric-600" /> },
     { title: 'Frequently Asked Questions', path: '/faq', description: 'Answers to common questions about electrical repairs, wiring, and scheduling.', icon: <HelpCircle className="w-5 h-5 text-electric-600" /> },
+    { title: 'Website Sitemap', path: '/sitemap', description: 'Complete directory of all pages, electrical service offerings, and local coverage areas.', icon: <Layers className="w-5 h-5 text-electric-600" /> },
   ];
+
+  const totalPages = mainPages.length + SERVICES.length + SERVICE_AREAS.length;
 
   return (
     <>
@@ -61,9 +64,20 @@ export default function Sitemap() {
           <p className="text-navy-200 text-lg max-w-2xl mx-auto mb-6 animate-fade-in-up">
             Quickly navigate all pages, electrical solutions, and community service areas offered by {BUSINESS.name}.
           </p>
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-navy-800/80 border border-navy-700 text-sm text-navy-300">
-            <FileText className="w-4 h-4 text-amber-400" />
-            <span>27 Indexed Pages Available</span>
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-navy-800/80 border border-navy-700 text-sm text-navy-300">
+              <FileText className="w-4 h-4 text-amber-400" />
+              <span>{totalPages} Indexed Pages Available</span>
+            </div>
+            <a
+              href="/sitemap.xml"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-navy-800/80 hover:bg-navy-700/80 border border-navy-700 hover:border-electric-500 text-sm text-electric-400 transition-colors"
+            >
+              <span>View XML Sitemap (sitemap.xml)</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </a>
           </div>
         </div>
       </section>

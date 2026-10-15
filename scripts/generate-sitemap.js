@@ -1,0 +1,71 @@
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const rootDir = path.resolve(__dirname, '..');
+
+const contentFilePath = path.join(rootDir, 'src', 'data', 'content.ts');
+const content = fs.readFileSync(contentFilePath, 'utf8');
+
+// Extract domain
+const domainMatch = content.match(/domain:\s*['"]([^'"]+)['"]/);
+const domain = domainMatch ? domainMatch[1] : 'https://www.electricalwiringinstallationhahnville.com';
+
+// Extract service slugs
+const serviceSlugs = [];
+const serviceSection = content.substring(
+  content.indexOf('export const SERVICES'),
+  content.indexOf('export const SERVICE_AREAS')
+);
+for (const match of serviceSection.matchAll(/slug:\s*['"]([^'"]+)['"]/g)) {
+  serviceSlugs.push(match[1]);
+}
+
+// Extract service area slugs
+const areaSlugs = [];
+const areaSection = content.substring(
+  content.indexOf('export const SERVICE_AREAS'),
+  content.indexOf('export const GENERAL_FAQS') > -1 ? content.indexOf('export const GENERAL_FAQS') : content.length
+);
+for (const match of areaSection.matchAll(/slug:\s*['"]([^'"]+)['"]/g)) {
+  areaSlugs.push(match[1]);
+}
+
+const today = new Date().toISOString().split('T')[0];
+
+const coreRoutes = [
+  { path: '', changefreq: 'weekly', priority: '1.0' },
+  { path: 'services', changefreq: 'weekly', priority: '0.9' },
+  { path: 'service-areas', changefreq: 'weekly', priority: '0.9' },
+  { path: 'contact', changefreq: 'monthly', priority: '0.9' },
+  { path: 'about', changefreq: 'monthly', priority: '0.8' },
+  { path: 'faq', changefreq: 'monthly', priority: '0.7' },
+  { path: 'sitemap', changefreq: 'weekly', priority: '0.7' },
+];
+
+let xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n`;
+
+xml += `  <!-- Core Pages -->\n`;
+for (const route of coreRoutes) {
+  const url = route.path ? `${domain}/${route.path}` : `${domain}/`;
+  xml += `  <url>\n    <loc>${url}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>${route.changefreq}</changefreq>\n    <priority>${route.priority}</priority>\n  </url>\n`;
+}
+
+xml += `\n  <!-- Electrical Service Pages (Hahnville, LA) -->\n`;
+for (const slug of serviceSlugs) {
+  xml += `  <url>\n    <loc>${domain}/${slug}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>0.8</priority>\n  </url>\n`;
+}
+
+xml += `\n  <!-- Service Area Locations (St. Charles Parish, LA) -->\n`;
+for (const slug of areaSlugs) {
+  xml += `  <url>\n    <loc>${domain}/${slug}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>0.8</priority>\n  </url>\n`;
+}
+
+xml += `</urlset>\n`;
+
+const publicSitemapPath = path.join(rootDir, 'public', 'sitemap.xml');
+fs.writeFileSync(publicSitemapPath, xml, 'utf8');
+
+console.log(`Successfully generated sitemap.xml with ${coreRoutes.length + serviceSlugs.length + areaSlugs.length} URLs at ${publicSitemapPath}`);
