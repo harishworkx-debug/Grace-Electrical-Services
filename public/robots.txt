@@ -1,4 +1,12 @@
+# Robots.txt for Grace Electrical Services
+# Website: https://www.electricalwiringinstallationhahnville.com
+
 User-agent: *
 Allow: /
+Disallow: /404
 
+# Host
+Host: https://www.electricalwiringinstallationhahnville.com
+
+# Sitemap
 Sitemap: https://www.electricalwiringinstallationhahnville.com/sitemap.xml

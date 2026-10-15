@@ -68,4 +68,22 @@ xml += `</urlset>\n`;
 const publicSitemapPath = path.join(rootDir, 'public', 'sitemap.xml');
 fs.writeFileSync(publicSitemapPath, xml, 'utf8');
 
+const robotsTxt = `# Robots.txt for Grace Electrical Services
+# Website: ${domain}
+
+User-agent: *
+Allow: /
+Disallow: /404
+
+# Host
+Host: ${domain}
+
+# Sitemap
+Sitemap: ${domain}/sitemap.xml
+`;
+
+const publicRobotsPath = path.join(rootDir, 'public', 'robots.txt');
+fs.writeFileSync(publicRobotsPath, robotsTxt, 'utf8');
+
 console.log(`Successfully generated sitemap.xml with ${coreRoutes.length + serviceSlugs.length + areaSlugs.length} URLs at ${publicSitemapPath}`);
+console.log(`Successfully synced robots.txt at ${publicRobotsPath}`);
