@@ -127,6 +127,16 @@ export default function Header() {
             Call {BUSINESS.phone}
           </a>
 
+          {/* Mobile direct call button */}
+          <a
+            href={BUSINESS.phoneLink}
+            className="md:hidden inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-navy-950 font-bold text-xs shadow-sm active:scale-95 transition-all"
+            aria-label={`Call ${BUSINESS.phone}`}
+          >
+            <Phone className="w-3.5 h-3.5 fill-current" />
+            <span>Call Now</span>
+          </a>
+
           {/* Mobile toggle */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}

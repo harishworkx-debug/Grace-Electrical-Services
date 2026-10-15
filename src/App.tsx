@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ScrollToTop from '@/components/ScrollToTop';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import FloatingCallButton from '@/components/FloatingCallButton';
 import Home from '@/pages/Home';
 import Services from '@/pages/Services';
 import ServiceAreas from '@/pages/ServiceAreas';
@@ -9,6 +10,7 @@ import DynamicPage from '@/pages/DynamicPage';
 import About from '@/pages/About';
 import Contact from '@/pages/Contact';
 import FAQ from '@/pages/FAQ';
+import Sitemap from '@/pages/Sitemap';
 import NotFound from '@/pages/NotFound';
 
 export default function App() {
@@ -25,12 +27,14 @@ export default function App() {
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/faq" element={<FAQ />} />
+            <Route path="/sitemap" element={<Sitemap />} />
             <Route path="/404" element={<NotFound />} />
             <Route path="/:slug" element={<DynamicPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
         <Footer />
+        <FloatingCallButton />
       </div>
     </BrowserRouter>
   );

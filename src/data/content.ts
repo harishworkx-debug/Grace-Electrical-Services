@@ -30,7 +30,7 @@ export type ServiceInfo = {
 
 export const SERVICES: ServiceInfo[] = [
   {
-    slug: 'electrical-wiring-installation',
+    slug: 'electrical-wiring-installation-hahnville-la',
     title: 'Electrical Wiring Installation',
     shortTitle: 'Wiring Installation',
     description:
@@ -76,14 +76,14 @@ export const SERVICES: ServiceInfo[] = [
       },
     ],
     relatedServices: [
-      'electrical-rewiring',
-      'outlet-installation',
-      'switch-installation',
-      'electrical-panel-upgrades',
+      'electrical-rewiring-hahnville-la',
+      'outlet-installation-hahnville-la',
+      'switch-installation-hahnville-la',
+      'electrical-panel-upgrades-hahnville-la',
     ],
   },
   {
-    slug: 'electrical-repairs-troubleshooting',
+    slug: 'electrical-repairs-troubleshooting-hahnville-la',
     title: 'Electrical Repairs and Troubleshooting',
     shortTitle: 'Repairs & Troubleshooting',
     description:
@@ -128,14 +128,14 @@ export const SERVICES: ServiceInfo[] = [
       },
     ],
     relatedServices: [
-      'electrical-panel-repair',
-      'outlet-installation',
-      'switch-installation',
-      'electrical-rewiring',
+      'electrical-panel-repair-hahnville-la',
+      'outlet-installation-hahnville-la',
+      'switch-installation-hahnville-la',
+      'electrical-rewiring-hahnville-la',
     ],
   },
   {
-    slug: 'outlet-installation',
+    slug: 'outlet-installation-hahnville-la',
     title: 'Outlet Installation',
     shortTitle: 'Outlet Installation',
     description:
@@ -179,13 +179,13 @@ export const SERVICES: ServiceInfo[] = [
       },
     ],
     relatedServices: [
-      'switch-installation',
-      'electrical-wiring-installation',
-      'electrical-repairs-troubleshooting',
+      'switch-installation-hahnville-la',
+      'electrical-wiring-installation-hahnville-la',
+      'electrical-repairs-troubleshooting-hahnville-la',
     ],
   },
   {
-    slug: 'switch-installation',
+    slug: 'switch-installation-hahnville-la',
     title: 'Switch Installation',
     shortTitle: 'Switch Installation',
     description:
@@ -229,13 +229,13 @@ export const SERVICES: ServiceInfo[] = [
       },
     ],
     relatedServices: [
-      'outlet-installation',
-      'lighting-installation',
-      'electrical-wiring-installation',
+      'outlet-installation-hahnville-la',
+      'lighting-installation-hahnville-la',
+      'electrical-wiring-installation-hahnville-la',
     ],
   },
   {
-    slug: 'electrical-panel-repair',
+    slug: 'electrical-panel-repair-hahnville-la',
     title: 'Electrical Panel Repair',
     shortTitle: 'Panel Repair',
     description:
@@ -280,13 +280,13 @@ export const SERVICES: ServiceInfo[] = [
       },
     ],
     relatedServices: [
-      'electrical-panel-upgrades',
-      'electrical-repairs-troubleshooting',
-      'electrical-wiring-installation',
+      'electrical-panel-upgrades-hahnville-la',
+      'electrical-repairs-troubleshooting-hahnville-la',
+      'electrical-wiring-installation-hahnville-la',
     ],
   },
   {
-    slug: 'electrical-panel-upgrades',
+    slug: 'electrical-panel-upgrades-hahnville-la',
     title: 'Electrical Panel Upgrades',
     shortTitle: 'Panel Upgrades',
     description:
@@ -332,13 +332,13 @@ export const SERVICES: ServiceInfo[] = [
       },
     ],
     relatedServices: [
-      'electrical-panel-repair',
-      'electrical-wiring-installation',
-      'electrical-rewiring',
+      'electrical-panel-repair-hahnville-la',
+      'electrical-wiring-installation-hahnville-la',
+      'electrical-rewiring-hahnville-la',
     ],
   },
   {
-    slug: 'lighting-installation',
+    slug: 'lighting-installation-hahnville-la',
     title: 'Lighting Installation',
     shortTitle: 'Lighting Installation',
     description:
@@ -382,13 +382,13 @@ export const SERVICES: ServiceInfo[] = [
       },
     ],
     relatedServices: [
-      'switch-installation',
-      'electrical-wiring-installation',
-      'outlet-installation',
+      'switch-installation-hahnville-la',
+      'electrical-wiring-installation-hahnville-la',
+      'outlet-installation-hahnville-la',
     ],
   },
   {
-    slug: 'electrical-rewiring',
+    slug: 'electrical-rewiring-hahnville-la',
     title: 'Electrical Rewiring',
     shortTitle: 'Rewiring',
     description:
@@ -434,13 +434,13 @@ export const SERVICES: ServiceInfo[] = [
       },
     ],
     relatedServices: [
-      'electrical-wiring-installation',
-      'electrical-panel-upgrades',
-      'outlet-installation',
+      'electrical-wiring-installation-hahnville-la',
+      'electrical-panel-upgrades-hahnville-la',
+      'outlet-installation-hahnville-la',
     ],
   },
   {
-    slug: 'residential-electrical-services',
+    slug: 'residential-electrical-services-hahnville-la',
     title: 'Residential Electrical Services',
     shortTitle: 'Residential Services',
     description:
@@ -484,14 +484,14 @@ export const SERVICES: ServiceInfo[] = [
       },
     ],
     relatedServices: [
-      'electrical-wiring-installation',
-      'electrical-repairs-troubleshooting',
-      'lighting-installation',
-      'electrical-panel-upgrades',
+      'electrical-wiring-installation-hahnville-la',
+      'electrical-repairs-troubleshooting-hahnville-la',
+      'lighting-installation-hahnville-la',
+      'electrical-panel-upgrades-hahnville-la',
     ],
   },
   {
-    slug: 'commercial-electrical-services',
+    slug: 'commercial-electrical-services-hahnville-la',
     title: 'Commercial Electrical Services',
     shortTitle: 'Commercial Services',
     description:
@@ -536,10 +536,10 @@ export const SERVICES: ServiceInfo[] = [
       },
     ],
     relatedServices: [
-      'electrical-wiring-installation',
-      'electrical-panel-upgrades',
-      'lighting-installation',
-      'electrical-repairs-troubleshooting',
+      'electrical-wiring-installation-hahnville-la',
+      'electrical-panel-upgrades-hahnville-la',
+      'lighting-installation-hahnville-la',
+      'electrical-repairs-troubleshooting-hahnville-la',
     ],
   },
 ];
@@ -554,7 +554,7 @@ export type ServiceAreaInfo = {
 
 export const SERVICE_AREAS: ServiceAreaInfo[] = [
   {
-    slug: 'hahnville-la',
+    slug: 'electrician-hahnville-la',
     city: 'Hahnville',
     state: 'LA',
     description:
@@ -562,7 +562,7 @@ export const SERVICE_AREAS: ServiceAreaInfo[] = [
     nearLandmark: 'the Mississippi River corridor in St. Charles Parish',
   },
   {
-    slug: 'luling-la',
+    slug: 'electrician-luling-la',
     city: 'Luling',
     state: 'LA',
     description:
@@ -570,7 +570,7 @@ export const SERVICE_AREAS: ServiceAreaInfo[] = [
     nearLandmark: 'the Mississippi River in St. Charles Parish, near Hahnville',
   },
   {
-    slug: 'destrehan-la',
+    slug: 'electrician-destrehan-la',
     city: 'Destrehan',
     state: 'LA',
     description:
@@ -578,7 +578,7 @@ export const SERVICE_AREAS: ServiceAreaInfo[] = [
     nearLandmark: 'St. Charles Parish, a short drive from Hahnville',
   },
   {
-    slug: 'norco-la',
+    slug: 'electrician-norco-la',
     city: 'Norco',
     state: 'LA',
     description:
@@ -586,7 +586,7 @@ export const SERVICE_AREAS: ServiceAreaInfo[] = [
     nearLandmark: 'St. Charles Parish along the Mississippi River',
   },
   {
-    slug: 'boutte-la',
+    slug: 'electrician-boutte-la',
     city: 'Boutte',
     state: 'LA',
     description:
@@ -594,7 +594,7 @@ export const SERVICE_AREAS: ServiceAreaInfo[] = [
     nearLandmark: 'St. Charles Parish, west of Hahnville',
   },
   {
-    slug: 'paradis-la',
+    slug: 'electrician-paradis-la',
     city: 'Paradis',
     state: 'LA',
     description:
@@ -602,7 +602,7 @@ export const SERVICE_AREAS: ServiceAreaInfo[] = [
     nearLandmark: 'St. Charles Parish, near Boutte',
   },
   {
-    slug: 'st-rose-la',
+    slug: 'electrician-st-rose-la',
     city: 'St. Rose',
     state: 'LA',
     description:
@@ -610,7 +610,7 @@ export const SERVICE_AREAS: ServiceAreaInfo[] = [
     nearLandmark: 'St. Charles Parish, along the river corridor',
   },
   {
-    slug: 'new-sarpy-la',
+    slug: 'electrician-new-sarpy-la',
     city: 'New Sarpy',
     state: 'LA',
     description:
@@ -618,7 +618,7 @@ export const SERVICE_AREAS: ServiceAreaInfo[] = [
     nearLandmark: 'St. Charles Parish, near Norco',
   },
   {
-    slug: 'ama-la',
+    slug: 'electrician-ama-la',
     city: 'Ama',
     state: 'LA',
     description:
@@ -626,7 +626,7 @@ export const SERVICE_AREAS: ServiceAreaInfo[] = [
     nearLandmark: 'St. Charles Parish, along the river from Hahnville',
   },
   {
-    slug: 'montz-la',
+    slug: 'electrician-montz-la',
     city: 'Montz',
     state: 'LA',
     description:

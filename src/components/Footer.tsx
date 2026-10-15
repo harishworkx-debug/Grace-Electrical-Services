@@ -119,6 +119,14 @@ export default function Footer() {
                   FAQ
                 </Link>
               </li>
+              <li>
+                <Link
+                  to="/sitemap"
+                  className="text-sm text-navy-400 hover:text-electric-400 transition-colors"
+                >
+                  Sitemap
+                </Link>
+              </li>
               <li className="flex items-start gap-2 text-sm text-navy-400 pt-2">
                 <MapPin className="w-4 h-4 mt-0.5 shrink-0 text-navy-500" />
                 {BUSINESS.fullLocation}
@@ -131,9 +139,13 @@ export default function Footer() {
           <p className="text-xs text-navy-500">
             &copy; {year} {BUSINESS.name}. All rights reserved.
           </p>
-          <p className="text-xs text-navy-500">
-            Electrical services in Hahnville, Louisiana and surrounding areas.
-          </p>
+          <div className="flex items-center gap-4 text-xs text-navy-500">
+            <span>Electrical services in Hahnville, LA &amp; surrounding areas</span>
+            <span>&bull;</span>
+            <Link to="/sitemap" className="text-electric-400 hover:text-electric-300 transition-colors">
+              Website Sitemap
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

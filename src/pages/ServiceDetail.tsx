@@ -13,9 +13,10 @@ import {
   Lightbulb,
   Home as HomeIcon,
   Building2,
+  MapPin,
 } from 'lucide-react';
 import { useSEO, BASE_URL } from '@/hooks/useSEO';
-import { BUSINESS, SERVICES } from '@/data/content';
+import { BUSINESS, SERVICES, SERVICE_AREAS } from '@/data/content';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import CTABanner from '@/components/CTABanner';
 import FAQAccordion from '@/components/FAQAccordion';
@@ -85,11 +86,17 @@ export default function ServiceDetail() {
         </div>
         <div className="container-page relative py-16 md:py-20">
           <div className="max-w-2xl animate-fade-in-up">
-            <div className="w-14 h-14 rounded-xl bg-amber-500 flex items-center justify-center mb-6 shadow-lg">
-              {iconMap[service.icon]}
+            <div className="flex flex-wrap items-center gap-3 mb-6">
+              <div className="w-14 h-14 rounded-xl bg-amber-500 flex items-center justify-center shadow-lg">
+                {iconMap[service.icon]}
+              </div>
+              <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/30 text-xs sm:text-sm font-medium">
+                <MapPin className="w-4 h-4 text-amber-400" />
+                Primary Service Area: {BUSINESS.city}, LA
+              </div>
             </div>
             <h1 className="font-display text-4xl md:text-5xl font-bold text-white mb-4">
-              {service.title}
+              {service.title} in {BUSINESS.city}, LA
             </h1>
             <p className="text-lg text-navy-200 leading-relaxed mb-6">
               {service.description}
@@ -105,7 +112,7 @@ export default function ServiceDetail() {
       <Breadcrumbs
         crumbs={[
           { label: 'Services', to: '/services' },
-          { label: service.shortTitle },
+          { label: `${service.shortTitle} (${BUSINESS.city}, LA)` },
         ]}
       />
 
@@ -246,6 +253,36 @@ export default function ServiceDetail() {
                     </Link>
                   ))}
                 </div>
+              </div>
+
+              {/* Service Areas */}
+              <div className="bg-navy-50 rounded-2xl p-5 border border-navy-100">
+                <div className="flex items-center gap-2 mb-2">
+                  <MapPin className="w-5 h-5 text-electric-600" />
+                  <h3 className="font-display text-base font-bold text-navy-900">
+                    Service Areas Covered
+                  </h3>
+                </div>
+                <p className="text-navy-600 text-xs mb-3">
+                  Based in {BUSINESS.city}, LA and proudly serving nearby communities:
+                </p>
+                <div className="flex flex-wrap gap-1.5">
+                  {SERVICE_AREAS.slice(0, 6).map((a) => (
+                    <Link
+                      key={a.slug}
+                      to={`/${a.slug}`}
+                      className="text-xs px-2.5 py-1 rounded-md bg-white border border-navy-200 text-navy-700 hover:border-electric-400 hover:text-electric-600 transition-colors"
+                    >
+                      {a.city}
+                    </Link>
+                  ))}
+                </div>
+                <Link
+                  to="/service-areas"
+                  className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-electric-600 hover:underline"
+                >
+                  View all locations &rarr;
+                </Link>
               </div>
             </aside>
           </div>
