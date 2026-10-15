@@ -1,0 +1,37 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import ScrollToTop from '@/components/ScrollToTop';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import Home from '@/pages/Home';
+import Services from '@/pages/Services';
+import ServiceAreas from '@/pages/ServiceAreas';
+import DynamicPage from '@/pages/DynamicPage';
+import About from '@/pages/About';
+import Contact from '@/pages/Contact';
+import FAQ from '@/pages/FAQ';
+import NotFound from '@/pages/NotFound';
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <ScrollToTop />
+      <div className="flex min-h-screen flex-col">
+        <Header />
+        <main className="flex-1">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/service-areas" element={<ServiceAreas />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/faq" element={<FAQ />} />
+            <Route path="/404" element={<NotFound />} />
+            <Route path="/:slug" element={<DynamicPage />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </BrowserRouter>
+  );
+}
