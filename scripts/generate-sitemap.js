@@ -13,25 +13,35 @@ const content = fs.readFileSync(contentFilePath, 'utf8');
 const domainMatch = content.match(/domain:\s*['"]([^'"]+)['"]/);
 const domain = domainMatch ? domainMatch[1] : 'https://www.electricalwiringinstallationhahnville.com';
 
-// Extract service slugs
-const serviceSlugs = [];
 const serviceSection = content.substring(
   content.indexOf('export const SERVICES'),
   content.indexOf('export const SERVICE_AREAS')
 );
-for (const match of serviceSection.matchAll(/slug:\s*['"]([^'"]+)['"]/g)) {
-  serviceSlugs.push(match[1]);
-}
 
-// Extract service area slugs
-const areaSlugs = [];
+// Extract service slugs
+const serviceSlugs = [
+  ...new Set(
+    Array.from(
+      serviceSection.matchAll(/slug:\s*['"]([^'"]+)['"]/g),
+      (m) => m[1]
+    ).filter((slug) => !slug.startsWith('electrician-'))
+  ),
+];
+
 const areaSection = content.substring(
   content.indexOf('export const SERVICE_AREAS'),
   content.indexOf('export const GENERAL_FAQS') > -1 ? content.indexOf('export const GENERAL_FAQS') : content.length
 );
-for (const match of areaSection.matchAll(/slug:\s*['"]([^'"]+)['"]/g)) {
-  areaSlugs.push(match[1]);
-}
+
+// Extract service area slugs (only top-level electrician-*-la slugs)
+const areaSlugs = [
+  ...new Set(
+    Array.from(
+      areaSection.matchAll(/slug:\s*['"]([^'"]+)['"]/g),
+      (m) => m[1]
+    ).filter((slug) => slug.startsWith('electrician-'))
+  ),
+];
 
 const today = new Date().toISOString().split('T')[0];
 
@@ -39,6 +49,8 @@ const coreRoutes = [
   { path: '', changefreq: 'weekly', priority: '1.0' },
   { path: 'services', changefreq: 'weekly', priority: '0.9' },
   { path: 'service-areas', changefreq: 'weekly', priority: '0.9' },
+  { path: 'reviews', changefreq: 'weekly', priority: '0.9' },
+  { path: 'guides', changefreq: 'weekly', priority: '0.8' },
   { path: 'contact', changefreq: 'monthly', priority: '0.9' },
   { path: 'about', changefreq: 'monthly', priority: '0.8' },
   { path: 'faq', changefreq: 'monthly', priority: '0.7' },

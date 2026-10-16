@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Phone, ChevronDown, Zap } from 'lucide-react';
+import { Menu, X, Phone, ChevronDown, Zap, Star } from 'lucide-react';
 import { BUSINESS, SERVICES, SERVICE_AREAS } from '@/data/content';
 
 export default function Header() {
@@ -107,6 +107,15 @@ export default function Header() {
               )}
             </div>
 
+            <Link to="/reviews" className={`flex items-center gap-1.5 ${navLinkClass('/reviews')}`}>
+              <span>Reviews</span>
+              <span className="inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded-full text-[10px] font-bold bg-amber-100 text-amber-800">
+                <Star className="w-2.5 h-2.5 fill-amber-500 text-amber-500" /> 5.0
+              </span>
+            </Link>
+            <Link to="/guides" className={navLinkClass('/guides')}>
+              Guides
+            </Link>
             <Link to="/about" className={navLinkClass('/about')}>
               About
             </Link>
@@ -191,6 +200,18 @@ export default function Header() {
               </div>
             </div>
 
+            <Link
+              to="/reviews"
+              className="flex items-center justify-between py-2 font-medium text-navy-700 hover:text-electric-600"
+            >
+              <span>Customer Reviews</span>
+              <span className="inline-flex items-center gap-1 text-xs font-bold text-amber-700 bg-amber-50 border border-amber-200 px-2 py-0.5 rounded-full">
+                <Star className="w-3 h-3 fill-amber-500 text-amber-500" /> 5.0 (6)
+              </span>
+            </Link>
+            <Link to="/guides" className="block py-2 font-medium text-navy-700">
+              Guides &amp; Case Studies
+            </Link>
             <Link to="/about" className="block py-2 font-medium text-navy-700">
               About
             </Link>

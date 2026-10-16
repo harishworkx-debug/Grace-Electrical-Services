@@ -9,6 +9,7 @@ import {
   HelpCircle,
   Phone,
   Layers,
+  Star,
 } from 'lucide-react';
 import { useSEO, BASE_URL } from '@/hooks/useSEO';
 import { BUSINESS, SERVICES, SERVICE_AREAS } from '@/data/content';
@@ -17,9 +18,9 @@ import CTABanner from '@/components/CTABanner';
 
 export default function Sitemap() {
   useSEO({
-    title: 'Website Sitemap | Grace Electrical Services Hahnville, LA',
+    title: 'Website Sitemap | Grace Electrical Services | Hahnville, LA',
     description:
-      'Explore all pages, electrical services, and service areas for Grace Electrical Services in Hahnville, Louisiana and St. Charles Parish.',
+      'Complete directory of all pages, electrical services, and community service areas for Grace Electrical Services in Hahnville and St. Charles Parish, Louisiana.',
     canonicalPath: '/sitemap',
     structuredData: {
       '@context': 'https://schema.org',
@@ -35,6 +36,8 @@ export default function Sitemap() {
     { title: 'Home', path: '/', description: 'Overview of Grace Electrical Services, featured electrical solutions, and company background.', icon: <Home className="w-5 h-5 text-electric-600" /> },
     { title: 'Electrical Services', path: '/services', description: 'Browse all residential and commercial electrical services offered.', icon: <Wrench className="w-5 h-5 text-electric-600" /> },
     { title: 'Service Areas', path: '/service-areas', description: 'Communities we serve throughout St. Charles Parish and the river corridor.', icon: <MapPin className="w-5 h-5 text-electric-600" /> },
+    { title: 'Customer Reviews', path: '/reviews', description: 'Real 5.0-star verified Google reviews and testimonials from local clients in Hahnville.', icon: <Star className="w-5 h-5 text-amber-500 fill-amber-500" /> },
+    { title: 'Electrical Guides & Case Studies', path: '/guides', description: 'Practical technical guides on panels, wiring, diagnostics, and verified real-world project studies.', icon: <FileText className="w-5 h-5 text-electric-600" /> },
     { title: 'About Us', path: '/about', description: 'Learn about our standards, experience, and commitment to electrical safety.', icon: <Info className="w-5 h-5 text-electric-600" /> },
     { title: 'Contact', path: '/contact', description: 'Direct phone number, location, and service inquiry information.', icon: <Phone className="w-5 h-5 text-electric-600" /> },
     { title: 'Frequently Asked Questions', path: '/faq', description: 'Answers to common questions about electrical repairs, wiring, and scheduling.', icon: <HelpCircle className="w-5 h-5 text-electric-600" /> },
@@ -50,7 +53,7 @@ export default function Sitemap() {
         <div className="absolute inset-0 opacity-15">
           <img
             src="https://images.pexels.com/photos/257736/pexels-photo-257736.jpeg?auto=compress&cs=tinysrgb&w=1920&h=600&dpr=1"
-            alt=""
+            alt="Grace Electrical Services website directory and full sitemap in Hahnville, LA"
             className="w-full h-full object-cover"
           />
         </div>
@@ -59,7 +62,7 @@ export default function Sitemap() {
             <Layers className="w-7 h-7 text-navy-900" />
           </div>
           <h1 className="font-display text-4xl md:text-5xl font-bold text-white mb-4 animate-fade-in-up">
-            Website Sitemap
+            Website Directory &amp; Sitemap
           </h1>
           <p className="text-navy-200 text-lg max-w-2xl mx-auto mb-6 animate-fade-in-up">
             Quickly navigate all pages, electrical solutions, and community service areas offered by {BUSINESS.name}.

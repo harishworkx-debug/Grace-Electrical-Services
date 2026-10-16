@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Zap, Phone, MapPin, Mail } from 'lucide-react';
+import { Zap, Phone, MapPin, Mail, Star } from 'lucide-react';
 import { BUSINESS, SERVICES, SERVICE_AREAS } from '@/data/content';
 
 export default function Footer() {
@@ -26,13 +26,27 @@ export default function Footer() {
               Electrical wiring installation and services for Hahnville, Louisiana
               and surrounding communities.
             </p>
-            <a
-              href={BUSINESS.phoneLink}
-              className="inline-flex items-center gap-2 text-electric-400 hover:text-electric-300 font-semibold transition-colors"
+            <Link
+              to="/reviews"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-navy-900 border border-navy-800 text-xs text-navy-200 hover:border-amber-400/50 transition-colors mb-4"
             >
-              <Phone className="w-4 h-4" />
-              {BUSINESS.phone}
-            </a>
+              <div className="flex items-center text-amber-400">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-3 h-3 fill-amber-400 text-amber-400" />
+                ))}
+              </div>
+              <span className="font-semibold text-white">5.0 Rating</span>
+              <span className="text-navy-400">• 6 Google Reviews</span>
+            </Link>
+            <div>
+              <a
+                href={BUSINESS.phoneLink}
+                className="inline-flex items-center gap-2 text-electric-400 hover:text-electric-300 font-semibold transition-colors"
+              >
+                <Phone className="w-4 h-4" />
+                {BUSINESS.phone}
+              </a>
+            </div>
           </div>
 
           {/* Services */}
@@ -105,10 +119,27 @@ export default function Footer() {
               </li>
               <li>
                 <Link
+                  to="/reviews"
+                  className="text-sm text-navy-400 hover:text-electric-400 transition-colors flex items-center justify-between"
+                >
+                  <span>Customer Reviews</span>
+                  <span className="text-[11px] font-semibold text-amber-400">5.0 ★</span>
+                </Link>
+              </li>
+              <li>
+                <Link
                   to="/about"
                   className="text-sm text-navy-400 hover:text-electric-400 transition-colors"
                 >
                   About Us
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/guides"
+                  className="text-sm text-navy-400 hover:text-electric-400 transition-colors"
+                >
+                  Guides &amp; Case Studies
                 </Link>
               </li>
               <li>

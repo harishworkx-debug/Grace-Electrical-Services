@@ -32,8 +32,8 @@ export default function ServiceCard({ service, icon }: ServiceCardProps) {
         <p className="text-sm text-navy-600 leading-relaxed flex-1">
           {service.description}
         </p>
-        <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-electric-600 group-hover:gap-2 transition-all">
-          {service.title}
+        <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-electric-600 group-hover:gap-2.5 transition-all">
+          <span>View {service.shortTitle} Details</span>
           <ArrowRight className="w-4 h-4" />
         </span>
       </div>

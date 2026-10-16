@@ -7,7 +7,7 @@ export const BUSINESS = {
   state: 'Louisiana',
   zip: '70057',
   fullLocation: 'Hahnville, Louisiana 70057',
-  mapsListing: 'https://maps.app.goo.gl/QAe2nY7owLaxnPQu6',
+  mapsListing: 'https://maps.app.goo.gl/4yhMroKa48iLKc868',
   mapsEmbed:
     'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d55303.83434629346!2d-90.49194088948813!3d29.965355111550448!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xb622e8fa5d184db%3A0x13ef870f92f3cf45!2sGrace%20Electrical%20Services!5e0!3m2!1sen!2sin!4v1792061134833!5m2!1sen!2sin',
 };
@@ -16,15 +16,32 @@ export type ServiceInfo = {
   slug: string;
   title: string;
   shortTitle: string;
+  searchFocus: string;
   description: string;
   heroImage: string;
   heroAlt: string;
   icon: string;
+  distinctionNote?: {
+    title: string;
+    text: string;
+    linkTo?: string;
+    linkText?: string;
+    alertType?: 'info' | 'warning';
+  };
   longDescription: string;
+  problemsAddressed: { title: string; desc: string }[];
+  serviceProcess: { step: number; title: string; desc: string }[];
+  safetyAndCode: { title: string; desc: string }[];
+  realWorkExample?: {
+    client: string;
+    location: string;
+    scope: string;
+    quote: string;
+  };
   situations: string[];
   whatItInvolves: string[];
   benefits: string[];
-  faqs: { question: string; answer: string }[];
+  faqs: { question: string; answer: string; linkPath?: string; linkText?: string }[];
   relatedServices: string[];
 };
 
@@ -33,46 +50,112 @@ export const SERVICES: ServiceInfo[] = [
     slug: 'electrical-wiring-installation-hahnville-la',
     title: 'Electrical Wiring Installation',
     shortTitle: 'Wiring Installation',
+    searchFocus: 'Electrical wiring installation Hahnville LA',
     description:
-      'Professional electrical wiring installation for new construction, renovations, and addition projects in Hahnville and nearby areas.',
+      'Need electrical wiring installation in Hahnville, LA? Explore wiring options, learn about the installation process and contact Grace Electrical Services for an estimate.',
     heroImage:
       'https://images.pexels.com/photos/4981793/pexels-photo-4981793.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     heroAlt:
-      'Electrician installing wiring in a new building wearing safety gear',
+      'Electrician installing new copper electrical wiring wearing safety gear',
     icon: 'Cable',
     longDescription:
-      'Electrical wiring installation is the foundation of any safe and functional electrical system. Whether you are building a new home, adding an addition, or undertaking a major renovation, proper wiring ensures that your electrical system can handle your daily demands safely and efficiently. Grace Electrical Services handles wiring installation projects in Hahnville, Louisiana and surrounding communities, working with you to understand the scope and requirements of your project.',
+      'Proper electrical wiring installation forms the backbone of any safe, functional home or commercial facility. In Hahnville, Louisiana, where high humidity and seasonal storms test electrical infrastructure, every wire run must be planned with precision. Grace Electrical Services provides comprehensive new and replacement wiring for residential construction, room additions, detached workshops, and major property renovations, ensuring your circuits strictly comply with National Electrical Code (NEC) guidelines and local St. Charles Parish building safety standards.',
+    problemsAddressed: [
+      {
+        title: 'New Construction & Structural Additions',
+        desc: 'Roughing-in and finishing complete electrical distribution systems sized to handle contemporary power demands without circuit strain.',
+      },
+      {
+        title: 'Detached Garages, Workshops & Sheds',
+        desc: 'Trenching underground conduit and setting dedicated subpanels to provide reliable 120V and 240V power to outbuildings.',
+      },
+      {
+        title: 'Kitchen & Bathroom Renovation Circuits',
+        desc: 'Installing dedicated 20-amp small appliance branch circuits, GFCI receptacles, and high-draw appliance connections.',
+      },
+      {
+        title: 'Replacing Defective or Ungrounded Wire Runs',
+        desc: 'Upgrading degraded or compromised wiring with modern non-metallic sheathed copper conductors featuring full grounding continuity.',
+      },
+    ],
+    serviceProcess: [
+      {
+        step: 1,
+        title: 'Load Calculation & Circuit Routing',
+        desc: 'Rodney calculates electrical load requirements according to NEC guidelines, planning the most direct, code-compliant pathways through framing and joists.',
+      },
+      {
+        step: 2,
+        title: 'Cable Pulling & Box Rough-In',
+        desc: 'Running heavy-gauge commercial-grade copper conductors through framing, securing metal/PVC boxes, and protecting cable runs with nail plates.',
+      },
+      {
+        step: 3,
+        title: 'Panel Connections & Device Termination',
+        desc: 'Connecting dedicated home-runs into the main breaker panel with proper wire torquing, terminating outlets, switches, and lighting boxes.',
+      },
+      {
+        step: 4,
+        title: 'Circuit Testing & Inspection Verification',
+        desc: 'Comprehensive multi-meter testing for polarity, continuity, ground resistance, and proper voltage under active load before sign-off.',
+      },
+    ],
+    safetyAndCode: [
+      {
+        title: 'St. Charles Parish Permit & Code Adherence',
+        desc: 'All structural wiring projects are performed strictly in compliance with National Electrical Code standards and parish inspection requirements.',
+      },
+      {
+        title: '100% Solid Copper Conductors',
+        desc: 'We install only premium copper NM-B and THHN conductors—never undersized or substandard wiring—to prevent terminal overheating and arcing.',
+      },
+      {
+        title: 'Mandatory Arc-Fault (AFCI) Protection',
+        desc: 'Living areas, bedrooms, and common spaces receive code-mandated AFCI breaker protection to immediately isolate dangerous arcing faults.',
+      },
+    ],
+    realWorkExample: {
+      client: 'Rhodes',
+      location: 'St. Charles Parish, LA',
+      scope: 'Whole-house electrical wiring installation',
+      quote:
+        'I hired the company to wire a house for me. Rodney is a very efficient, knowledgeable and competent person to hire when you need an electrician. I definitely would hire him again.',
+    },
     situations: [
-      'New home or building construction requiring full wiring',
-      'Home renovations that involve opening walls or adding rooms',
-      'Room additions or converted spaces that need new circuits',
-      'Garage, workshop, or outdoor structure wiring',
-      'Upgrading old wiring during a remodel',
+      'New home construction requiring complete rough-in and trim-out wiring',
+      'Room additions, mother-in-law suites, or enclosed patio conversions',
+      'Building detached garages, workshops, or riverfront outdoor spaces',
+      'Kitchen and bathroom remodels requiring dedicated 20A appliance circuits',
+      'Upgrading ungrounded or damaged branch circuits during major renovations',
     ],
     whatItInvolves: [
-      'Assessing the electrical load requirements for the space',
-      'Planning circuit layout and wiring routes',
-      'Running cables through walls, ceilings, and conduit',
-      'Connecting wiring to outlets, switches, and fixtures',
-      'Connecting circuits to the electrical panel',
-      'Testing installed wiring for proper function and safety',
+      'Calculating circuit load requirements to prevent overloaded breakers',
+      'Planning clean cable routes through wall cavities and attic spaces',
+      'Running code-compliant copper conductors with proper support stapling',
+      'Securing heavy-duty electrical boxes and rough-in terminations',
+      'Connecting branch circuits into the service panel with proper breaker sizing',
+      'Full polarity, ground path, and voltage load verification',
     ],
     benefits: [
-      'Safe, code-compliant electrical infrastructure',
-      'Proper capacity for your current and future needs',
-      'Reduced risk of overloaded circuits and electrical hazards',
-      'Clean, organized wiring that supports future upgrades',
+      'Safe, code-compliant electrical infrastructure built to last decades',
+      'Adequate capacity for modern electronics, HVAC, and kitchen appliances',
+      'Elimination of fire hazards caused by overloaded or degraded wiring',
+      'Direct contact with Rodney throughout the entire installation',
     ],
     faqs: [
       {
-        question: 'What types of wiring installation projects do you handle?',
+        question: 'What types of wiring installation projects do you handle in Hahnville?',
         answer:
-          'We handle wiring for new construction, renovations, room additions, and similar projects. Call us to discuss the specifics of your project so we can determine how to help.',
+          'We handle full wiring for new residential construction, room additions, detached workshops, garage subpanels, and kitchen/bath remodels. Call Rodney directly at 504-559-5351 to review your blueprints or project scope.',
+        linkPath: '/contact',
+        linkText: 'Contact Rodney to Discuss Your Wiring Project',
       },
       {
-        question: 'How long does a wiring installation take?',
+        question: 'Do wiring installation projects require St. Charles Parish permits?',
         answer:
-          'The timeline depends on the size and complexity of the project. We can provide a better sense of timing after discussing your project details over the phone.',
+          'Major wiring installations, service upgrades, and new construction require parish permits and inspections to ensure code compliance. We coordinate all work to satisfy local building officials and NEC standards.',
+        linkPath: '/electrical-panel-upgrades-hahnville-la',
+        linkText: 'Learn About Panel Capacity for New Wiring',
       },
     ],
     relatedServices: [
@@ -86,45 +169,111 @@ export const SERVICES: ServiceInfo[] = [
     slug: 'electrical-repairs-troubleshooting-hahnville-la',
     title: 'Electrical Repairs and Troubleshooting',
     shortTitle: 'Repairs & Troubleshooting',
+    searchFocus: 'Electrical repair and troubleshooting Hahnville LA',
     description:
-      'Diagnosis and repair of common electrical issues including malfunctioning outlets, flickering lights, and circuit problems.',
+      'Troubleshooting recurring breaker trips, flickering lights or loss of power in Hahnville, LA? Learn safe next steps and book diagnostic repair with Grace Electrical Services.',
     heroImage:
       'https://images.pexels.com/photos/257736/pexels-photo-257736.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     heroAlt:
-      'Electrician working on a circuit breaker panel with colorful wires',
+      'Electrician diagnosing circuit breaker wiring issues with test equipment',
     icon: 'Wrench',
     longDescription:
-      'Electrical problems can range from minor annoyances to serious safety concerns. Flickering lights, outlets that stop working, breakers that trip repeatedly, and unusual sounds or smells from electrical equipment all warrant attention. Grace Electrical Services provides troubleshooting and repair services to diagnose and address electrical issues in homes and businesses throughout the Hahnville area.',
+      'Electrical problems often emerge without warning—a breaker that refuses to stay reset, lights that dim every time the air conditioner turns on, or wall outlets that feel unusually warm. In Hahnville, ignoring these warning signs can escalate from an inconvenience into a dangerous fire hazard. Grace Electrical Services provides systematic, root-cause troubleshooting. Rather than blindly resetting breakers or swapping parts, Rodney uses calibrated multi-meters and circuit tracing to pinpoint the exact failure point and resolve it safely.',
+    problemsAddressed: [
+      {
+        title: 'Frequent Circuit Breaker Tripping',
+        desc: 'Isolating short circuits, ground faults, or overloaded branch lines that cause breakers to trip repeatedly.',
+      },
+      {
+        title: 'Flickering, Dimming or Surging Lights',
+        desc: 'Diagnosing loose neutral connections, voltage fluctuations, or undersized conductors shared with heavy motor loads.',
+      },
+      {
+        title: 'Dead Outlets & Inoperative Switches',
+        desc: 'Tracing broken connections, tripped GFCI receptacles upstream, or burnt pigtails behind wall plates.',
+      },
+      {
+        title: 'Warm Wall Plates & Burning Odors',
+        desc: 'Identifying dangerous electrical arcing from backstabbed outlets, loose terminals, or melted insulation.',
+      },
+    ],
+    serviceProcess: [
+      {
+        step: 1,
+        title: 'Symptom Consultation & Immediate Safety Check',
+        desc: 'Reviewing when the issue occurs, what appliances were running, and checking for immediate fire or shock risks.',
+      },
+      {
+        step: 2,
+        title: 'Systematic Diagnostic Meter Testing',
+        desc: 'Using digital multi-meters to measure live voltage, continuity, ground fault resistance, and circuit load draw.',
+      },
+      {
+        step: 3,
+        title: 'Junction Box & Connection Inspection',
+        desc: 'Opening affected junction boxes along the circuit path to inspect splices, terminal torque, and conductor integrity.',
+      },
+      {
+        step: 4,
+        title: 'Permanent Repair & Load Verification',
+        desc: 'Replacing damaged components, retorquing connections to manufacturer specs, and testing the circuit under full active load.',
+      },
+    ],
+    safetyAndCode: [
+      {
+        title: 'Safe Next Steps for Homeowners',
+        desc: 'If you smell burning plastic or see sparks, turn off the controlling breaker immediately. NEVER repeatedly force a tripped breaker into the ON position—this overrides critical short-circuit safety mechanisms.',
+      },
+      {
+        title: 'Proper Terminal Torquing Standards',
+        desc: 'Loose connections cause electrical arcing and heat. We torque all breaker lugs and device screws to NEC manufacturer specifications.',
+      },
+      {
+        title: 'Root-Cause Resolution',
+        desc: 'We never mask symptoms with higher-amp breakers, which causes wall conductors to overheat and ignite framing materials.',
+      },
+    ],
+    realWorkExample: {
+      client: 'Abu',
+      location: 'Hahnville, LA',
+      scope: 'Diagnostic troubleshooting and electrical repair',
+      quote:
+        'The service was prompt, professional, and thorough. The electrician arrived on time, explained everything clearly, and used a smart, step-by-step approach to find and fix the problem. Honesty and fair pricing stood out.',
+    },
     situations: [
-      'Outlets or switches that have stopped working',
-      'Lights that flicker, dim, or turn off unexpectedly',
-      'Circuit breakers that trip frequently',
-      'Burning smell or unusual heat from outlets or switches',
-      'Power surges or inconsistent electrical supply',
+      'Circuit breakers that trip as soon as they are reset or under everyday usage',
+      'Lights flickering or dimming when the refrigerator, dryer, or AC compressor starts',
+      'Outlets or switches that have stopped working throughout one room',
+      'Wall switch plates or receptacles that feel warm or emit a faint burning odor',
+      'Unusual humming, buzzing, or clicking noises coming from breaker panels',
     ],
     whatItInvolves: [
-      'Inspecting the affected circuits and components',
-      'Testing wiring, outlets, switches, and panel connections',
-      'Identifying the root cause of the problem',
-      'Replacing or repairing damaged components',
-      'Testing the repair to confirm the issue is resolved',
+      'Visual inspection of service panels, subpanels, and branch circuits',
+      'Digital multi-meter testing for proper voltage, continuity, and ground paths',
+      'Locating loose neutral connections, open circuits, and damaged wiring splices',
+      'Replacing burnt or failing breakers, receptacles, and switches',
+      'Verifying safe operating temperatures and circuit load balances',
     ],
     benefits: [
-      'Restored safe and reliable electrical function',
-      'Identification of underlying causes, not just symptoms',
-      'Reduced risk of electrical fire or further damage',
-      'Peace of mind knowing the issue was properly diagnosed',
+      'Elimination of hidden electrical fire risks behind your walls',
+      'Permanent diagnosis that addresses the actual root problem, not just symptoms',
+      'Direct owner-electrician communication with clear explanations',
+      'Fair, honest pricing with quotes far below big-brand electrical chains',
     ],
     faqs: [
       {
-        question: 'Can you fix any electrical problem?',
+        question: 'Why does my breaker trip immediately after I reset it?',
         answer:
-          'We diagnose and repair a wide range of common electrical issues. Some problems may require specialized solutions — call us to describe what you are experiencing and we will let you know how we can help.',
+          'A breaker that trips instantly usually indicates a direct short circuit or a ground fault in the wiring. Do not continue trying to force it on. Leave it off and call Rodney at 504-559-5351 for safe diagnostic testing.',
+        linkPath: '/contact',
+        linkText: 'Call Rodney for Same-Day Troubleshooting',
       },
       {
-        question: 'Is a flickering light always a serious problem?',
+        question: 'Is a warm outlet cover dangerous?',
         answer:
-          'Not always, but flickering can indicate a loose connection, a failing fixture, or a circuit issue. It is best to have it checked to rule out any safety concerns.',
+          'Yes. Outlets should never feel warm to the touch. Warmth indicates severe resistance, loose terminal screws, or dangerous arcing that can melt wire insulation. Shut off the breaker and have it inspected promptly.',
+        linkPath: '/outlet-installation-hahnville-la',
+        linkText: 'Learn About Safe Outlet Replacements',
       },
     ],
     relatedServices: [
@@ -138,44 +287,103 @@ export const SERVICES: ServiceInfo[] = [
     slug: 'outlet-installation-hahnville-la',
     title: 'Outlet Installation',
     shortTitle: 'Outlet Installation',
+    searchFocus: 'Outlet installation Hahnville LA',
     description:
-      'Installation of new electrical outlets and replacement of old or damaged outlets for homes and businesses.',
+      'Need outlet installation in Hahnville, LA? Explore tamper-resistant receptacles, outdoor GFCI outlets, dedicated appliance circuits, and request an estimate.',
     heroImage:
       'https://images.pexels.com/photos/4981794/pexels-photo-4981794.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    heroAlt: 'Gloved hands using a drill to install a power outlet on a wall',
+    heroAlt: 'Electrician installing and wiring a tamper-resistant power outlet',
     icon: 'Plug',
     longDescription:
-      'Whether you need additional outlets for convenience, are replacing old two-prong outlets with grounded ones, or need GFCI outlets in kitchens and bathrooms, outlet installation is a common electrical service. Grace Electrical Services installs and replaces outlets for residential and commercial properties in Hahnville and nearby areas.',
+      'Modern Louisiana households require safe, convenient access to electricity without relying on dangerous webs of extension cords. Whether you need to replace old ungrounded two-prong outlets with modern grounded receptacles, add life-saving GFCI protection in moisture-prone kitchens and baths, or install heavy-duty 240V dedicated lines for dryers and EV chargers, Grace Electrical Services provides code-compliant outlet installations in Hahnville. We ensure every outlet is properly grounded, securely mounted, and balanced across your home’s electrical circuits.',
+    problemsAddressed: [
+      {
+        title: 'Dangerous 2-Prong Ungrounded Receptacles',
+        desc: 'Upgrading older homes lacking an equipment grounding conductor to provide safe power for sensitive modern electronics.',
+      },
+      {
+        title: 'Moisture-Prone Wet Areas Needing GFCI',
+        desc: 'Installing Ground Fault Circuit Interrupters in kitchens, bathrooms, laundry rooms, and garages to prevent fatal shock.',
+      },
+      {
+        title: 'Outdoor & Weather-Exposed Receptacles',
+        desc: 'Installing weather-resistant GFCI receptacles enclosed in heavy-duty in-use bubble covers that withstand heavy rainfall.',
+      },
+      {
+        title: 'Dedicated 240V Heavy Appliance Outlets',
+        desc: 'Running dedicated high-amp lines for electric vehicle chargers, clothes dryers, ovens, and workshop machinery.',
+      },
+    ],
+    serviceProcess: [
+      {
+        step: 1,
+        title: 'Circuit Capacity Assessment',
+        desc: 'Checking circuit ampacity and existing appliance loads to verify the circuit can support additional receptacles safely.',
+      },
+      {
+        step: 2,
+        title: 'Box Mounting & Cable Rough-In',
+        desc: 'Cutting clean drywall openings and securing heavy-duty remodel boxes, pulling 12 AWG or 14 AWG copper Romex.',
+      },
+      {
+        step: 3,
+        title: 'Side-Screw Terminal Termination',
+        desc: 'Wiring line, neutral, and ground wires to heavy-duty side screws—avoiding unreliable push-in backstabs.',
+      },
+      {
+        step: 4,
+        title: 'Ground-Fault & Polarity Testing',
+        desc: 'Using receptacle circuit analyzers to test ground continuity, correct hot/neutral polarity, and GFCI trip sensitivity.',
+      },
+    ],
+    safetyAndCode: [
+      {
+        title: 'Service Limitations & Circuit Load Limits',
+        desc: 'Per NEC guidelines, continuous loads must not exceed 80% of a circuit’s rating. If a circuit is near capacity, we run a new dedicated home-run rather than overloading existing wires.',
+      },
+      {
+        title: 'Tamper-Resistant (TR) Receptacles',
+        desc: 'All new residential outlets feature internal shutter mechanisms required by code to protect children from shock hazards.',
+      },
+      {
+        title: 'In-Use Outdoor Weatherproof Covers',
+        desc: 'Louisiana weather demands extra-duty wet-location covers that remain sealed even when power cords are plugged in.',
+      },
+    ],
     situations: [
-      'Not having enough outlets and relying on extension cords',
-      'Replacing old, worn, or damaged outlets',
-      'Upgrading to GFCI or AFCI outlets in kitchens, baths, and outdoors',
-      'Adding outlets for new appliances or electronics',
-      'Outlets that are loose, sparking, or discolored',
+      'Over-reliance on extension cords, power strips, and multi-plug adapters',
+      'Old two-prong outlets that cannot accept grounded three-prong cords',
+      'Kitchen or bathroom outlets without mandatory GFCI safety trip buttons',
+      'Loose outlets where plugs sag or fall out, creating arcing risks',
+      'Adding dedicated 240V circuits for Level 2 EV charging or heavy power tools',
     ],
     whatItInvolves: [
-      'Assessing the location and existing wiring',
-      'Selecting the appropriate outlet type for the application',
-      'Running new wiring if needed for new outlet locations',
-      'Installing and securing the outlet box and receptacle',
-      'Testing the outlet for proper voltage and grounding',
+      'Evaluating circuit ampacity and wire gauge (14 AWG for 15A, 12 AWG for 20A)',
+      'Installing heavy-duty commercial-grade tamper-resistant receptacles',
+      'Wiring GFCI receptacles to protect downstream outlets along the same circuit',
+      'Installing weatherproof outdoor outlet enclosures with in-use protective covers',
+      'Testing trip thresholds, voltage levels, and equipment ground resistance',
     ],
     benefits: [
-      'Convenient access to power where you need it',
-      'Improved safety with properly grounded, code-compliant outlets',
-      'Reduced reliance on extension cords and power strips',
-      'GFCI protection in wet or damp areas',
+      'Convenient access to power exactly where your furniture and appliances are placed',
+      'Shock and electrocution protection in wet areas around sinks and exterior patios',
+      'Elimination of fire hazards caused by overloaded extension cords',
+      'Proper grounding protection for computers, televisions, and electronics',
     ],
     faqs: [
       {
-        question: 'What is a GFCI outlet and do I need one?',
+        question: 'What is the difference between GFCI and AFCI outlets?',
         answer:
-          'A GFCI (ground fault circuit interrupter) outlet shuts off power if it detects an imbalance, providing important protection in wet areas. They are typically required in kitchens, bathrooms, garages, and outdoor locations.',
+          'GFCI (Ground Fault Circuit Interrupter) outlets protect people from electric shock in wet areas like bathrooms and kitchens. AFCI (Arc Fault Circuit Interrupter) protection detects sparking wires behind walls to prevent electrical fires. Both are code-required in modern homes.',
+        linkPath: '/electrical-repairs-troubleshooting-hahnville-la',
+        linkText: 'Learn About Circuit Safety & Troubleshooting',
       },
       {
-        question: 'Can you add an outlet anywhere I want?',
+        question: 'Can you install a 50-amp outlet for an EV charger in my Hahnville garage?',
         answer:
-          'In most cases, yes. We will assess the location and existing wiring to determine the best approach. Call us to discuss where you need an outlet.',
+          'Yes. We install dedicated 240V NEMA 14-50 receptacles or hardwire EV charging stations, ensuring your main electrical panel has sufficient amp capacity.',
+        linkPath: '/electrical-panel-upgrades-hahnville-la',
+        linkText: 'Check Your Panel Capacity for EV Chargers',
       },
     ],
     relatedServices: [
@@ -188,44 +396,103 @@ export const SERVICES: ServiceInfo[] = [
     slug: 'switch-installation-hahnville-la',
     title: 'Switch Installation',
     shortTitle: 'Switch Installation',
+    searchFocus: 'Light switch installation Hahnville LA',
     description:
-      'Installation and replacement of light switches, dimmer switches, and smart switches for residential and commercial properties.',
+      'Need light switch installation in Hahnville, LA? Explore LED-compatible dimmers, 3-way hallway switches, and smart controls installed safely by Grace Electrical Services.',
     heroImage:
       'https://images.pexels.com/photos/12996907/pexels-photo-12996907.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    heroAlt: 'White electrical rocker switches on a textured stone wall',
+    heroAlt: 'Modern wall rocker light switches and dimmers installed cleanly',
     icon: 'ToggleRight',
     longDescription:
-      'Switch installation covers everything from replacing a faulty light switch to installing dimmer switches for ambiance or smart switches for added convenience. Grace Electrical Services installs and replaces switches for homes and businesses in Hahnville, Louisiana and surrounding areas.',
+      'Light switches are among the most frequently used components in any building. When switches become loose, crackle when flipped, or fail to control fixtures properly, they present both an annoyance and a loose-connection fire risk. Grace Electrical Services installs and replaces all varieties of switches in Hahnville, Louisiana—from standard rockers and smooth LED dimmers to multi-location 3-way/4-way setups and smart Wi-Fi switches. We ensure your switch boxes have adequate cubic capacity and proper neutral connections for seamless, quiet operation.',
+    problemsAddressed: [
+      {
+        title: 'Buzzing or Flickering LED Dimmers',
+        desc: 'Replacing outdated incandescent dimmers with modern digital trailing-edge dimmers calibrated specifically for LED fixtures.',
+      },
+      {
+        title: 'Multi-Location 3-Way & 4-Way Switching',
+        desc: 'Correcting complex traveler wire configurations so hallway, staircase, and open-concept lights can be controlled from multiple entries.',
+      },
+      {
+        title: 'Smart Switch Upgrades Needing Neutral Wires',
+        desc: 'Verifying neutral wire availability inside older junction boxes and installing Wi-Fi timers and smart automation switches.',
+      },
+      {
+        title: 'Warm or Crackling Wall Switches',
+        desc: 'Replacing worn internal switch contacts that arc and generate dangerous heat inside the wall cavity.',
+      },
+    ],
+    serviceProcess: [
+      {
+        step: 1,
+        title: 'Circuit De-Energization & Neutral Verification',
+        desc: 'Testing circuit conductors to ensure zero voltage and checking for neutral wire availability required by modern smart switches.',
+      },
+      {
+        step: 2,
+        title: 'Traveler & Phase Wire Identification',
+        desc: 'Tracing line, load, traveler, and ground conductors in multi-switch boxes to prevent miswired loops.',
+      },
+      {
+        step: 3,
+        title: 'Secure Terminal Connection & Grounding',
+        desc: 'Terminating wires with secure screw connections, grounding the switch yoke, and organizing wiring to avoid box crowding.',
+      },
+      {
+        step: 4,
+        title: 'Dimmer Calibration & Load Testing',
+        desc: 'Adjusting low-end trim potentiometers on dimmers to eliminate bulb buzzing, strobing, or ghosting.',
+      },
+    ],
+    safetyAndCode: [
+      {
+        title: 'Box Cubic-Inch Volume Compliance',
+        desc: 'Cramming large smart switches into undersized shallow junction boxes violates NEC box-fill rules and causes overheating. We verify box volume.',
+      },
+      {
+        title: 'LED Driver & Dimmer Compatibility',
+        desc: 'Using the incorrect dimmer type causes premature LED fixture burnout. We match leading/trailing edge dimmers to your fixtures.',
+      },
+      {
+        title: 'Proper Equipment Grounding',
+        desc: 'Every switch faceplate screw can conduct electricity if a loose wire slips; grounding the switch yoke prevents shock hazards.',
+      },
+    ],
     situations: [
-      'Replacing a switch that is not working properly',
-      'Installing dimmer switches for adjustable lighting',
-      'Upgrading to smart or programmable switches',
-      'Adding a switch in a new location',
-      'Converting a single switch to a three-way configuration',
+      'Switches that make a buzzing, snapping, or crackling sound when turned on',
+      'Installing dimmer controls to create comfortable lighting ambiance in dining and living rooms',
+      'Upgrading to smart Wi-Fi switches that require neutral wire verification',
+      'Staircase or long hallway lights that can only be controlled from one end',
+      'Outdated toggle switches being upgraded to clean, modern decorator rocker plates',
     ],
     whatItInvolves: [
-      'Assessing the existing wiring and switch box',
-      'Selecting the correct switch type for the circuit',
-      'Disconnecting and removing the old switch',
-      'Wiring and securing the new switch',
-      'Testing for proper operation',
+      'Assessing existing switch box depth and neutral wire availability',
+      'Selecting the correct switch type: single-pole, 3-way, 4-way, or electronic dimmer',
+      'Safe circuit isolation and non-contact voltage verification',
+      'Terminating conductors with proper mechanical torquing and ground bonds',
+      'Calibrating low-end trim on LED dimmers to eliminate flicker and hum',
     ],
     benefits: [
-      'Reliable, responsive switch operation',
-      'Improved lighting control and ambiance with dimmers',
-      'Updated look and feel for your space',
-      'Proper wiring connections for safety',
+      'Smooth, silent lighting control tailored to your home’s aesthetic',
+      'Elimination of dangerous internal switch arcing and heat buildup',
+      'Convenient multi-location control for stairways and large rooms',
+      'Work completed cleanly and tested for full reliability',
     ],
     faqs: [
       {
-        question: 'Can you install a dimmer on any light fixture?',
+        question: 'Why does my light switch buzz when I dim my LED bulbs?',
         answer:
-          'Dimmer compatibility depends on the type of fixture and bulbs being used. We can assess your setup and recommend the right dimmer switch for your needs.',
+          'Buzzing occurs when an older incandescent dimmer is paired with modern LED bulbs, causing rapid voltage chopping that vibrates the bulb driver. Installing an LED-rated digital dimmer eliminates this hum.',
+        linkPath: '/lighting-installation-hahnville-la',
+        linkText: 'Explore LED Fixture & Lighting Installations',
       },
       {
-        question: 'Do you install smart switches?',
+        question: 'Can you install smart switches in an older Hahnville home?',
         answer:
-          'Yes, we can install smart and programmable switches. Call to discuss the specific switch you have in mind and we will confirm compatibility.',
+          'Most smart switches require a neutral wire inside the switch box for continuous power. Older homes sometimes routed only a switch loop. Rodney inspects your switch boxes and can run neutral conductors where needed.',
+        linkPath: '/electrical-rewiring-hahnville-la',
+        linkText: 'Learn About Older Home Wiring Upgrades',
       },
     ],
     relatedServices: [
@@ -238,45 +505,118 @@ export const SERVICES: ServiceInfo[] = [
     slug: 'electrical-panel-repair-hahnville-la',
     title: 'Electrical Panel Repair',
     shortTitle: 'Panel Repair',
+    searchFocus: 'Electrical panel repair Hahnville LA',
     description:
-      'Inspection and repair of electrical panel issues including breaker problems, loose connections, and panel maintenance.',
+      'Noticing buzzing panels or failing circuit breakers in Hahnville, LA? Learn warning signs, safe diagnostic steps, and expert panel repairs from Grace Electrical Services.',
     heroImage:
       'https://images.pexels.com/photos/32497160/pexels-photo-32497160.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     heroAlt:
-      'Electrician examining a residential fuse box for electrical safety',
+      'Electrician examining circuit breakers inside a residential panel enclosure',
     icon: 'ShieldAlert',
+    distinctionNote: {
+      alertType: 'warning',
+      title: 'Panel Repair vs. Panel Upgrade — Which Do You Need?',
+      text: 'Panel repair fixes specific components—such as replacing a failing circuit breaker, tightening loose neutral bars, or eliminating moisture corrosion—within an existing, code-compliant panel that already has sufficient capacity. If your panel is over 25 years old, has a low 100A capacity, lacks slots for additions, or is a hazardous fuse box, you need an Electrical Panel Upgrade instead.',
+      linkTo: '/electrical-panel-upgrades-hahnville-la',
+      linkText: 'Learn About Full 200A Panel Upgrades',
+    },
     longDescription:
-      'The electrical panel is the central hub that distributes power throughout your home or business. Panel problems — such as breakers that will not stay reset, warm or buzzing panels, corrosion, or outdated components — should be assessed promptly. Grace Electrical Services provides electrical panel inspection and repair for properties in Hahnville and nearby communities.',
+      'Your electrical panel is the central nervous system of your property’s power distribution. When breakers trip repeatedly, panel enclosures make faint buzzing sounds, or lights fluctuate across multiple rooms, the issue often traces directly to the breaker panel. Grace Electrical Services provides thorough panel diagnostic inspections and repairs in Hahnville, Louisiana. We identify whether individual breakers have deteriorated, bus bar connections have loosened, or corrosion is causing resistance—restoring safe, reliable power distribution.',
+    problemsAddressed: [
+      {
+        title: 'Failing or Weakened Circuit Breakers',
+        desc: 'Breakers whose internal bi-metallic strip or electromagnetic mechanism has weakened, causing trips under normal loads.',
+      },
+      {
+        title: 'Buzzing, Humming or Crackling Panel Noises',
+        desc: 'Dangerous vibration caused by loose bus stab connections or arcing between the breaker clip and bus bar.',
+      },
+      {
+        title: 'Loose Neutral or Ground Bus Connections',
+        desc: 'Loose terminal screws on the neutral bar causing unexplained voltage swings and flickering across unrelated rooms.',
+      },
+      {
+        title: 'Double-Tapped Breaker Lugs',
+        desc: 'Correcting hazardous code violations where two branch wires are improperly shoved under a single-wire breaker lug.',
+      },
+    ],
+    serviceProcess: [
+      {
+        step: 1,
+        title: 'Thermal & Visual Panel Inspection',
+        desc: 'Checking for heat discoloration, burnt wire insulation, melted breaker casing, and moisture intrusion from Louisiana humidity.',
+      },
+      {
+        step: 2,
+        title: 'Circuit Load & Voltage Diagnostics',
+        desc: 'Measuring current draw on active circuits using clamp meters to verify breakers are operating within design parameters.',
+      },
+      {
+        step: 3,
+        title: 'Terminal Torquing & Component Replacement',
+        desc: 'Replacing worn breakers with exact manufacturer-approved types, cleaning bus stabs, and torquing bus screws to NEC specs.',
+      },
+      {
+        step: 4,
+        title: 'Balance & Full Load Verification',
+        desc: 'Verifying proper phase load balance and confirming silent, cool operation across the entire panel enclosure.',
+      },
+    ],
+    safetyAndCode: [
+      {
+        title: 'CRITICAL WARNING: Never Work Inside a Live Panel',
+        desc: 'Main service entrance cables entering the top of your panel remain energized with 240 volts of lethal current even when the main breaker is switched off. Attempting DIY repairs inside a panel carries extreme electrocution and arc-flash burn risks.',
+      },
+      {
+        title: 'When Panel Repair Is NOT Suitable',
+        desc: 'If your panel is an obsolete brand known for catastrophic fire hazards (such as Federal Pacific Stab-Lok or Zinsco) or has severe water damage, component repair is unsafe. In these situations, full panel replacement is required.',
+      },
+      {
+        title: 'Manufacturer-Approved Breaker Types',
+        desc: 'Breakers must match the panel enclosure listing (e.g. Square D, Siemens, Eaton). Interchanging unapproved breaker brands causes loose connections and voids your homeowner insurance coverage.',
+      },
+    ],
+    realWorkExample: {
+      client: 'Rhodes',
+      location: 'Hahnville area, LA',
+      scope: 'Electrical panel repair and circuit relocation',
+      quote:
+        'Rodney is a very efficient, knowledgeable and competent person to hire when you need an electrician. I definitely would hire him again and recommend him to anyone.',
+    },
     situations: [
-      'Breakers that trip frequently or will not reset',
-      'Panel feels warm to the touch or makes buzzing sounds',
-      'Burning smell near the panel',
-      'Outdated or corroded panel components',
-      'Inconsistent power distribution across circuits',
+      'Circuit breakers that trip frequently even after unplugging appliances',
+      'Faint humming, buzzing, or clicking sounds coming from inside the panel door',
+      'A circuit breaker that feels warm or has visible discoloration around its switch',
+      'Lights dimming in several different rooms simultaneously',
+      'Correcting double-tapped breakers noted during a home sale inspection',
     ],
     whatItInvolves: [
-      'Visually inspecting the panel and internal components',
-      'Testing breakers and connections',
-      'Tightening loose connections',
-      'Replacing damaged or worn breakers',
-      'Assessing whether a panel upgrade is needed',
+      'Infrared inspection for hot spots and overloaded branch connections',
+      'Testing breaker trip mechanisms and mechanical bus bar contacts',
+      'Replacing damaged, arcing, or obsolete circuit breakers',
+      'Retorquing all neutral bar and ground bar terminal screws to factory specs',
+      'Assessing whether existing panel capacity meets current household demands',
     ],
     benefits: [
-      'Safe, reliable power distribution',
-      'Reduced fire risk from loose or corroded connections',
-      'Properly functioning circuit protection',
-      'Professional assessment of whether repair or replacement is needed',
+      'Silent, safe, and dependable power distribution throughout your home',
+      'Elimination of dangerous panel arcing and localized fire risks',
+      'Proper circuit protection for high-value appliances and HVAC systems',
+      'Honest professional advice on whether repair is sufficient or if an upgrade is needed',
     ],
     faqs: [
       {
-        question: 'How do I know if my panel needs repair or replacement?',
+        question: 'How do I know if my electrical panel can be repaired or needs to be replaced?',
         answer:
-          'Signs like frequent breaker trips, warmth, buzzing, or visible damage suggest a problem. We can inspect your panel and advise whether a repair is sufficient or if an upgrade is recommended.',
+          'If your panel is a modern, code-compliant enclosure with sufficient ampacity and the issue is an isolated failing breaker or loose terminal screw, a repair is ideal. If the panel is over 25 years old, corroded, or lacks capacity for modern appliances, a full panel upgrade is the safer, more cost-effective choice.',
+        linkPath: '/electrical-panel-upgrades-hahnville-la',
+        linkText: 'Compare Panel Repair vs. Panel Upgrade Options',
       },
       {
-        question: 'Is it safe to reset a tripped breaker myself?',
+        question: 'Is it dangerous if my electrical panel makes a humming sound?',
         answer:
-          'Resetting a tripped breaker is generally safe, but if it trips again immediately, do not keep resetting it. Call us to diagnose the underlying cause.',
+          'Yes. Panels should operate silently. A humming or buzzing sound indicates a breaker carrying current near its trip threshold, a loose connection arcing against the bus bar, or a failing breaker mechanism. Contact Rodney at 504-559-5351 for prompt inspection.',
+        linkPath: '/contact',
+        linkText: 'Call Rodney for Urgent Panel Inspection',
       },
     ],
     relatedServices: [
@@ -289,46 +629,116 @@ export const SERVICES: ServiceInfo[] = [
     slug: 'electrical-panel-upgrades-hahnville-la',
     title: 'Electrical Panel Upgrades',
     shortTitle: 'Panel Upgrades',
+    searchFocus: 'Electrical panel upgrade Hahnville LA',
     description:
-      'Upgrading electrical panels to increase capacity, improve safety, and meet the demands of modern homes and businesses.',
+      'Planning an electrical panel upgrade in Hahnville, LA? Learn about upgrading to 200 amps for modern appliances, EV chargers, permits, and request an estimate.',
     heroImage:
       'https://images.pexels.com/photos/28950842/pexels-photo-28950842.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     heroAlt:
-      'Close-up of an organized circuit breaker panel with color-coded wiring',
+      'Newly installed 200-amp residential circuit breaker panel with clean wiring',
     icon: 'Zap',
+    distinctionNote: {
+      alertType: 'info',
+      title: 'Panel Upgrade vs. Panel Repair — What Is the Difference?',
+      text: 'A panel upgrade replaces your entire service entrance, meter enclosure, and main distribution panel to expand your total capacity (typically upgrading from an old 100-amp service to 200-amp capacity). This is required when adding heavy modern loads like EV chargers, heat pumps, or major home additions. If your panel already has adequate capacity but has an isolated tripped breaker, see Electrical Panel Repair.',
+      linkTo: '/electrical-panel-repair-hahnville-la',
+      linkText: 'View Component Panel Repair Services',
+    },
     longDescription:
-      'An electrical panel upgrade replaces an older or undersized panel with a new one that provides more capacity and modern safety features. If your home or business has added appliances, an addition, or EV charging, your existing panel may no longer have enough capacity. Grace Electrical Services handles panel upgrades for properties in Hahnville and surrounding areas.',
+      'Many homes in Hahnville and throughout St. Charles Parish were built decades ago with 60-amp or 100-amp electrical panels. Today’s households run central air conditioners, electric vehicle chargers, heat pumps, computers, and high-draw kitchen appliances that easily overwhelm older panels. An electrical panel upgrade replaces your outdated enclosure with a modern 200-amp service panel featuring full AFCI/GFCI protection, whole-home surge suppression, and dedicated space for backup generator interlocks. Grace Electrical Services manages the entire process from load calculations to Entergy utility coordination and parish inspection sign-off.',
+    problemsAddressed: [
+      {
+        title: 'Undersized 100A or 60A Electrical Service',
+        desc: 'Upgrading insufficient electrical service to 200 amps to power modern all-electric homes, pool pumps, and heavy appliances.',
+      },
+      {
+        title: 'No Available Breaker Slots for New Additions',
+        desc: 'Eliminating crowded panels by providing 40+ dedicated full-size breaker spaces for room additions and renovations.',
+      },
+      {
+        title: 'Level 2 EV Charger & Generator Interlocks',
+        desc: 'Installing dedicated 50A circuits for electric vehicle chargers and code-compliant manual transfer switches for storm generators.',
+      },
+      {
+        title: 'Obsolete Fuse Boxes & Hazardous Legacy Panels',
+        desc: 'Replacing insurance-prohibited Federal Pacific, Zinsco, or screw-in fuse panels with modern UL-listed safety equipment.',
+      },
+    ],
+    serviceProcess: [
+      {
+        step: 1,
+        title: 'Demand Load Calculation & Entergy Coordination',
+        desc: 'Calculating your home’s peak electrical load per NEC Article 220 and coordinating service drop disconnects with Entergy.',
+      },
+      {
+        step: 2,
+        title: 'Permit Acquisition & Utility Disconnect',
+        desc: 'Securing necessary St. Charles Parish electrical permits and arranging safe utility shutoff on installation day.',
+      },
+      {
+        step: 3,
+        title: 'New Service Mast, Meter & Panel Installation',
+        desc: 'Mounting heavy-duty exterior meter enclosure, weatherhead, grounding electrodes, and a 200A interior breaker panel.',
+      },
+      {
+        step: 4,
+        title: 'Circuit Transfer & Code-Required AFCI/GFCI Breakers',
+        desc: 'Transferring every branch circuit, installing modern dual-function breakers, neat wire comb dressing, and circuit directory labeling.',
+      },
+      {
+        step: 5,
+        title: 'Parish Inspection & Power Restoration',
+        desc: 'Passing municipal safety inspection, coordinating Entergy power hookup, and verifying full operating balance.',
+      },
+    ],
+    safetyAndCode: [
+      {
+        title: 'NEC 2020/2023 Exterior Emergency Disconnect',
+        desc: 'Modern code requires an accessible outdoor emergency disconnect so first responders can shut off household power during storms or fires.',
+      },
+      {
+        title: 'Dual 8-Foot Copper Grounding Electrode System',
+        desc: 'We install two spaced 8-foot copper ground rods bonded with heavy continuous bare copper wire to dissipate lightning surges safely.',
+      },
+      {
+        title: 'Whole-Home Surge Protective Device (SPD)',
+        desc: 'Protecting expensive appliances and smart electronics from lightning grid spikes common along the Mississippi River corridor.',
+      },
+    ],
     situations: [
-      'Your panel does not have enough breaker slots for new circuits',
-      'Adding large appliances, an addition, or EV charging',
-      'Older home with a fuse box or low-amp panel',
-      'Flickering lights or tripped breakers when running multiple devices',
-      'Panel is outdated or no longer meets current electrical codes',
+      'Home currently operating on an old 100-amp service with no room for new breakers',
+      'Installing a Level 2 electric vehicle (EV) charging station in your garage or carport',
+      'Replacing a vintage screw-in fuse box or hazardous Federal Pacific/Zinsco panel',
+      'Adding central air conditioning, an induction cooktop, or a tankless water heater',
+      'Installing a manual generator interlock kit for hurricane power backup',
     ],
     whatItInvolves: [
-      'Assessing current and future electrical load requirements',
-      'Selecting an appropriately sized panel',
-      'Removing the old panel and installing the new one',
-      'Transferring and reorganizing circuits',
-      'Installing new breakers and labeling all circuits',
-      'Testing the new panel for proper function',
+      'Comprehensive whole-home electrical load assessment per NEC standards',
+      'Replacing exterior service entrance cables, weatherhead, and meter socket',
+      'Installing a modern 200-amp panel with 40 or 42 full-size breaker spaces',
+      'Installing dual-function AFCI/GFCI circuit breakers to meet modern safety codes',
+      'Complete circuit labeling and balanced phase load testing across both 120V legs',
     ],
     benefits: [
-      'Increased electrical capacity for modern demands',
-      'Improved safety with modern breaker technology',
-      'Enough circuits for future additions or upgrades',
-      'Compliance with current electrical codes',
+      'Plentiful electrical capacity for all modern appliances, HVAC, and EV chargers',
+      'Significantly improved electrical safety with modern arc-fault and surge technology',
+      'Smooth compliance with homeowner insurance requirements and real estate inspections',
+      'Peace of mind during severe weather with backup generator readiness',
     ],
     faqs: [
       {
-        question: 'How do I know if I need a panel upgrade?',
+        question: 'How long does a 200-amp electrical panel upgrade take in Hahnville?',
         answer:
-          'If your panel is over 20 years old, does not have enough space for new circuits, or you are experiencing tripped breakers when running multiple devices, an upgrade may be needed. Call us to discuss your situation.',
+          'The actual physical panel replacement is completed in a single day, typically taking 6 to 8 hours. We coordinate with Entergy and local inspectors to ensure your power is reconnected as quickly as possible.',
+        linkPath: '/contact',
+        linkText: 'Speak with Rodney About Scheduling an Upgrade',
       },
       {
-        question: 'How long does a panel upgrade take?',
+        question: 'Will a panel upgrade increase my home value and insurance eligibility?',
         answer:
-          'Most panel upgrades are completed in a day. We can give you a better estimate after understanding your specific setup.',
+          'Yes. Outdated 100A panels or fuse boxes frequently trigger insurance cancellations or surcharges during home sales. Upgrading to a certified 200A panel with whole-home surge protection satisfies insurance underwriters and boosts resale value.',
+        linkPath: '/about',
+        linkText: 'Read About Our Code-Compliant Standards',
       },
     ],
     relatedServices: [
@@ -341,44 +751,111 @@ export const SERVICES: ServiceInfo[] = [
     slug: 'lighting-installation-hahnville-la',
     title: 'Lighting Installation',
     shortTitle: 'Lighting Installation',
+    searchFocus: 'Lighting installation Hahnville LA',
     description:
-      'Installation of indoor and outdoor lighting including recessed lighting, fixtures, landscape lighting, and more.',
+      'Looking for lighting installation in Hahnville, LA? Explore recessed canless LEDs, structural ceiling fan braces, chandeliers, and outdoor security fixtures.',
     heroImage:
       'https://images.pexels.com/photos/4792521/pexels-photo-4792521.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    heroAlt: 'Person screwing a light bulb into a new lamp during renovation',
+    heroAlt:
+      'Electrician installing modern recessed ceiling lighting in a renovated home',
     icon: 'Lightbulb',
     longDescription:
-      'Lighting installation covers a wide range of indoor and outdoor projects — from recessed lighting and ceiling fixtures to landscape and security lighting. Grace Electrical Services installs lighting for residential and commercial properties in Hahnville, Louisiana and surrounding communities.',
+      'Lighting dramatically shapes the comfort, security, and beauty of your property. Whether you are replacing old halogen cans with energy-efficient ultra-thin LED recessed wafers, mounting heavy chandeliers in vaulted entryways, adding exterior security floodlights, or installing structural ceiling fans for southern Louisiana summers, Grace Electrical Services provides expert installation. Rodney ensures all junction boxes are structurally rated, properly anchored to ceiling joists, and wired to smooth dimmer controls.',
+    problemsAddressed: [
+      {
+        title: 'Dark or Unevenly Lit Living Spaces',
+        desc: 'Installing balanced layouts of recessed LED wafer lights with selectable warm-to-cool color temperatures.',
+      },
+      {
+        title: 'Ceiling Fan Installation & Wobbling Boxes',
+        desc: 'Replacing weak plastic light boxes with heavy-duty UL-listed ceiling fan support braces to prevent falling hazards (as praised by clients Anthony and Shelby!).',
+      },
+      {
+        title: 'Chandelier & Pendant Mounting in High Ceilings',
+        desc: 'Safely securing heavy designer light fixtures with rated hardware, proper chain suspension, and balanced wiring.',
+      },
+      {
+        title: 'Outdoor Perimeter & Security Illumination',
+        desc: 'Installing weatherproof motion-sensing floodlights, patio illumination, and dusk-to-dawn photocells.',
+      },
+    ],
+    serviceProcess: [
+      {
+        step: 1,
+        title: 'Lighting Design & Layout Planning',
+        desc: 'Measuring ceiling height, beam placement, and room dimensions to determine optimal fixture spacing and eliminate dark shadows.',
+      },
+      {
+        step: 2,
+        title: 'Structural Box & Conduit Rough-In',
+        desc: 'Installing joist-mounted metal fan-rated junction boxes or cutting clean precision holes for ultra-thin LED canless wafers.',
+      },
+      {
+        step: 3,
+        title: 'Fixture Mounting & Safe Wiring',
+        desc: 'Hanging fixtures, making secure copper wire pigtails, grounding metal housings, and balancing ceiling fan blades.',
+      },
+      {
+        step: 4,
+        title: 'Dimmer Switch Pairing & Operational Check',
+        desc: 'Connecting compatible LED dimmers, testing multi-speed fan controls, and verifying quiet, flicker-free illumination.',
+      },
+    ],
+    safetyAndCode: [
+      {
+        title: 'Mandatory Fan-Rated Structural Support',
+        desc: 'Standard light fixture boxes are only rated for 35 lbs of static weight. Ceiling fans produce dynamic rotational vibration and MUST be anchored to UL-listed metal fan braces.',
+      },
+      {
+        title: 'Wet-Rated Exterior Enclosures',
+        desc: 'Exterior fixtures in Hahnville must feature silicone gaskets and corrosion-resistant finishes to survive heavy humidity and storm-driven rain.',
+      },
+      {
+        title: 'IC-Rated & Air-Tight Recessed Lighting',
+        desc: 'We install Insulation Contact (IC) rated recessed lights that seal tightly against attic air, preventing heat loss and moisture infiltration.',
+      },
+    ],
+    realWorkExample: {
+      client: 'Anthony & Shelby Jusselin',
+      location: 'Hahnville, LA',
+      scope: 'Ceiling fan and lighting installations',
+      quote:
+        'Anthony: "I asked him for advice installing a ceiling fan that I was going to do myself... he winded up staying without complaint and knocked it out too. Rodney is my go-to guy." Shelby: "Great experience overall! Prompt response and came out the next day... Fan installation."',
+    },
     situations: [
-      'Installing recessed or can lighting in ceilings',
-      'Adding ceiling fans with integrated lighting',
-      'Outdoor landscape and pathway lighting',
-      'Security and motion-activated lighting',
-      'Replacing outdated fixtures with modern ones',
+      'Installing sleek ultra-thin canless recessed LED downlights throughout kitchens and dens',
+      'Safely replacing standard ceiling lights with heavy ceiling fans in bedrooms and porches',
+      'Hanging high-ceiling foyer chandeliers, kitchen island pendants, and dining fixtures',
+      'Adding motion-activated security floodlights to illuminate dark driveways and yard perimeters',
+      'Replacing outdated fluorescent tube lighting with modern, energy-efficient LED panels',
     ],
     whatItInvolves: [
-      'Assessing the fixture type and installation location',
-      'Running wiring to the fixture location if needed',
-      'Installing junction boxes and mounting hardware',
-      'Connecting and securing the fixture',
-      'Installing bulbs and testing operation',
+      'Precision laser alignment for evenly spaced recessed lighting grids',
+      'Installing heavy-duty UL-listed fan-support ceiling braces between structural joists',
+      'Running new 14/2 or 14/3 copper cables for separate fan speed and light dimming controls',
+      'Wiring dusk-to-dawn photocells, motion sensors, and timer switches',
+      'Testing balanced fan rotation and silent, flicker-free dimming',
     ],
     benefits: [
-      'Enhanced aesthetics and functionality of your space',
-      'Energy-efficient lighting options',
-      'Improved safety and security with outdoor lighting',
-      'Professional installation for long-lasting performance',
+      'Dramatic improvement in home aesthetics, energy efficiency, and task illumination',
+      'Guaranteed structural stability for heavy ceiling fans without wobbling or noise',
+      'Enhanced nighttime home security and curb appeal with outdoor lighting',
+      'Clean installation with zero sheetrock mess left behind',
     ],
     faqs: [
       {
-        question: 'Can you install outdoor lighting?',
+        question: 'Can any ceiling light box hold a new ceiling fan?',
         answer:
-          'Yes, we install outdoor and landscape lighting. Call to describe what you have in mind and we will discuss the options.',
+          'No! Standard light boxes are only meant for lightweight fixtures. Ceiling fans vibrate and require a structural fan-rated metal bracket securely bolted between ceiling joists. Rodney installs code-compliant fan braces to guarantee safety.',
+        linkPath: '/contact',
+        linkText: 'Schedule a Safe Ceiling Fan Installation',
       },
       {
-        question: 'Do you install recessed lighting in existing ceilings?',
+        question: 'Can you install recessed lighting in rooms without attic access above?',
         answer:
-          'Yes, we can install recessed lighting in both new and existing ceilings. The process may involve accessing the ceiling space above. Call us to discuss your space.',
+          'Yes. We use ultra-thin canless LED wafer downlights that require only 1 to 2 inches of ceiling clearance. They clip directly into drywall with integrated junction boxes, minimizing ceiling damage.',
+        linkPath: '/switch-installation-hahnville-la',
+        linkText: 'Pair Recessed Lights with LED Dimmers',
       },
     ],
     relatedServices: [
@@ -391,46 +868,109 @@ export const SERVICES: ServiceInfo[] = [
     slug: 'electrical-rewiring-hahnville-la',
     title: 'Electrical Rewiring',
     shortTitle: 'Rewiring',
+    searchFocus: 'Electrical rewiring Hahnville LA',
     description:
-      'Complete or partial rewiring of homes and businesses to replace aging, damaged, or unsafe electrical wiring.',
+      'Signs of aging cloth or ungrounded wiring in Hahnville, LA? Learn about partial versus whole-house rewiring, renovation safety, and request an assessment.',
     heroImage:
       'https://images.pexels.com/photos/3614763/pexels-photo-3614763.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     heroAlt:
-      'Exposed electrical wiring being installed during home renovation',
+      'Fresh copper Romex electrical wiring being pulled during home rewiring',
     icon: 'Cable',
     longDescription:
-      'Electrical rewiring involves replacing old or damaged wiring throughout a home or building. Older properties may have wiring that has degraded over time, does not meet current safety standards, or cannot support modern electrical demands. Grace Electrical Services handles rewiring projects for properties in Hahnville and nearby areas.',
+      'Many older homes along the Mississippi River in St. Charles Parish still contain original electrical wiring installed 40 to 60+ years ago. Over decades, cloth-jacketed wiring degrades, rubber insulation becomes brittle, and older circuits lack vital equipment grounding paths. Grace Electrical Services specializes in partial and whole-house electrical rewiring in Hahnville, Louisiana. Rodney carefully plans wire pulls through attics, crawl spaces, and wall cavities to replace hazardous, fire-prone wiring with modern Romex copper circuits while minimizing impact on your walls and woodwork.',
+    problemsAddressed: [
+      {
+        title: 'Brittle Cloth-Jacketed & Rubber Insulation',
+        desc: 'Replacing ancient insulation that flakes away inside wall cavities, exposing bare conductors to framing combustion.',
+      },
+      {
+        title: 'Ungrounded 2-Wire Circuits',
+        desc: 'Pulling fresh 3-conductor cables with dedicated equipment grounding to protect appliances, electronics, and human life.',
+      },
+      {
+        title: 'Hazardous 1960s-1970s Aluminum Branch Wiring',
+        desc: 'Eliminating fire-prone aluminum branch circuits that expand and contract, causing catastrophic terminal arcing.',
+      },
+      {
+        title: 'Unsafe DIY Splices & Buried Junction Boxes',
+        desc: 'Correcting uncontained flying wire splices hidden in attics and crawl spaces by previous remodelers.',
+      },
+    ],
+    serviceProcess: [
+      {
+        step: 1,
+        title: 'Comprehensive Wiring Safety Assessment',
+        desc: 'Inspecting existing conductors in attics, basements/crawl spaces, and device boxes to identify wire type, insulation condition, and grounding.',
+      },
+      {
+        step: 2,
+        title: 'Route Planning & Minimizing Wall Damage',
+        desc: 'Mapping fishing routes through attics, crawl spaces, and baseboards to pull fresh cables with minimal sheetrock or plaster cutting.',
+      },
+      {
+        step: 3,
+        title: 'Pulling Modern NM-B Copper Conductors',
+        desc: 'Routing fresh 12 AWG and 14 AWG grounded copper cables to every receptacle, switch, and light fixture location.',
+      },
+      {
+        step: 4,
+        title: 'Device Replacement & Service Panel Tie-In',
+        desc: 'Installing new tamper-resistant receptacles, switches, and terminating circuits into new AFCI/GFCI breakers in the main panel.',
+      },
+      {
+        step: 5,
+        title: 'Full System Continuity & Insulation Testing',
+        desc: 'Verifying proper ground loops, zero open neutrals, and complete circuit integrity across the entire home.',
+      },
+    ],
+    safetyAndCode: [
+      {
+        title: 'Partial vs. Whole-House Rewiring Scope',
+        desc: 'If budget or living arrangements require it, we can execute partial rewiring—focusing first on high-draw areas like kitchens, bathrooms, and laundry rooms—before tackling living spaces.',
+      },
+      {
+        title: 'Insurance Underwriting Requirements',
+        desc: 'Louisiana insurance companies routinely refuse coverage on homes with cloth wiring or ungrounded systems. Modern rewiring provides official documentation for underwriters.',
+      },
+      {
+        title: 'Strict Containment in Junction Boxes',
+        desc: 'All wire splices must occur inside accessible, covered UL-listed junction boxes—never open in attics or behind sheetrock.',
+      },
+    ],
     situations: [
-      'Older home with aging or degraded wiring',
-      'Wiring that does not support modern electrical loads',
-      'Damaged wiring from renovation, pests, or water exposure',
-      'Frequent electrical issues that suggest systemic wiring problems',
-      'Upgrading ungrounded wiring to grounded circuits',
+      'Homes over 40 years old that have never had their original branch wiring updated',
+      'Outlets that spark, smoke, or show black soot marks around the receptacle slots',
+      'Two-prong outlets present throughout the home with no equipment ground wire',
+      'Remodeling a historic plantation-era or mid-century home in St. Charles Parish',
+      'Home purchase inspection flagging degraded cloth insulation or aluminum branch circuits',
     ],
     whatItInvolves: [
-      'Assessing the existing wiring throughout the property',
-      'Planning the rewiring approach to minimize disruption',
-      'Removing old wiring where accessible',
-      'Running new wiring through walls, ceilings, and crawl spaces',
-      'Updating outlets, switches, and panel connections',
-      'Testing the new wiring system for safety and function',
+      'Comprehensive inspection of existing cable conditions in attic and wall cavities',
+      'Designing modern circuit pathways to separate heavy kitchen and HVAC loads',
+      'Fishing new commercial-grade copper Romex through framing without demolition',
+      'Replacing all old ungrounded electrical boxes and devices with modern receptacles',
+      'Terminating all new branch circuits into modern AFCI/GFCI circuit breakers',
     ],
     benefits: [
-      'Safe, modern wiring that meets current codes',
-      'Proper grounding throughout the property',
-      'Increased capacity for modern electrical demands',
-      'Reduced risk of electrical fire and equipment damage',
+      'Total peace of mind knowing the hidden fire hazard behind your walls is eliminated',
+      'Safe, reliable grounding for expensive computers, entertainment systems, and appliances',
+      'Easier insurance qualification and higher property appraisal value',
+      'Dedicated power capacity that easily accommodates future home expansions',
     ],
     faqs: [
       {
-        question: 'How do I know if my home needs rewiring?',
+        question: 'Will rewiring my home require destroying all my sheetrock or plaster?',
         answer:
-          'Signs include frequently tripped breakers, flickering lights, discolored outlets, or a home that is more than 40 years old with original wiring. Call us to discuss what you are experiencing.',
+          'No! Rodney uses specialized wire-fishing techniques to navigate cables through attics, crawl spaces, and interior stud bays. While minor access holes are sometimes necessary, we take great care to keep wall penetrations minimal.',
+        linkPath: '/contact',
+        linkText: 'Request an In-Home Rewiring Assessment',
       },
       {
-        question: 'Does rewiring require opening all my walls?',
+        question: 'Can I rewire just my kitchen and bathrooms first?',
         answer:
-          'Not always. We plan rewiring to minimize disruption and access wiring through attics, crawl spaces, and other routes where possible. The extent depends on your home\'s layout.',
+          'Yes. Partial rewiring is very common during kitchen or bathroom renovations. We can run new dedicated 20A grounded circuits to your remodel while leaving safe existing branch circuits in place.',
+        linkPath: '/electrical-panel-upgrades-hahnville-la',
+        linkText: 'Check Panel Capacity for New Rewired Circuits',
       },
     ],
     relatedServices: [
@@ -443,44 +983,118 @@ export const SERVICES: ServiceInfo[] = [
     slug: 'residential-electrical-services-hahnville-la',
     title: 'Residential Electrical Services',
     shortTitle: 'Residential Services',
+    searchFocus: 'Residential electrician Hahnville LA',
     description:
-      'Electrical services for homes in Hahnville and nearby areas including wiring, repairs, installations, and upgrades.',
+      'Looking for a trusted residential electrician in Hahnville, LA? Explore dedicated homeowner repairs, wiring, lighting, and child-safe panel upgrades by Rodney.',
     heroImage:
       'https://images.pexels.com/photos/3615735/pexels-photo-3615735.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    heroAlt: 'Exposed electrical wiring in wall sockets ready for installation',
+    heroAlt:
+      'Residential electrician inspecting household circuit wiring during remodel',
     icon: 'Home',
+    distinctionNote: {
+      alertType: 'info',
+      title: 'Looking for Our Full Services Directory?',
+      text: 'While our main Services Hub organizes all 10 specialized offerings for both residential and commercial sectors, this page is tailored specifically to Hahnville homeowners, families, and residential property safety needs.',
+      linkTo: '/services',
+      linkText: 'Visit the Overall Services Hub',
+    },
     longDescription:
-      'Grace Electrical Services provides a range of electrical services for homeowners in Hahnville, Louisiana and surrounding communities. From wiring installation and repairs to outlet and switch replacement, panel upgrades, and lighting installation, we work with homeowners to address their electrical needs.',
+      'Your home is your family’s sanctuary, and reliable electricity is essential for daily comfort, safety, and modern living. Grace Electrical Services is dedicated exclusively to delivering trusted, friendly, and code-compliant residential electrical work in Hahnville, Louisiana. As an independent local company owned and operated by Rodney, we treat your home with the care and respect of a good neighbor. From simple ceiling fan swaps and GFCI additions to emergency diagnostic troubleshooting and full 200-amp panel overhauls, we provide transparent quotes, on-time arrivals, and meticulous cleanup.',
+    problemsAddressed: [
+      {
+        title: 'Home Electrical Safety & Code Inspections',
+        desc: 'Identifying hidden fire hazards, ungrounded circuits, and undersized panels before home purchases, sales, or insurance renewals.',
+      },
+      {
+        title: 'Household Circuit Upgrades for Modern Living',
+        desc: 'Adding dedicated circuits for induction stoves, microwave drawers, electric vehicle chargers, and central air systems.',
+      },
+      {
+        title: 'Emergency Residential Troubleshooting',
+        desc: 'Prompt same-day response when breakers trip constantly, outlets spark, or whole rooms lose power unexpectedly.',
+      },
+      {
+        title: 'Lighting & Comfort Enhancements',
+        desc: 'Installing canless recessed LED lights, structural ceiling fans, and outdoor security fixtures to enhance your lifestyle.',
+      },
+    ],
+    serviceProcess: [
+      {
+        step: 1,
+        title: 'Direct Phone Consultation with Rodney',
+        desc: 'Discussing your home’s symptoms, project dreams, or urgent issues directly with the licensed electrician doing the work.',
+      },
+      {
+        step: 2,
+        title: 'In-Home Safety & Load Assessment',
+        desc: 'Arriving on time to examine your main panel, circuit loads, and existing wiring layout.',
+      },
+      {
+        step: 3,
+        title: 'Upfront, Transparent Pricing Quote',
+        desc: 'Providing a clear, straightforward estimate without corporate franchise markups or surprise fees.',
+      },
+      {
+        step: 4,
+        title: 'Expert Execution & Spotless Cleanup',
+        desc: 'Performing all wiring and repairs to strict NEC standards, testing every device under load, and cleaning the workspace thoroughly.',
+      },
+    ],
+    safetyAndCode: [
+      {
+        title: 'South Louisiana Storm & Surge Protection',
+        desc: 'Hahnville homes endure severe storm activity; we install whole-home surge protectors and generator interlocks to keep your family powered safely.',
+      },
+      {
+        title: 'Child-Safe Tamper-Resistant Devices',
+        desc: 'All installed receptacles feature internal spring-loaded shutters that prevent children from inserting foreign metal objects.',
+      },
+      {
+        title: 'Clean Home Worksite Guarantee',
+        desc: 'We wear shoe covers, protect your flooring, and vacuum up all wire clippings and sheetrock dust upon completion.',
+      },
+    ],
+    realWorkExample: {
+      client: 'Barbara Manuel',
+      location: 'Hahnville, LA',
+      scope: 'Residential electrical repairs and cleanup',
+      quote:
+        'Very professional work completed. He was on time and cleaned up after work was finished. Definitely recommend to others.',
+    },
     situations: [
-      'New construction or renovation wiring',
-      'Repairing malfunctioning outlets, switches, or fixtures',
-      'Upgrading an electrical panel for more capacity',
-      'Installing new lighting or ceiling fans',
-      'Whole-home rewiring for older properties',
+      'Remodeling an older St. Charles Parish home and needing comprehensive electrical updates',
+      'Adding dedicated electrical circuits for new kitchen appliances, dryers, or EV chargers',
+      'Experiencing recurring breaker trips, warm outlets, or unexplained flickering lights',
+      'Installing modern recessed LED downlights and structural ceiling fans in bedrooms',
+      'Preparing your home for storm season with whole-house surge suppression or generator hookups',
     ],
     whatItInvolves: [
-      'Discussing your project and electrical needs',
-      'Assessing the property and existing electrical system',
-      'Planning the work to fit your home and budget',
-      'Performing installations, repairs, or upgrades',
-      'Testing all work for safety and proper function',
+      'Direct owner-electrician communication from initial phone call to job completion',
+      'Careful in-home load calculations and panel capacity verifications',
+      'Residential wiring, outlet, switch, and fixture installations per NEC standards',
+      'Prompt diagnostic troubleshooting for emergency residential electrical faults',
+      'Thorough cleanup and respectful treatment of your living space',
     ],
     benefits: [
-      'Safe, code-compliant electrical work for your home',
-      'Improved comfort, convenience, and property value',
-      'Professional assessment of your electrical system',
-      'A single point of contact for your electrical needs',
+      'Direct personalized care from Rodney—no middlemen or nationwide call centers',
+      'Transparent, fair pricing with quotes often half the rate of corporate brand franchises',
+      'Meticulous adherence to National Electrical Code and parish safety standards',
+      '100% 5-star verified customer satisfaction across St. Charles Parish',
     ],
     faqs: [
       {
-        question: 'What residential electrical services do you offer?',
+        question: 'Do you work on older historic homes in Hahnville and St. Charles Parish?',
         answer:
-          'We offer wiring installation, repairs, troubleshooting, outlet and switch installation, panel repair and upgrades, lighting installation, and rewiring for homes. Call us to discuss your specific needs.',
+          'Yes. We have deep experience with older South Louisiana homes that require careful wiring preservation, panel upgrades, and ground-fault additions while respecting the home’s architecture.',
+        linkPath: '/electrical-rewiring-hahnville-la',
+        linkText: 'Explore Rewiring for Older Homes',
       },
       {
-        question: 'Do you work on older homes?',
+        question: 'How do I schedule a residential estimate with Rodney?',
         answer:
-          'Yes, we work on homes of all ages, including those that need rewiring or panel upgrades. Call us to discuss your home\'s electrical system.',
+          'Simply call 504-559-5351 or submit our online estimate request form. Rodney will discuss your project details and schedule an on-site visit at a time convenient for you.',
+        linkPath: '/contact',
+        linkText: 'Request Your Free Residential Estimate',
       },
     ],
     relatedServices: [
@@ -494,45 +1108,104 @@ export const SERVICES: ServiceInfo[] = [
     slug: 'commercial-electrical-services-hahnville-la',
     title: 'Commercial Electrical Services',
     shortTitle: 'Commercial Services',
+    searchFocus: 'Commercial electrician Hahnville LA',
     description:
-      'Electrical services for commercial properties including wiring, repairs, panel work, and lighting installation.',
+      'Need a commercial electrician in Hahnville or St. Charles Parish? Explore tenant build-outs, 3-phase machinery circuits, LED high-bays, and scheduled maintenance.',
     heroImage:
       'https://images.pexels.com/photos/8961695/pexels-photo-8961695.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     heroAlt:
-      'Construction worker installing electrical cables on a commercial site',
+      'Electrician pulling conduit cables on a commercial building site',
     icon: 'Building2',
     longDescription:
-      'Grace Electrical Services provides electrical services for commercial properties in Hahnville, Louisiana and nearby areas. From wiring and lighting installation to panel upgrades and repairs, we work with business owners and property managers to address their commercial electrical needs.',
+      'Commercial electrical systems require specialized technical knowledge of high-voltage distribution, three-phase power, commercial building codes, and safety interlocks. When electrical issues arise in a commercial facility, every hour of downtime means lost revenue. Grace Electrical Services provides dependable commercial electrical services throughout Hahnville, Luling, Destrehan, Norco, and industrial corridor communities in St. Charles Parish. We work closely with business owners, property managers, and general contractors to execute tenant improvements, equipment connections, and lighting overhauls on time and on budget.',
+    problemsAddressed: [
+      {
+        title: 'Commercial Tenant Build-Outs & Remodels',
+        desc: 'Configuring custom branch circuits, metal clad (MC) cable runs, and dedicated subpanels for new retail, office, and medical tenants.',
+      },
+      {
+        title: 'Dedicated 3-Phase Power & Equipment Drops',
+        desc: 'Installing dedicated 208V, 240V, and 480V circuits for commercial refrigeration, kitchen exhaust hoods, air compressors, and shop machinery.',
+      },
+      {
+        title: 'Commercial & High-Bay LED Lighting Upgrades',
+        desc: 'Replacing energy-wasting metal-halide and fluorescent fixtures with high-efficiency LED troffers, high-bays, and emergency exit illumination.',
+      },
+      {
+        title: 'Minimizing Unplanned Business Downtime',
+        desc: 'Fast commercial troubleshooting for tripped main breakers, motor starter faults, and damaged conduit runs.',
+      },
+    ],
+    serviceProcess: [
+      {
+        step: 1,
+        title: 'Commercial Facility Walkthrough & Scope Review',
+        desc: 'Evaluating commercial service panels, voltage phase balance, equipment amperage ratings, and blueprints.',
+      },
+      {
+        step: 2,
+        title: 'Project Scheduling to Minimize Downtime',
+        desc: 'Coordinating work during off-peak hours or structured phases to ensure minimal disruption to daily retail or office operations.',
+      },
+      {
+        step: 3,
+        title: 'Conduit Bending & Heavy Conductor Installation',
+        desc: 'Running EMT conduit, MC cabling, safety disconnects, and industrial-grade receptacles according to commercial NEC standards.',
+      },
+      {
+        step: 4,
+        title: 'Load Balancing & Municipal Inspection',
+        desc: 'Testing three-phase current balance, emergency egress lighting battery backups, and passing parish commercial inspection.',
+      },
+    ],
+    safetyAndCode: [
+      {
+        title: 'Commercial NEC & Life Safety Compliance',
+        desc: 'Strict adherence to emergency exit signs, illuminated egress paths, and commercial GFCI/tamper-resistant receptacle requirements.',
+      },
+      {
+        title: 'Heavy-Duty EMT & MC Conduit Standards',
+        desc: 'Commercial cabling is physically protected inside metal conduit and armored cable to withstand impact and industrial wear.',
+      },
+      {
+        title: 'Phase Balance & Motor Overload Protection',
+        desc: 'Balancing loads equally across phases to prevent overheating commercial transformer banks and motor burnout.',
+      },
+    ],
     situations: [
-      'Tenant build-outs and office renovations',
-      'Commercial lighting installation and repair',
-      'Panel upgrades for increased electrical capacity',
-      'Outlet and wiring installations for new equipment',
-      'Troubleshooting and repair of commercial electrical issues',
+      'Opening a new retail store, medical office, or commercial workspace in St. Charles Parish',
+      'Adding dedicated electrical drops for commercial kitchen equipment or walk-in coolers',
+      'Upgrading outdated fluorescent office troffers to high-efficiency LED panels',
+      'Installing exterior commercial security floodlighting and parking lot illumination',
+      'Resolving recurring circuit breaker trips causing disruption to business operations',
     ],
     whatItInvolves: [
-      'Understanding the commercial property and its electrical requirements',
-      'Planning work to minimize disruption to business operations',
-      'Performing installations, repairs, or upgrades',
-      'Coordinating with other contractors when needed',
-      'Testing all work for safety and compliance',
+      'Reviewing architectural plans and calculating commercial three-phase electrical loads',
+      'Installing heavy EMT conduit, junction boxes, and armored metal-clad (MC) wiring',
+      'Installing dedicated safety disconnect switches and motor starters for equipment',
+      'Coordinating work with other commercial trade contractors on site',
+      'Testing voltage drop, phase balance, and emergency battery lighting systems',
     ],
     benefits: [
-      'Safe, reliable electrical systems for your business',
-      'Minimized downtime with efficient work scheduling',
-      'Professional installation that meets commercial codes',
-      'Support for business growth and equipment additions',
+      'Reliable power delivery engineered to handle heavy commercial machinery and refrigeration',
+      'Lower commercial energy bills by upgrading to modern high-efficiency commercial LED fixtures',
+      'Minimized interruption to your customer operations through flexible project scheduling',
+      'Direct communication with Rodney to keep your project on schedule and on budget',
     ],
     faqs: [
       {
-        question: 'What types of commercial properties do you work on?',
+        question: 'Can you work around our commercial business operating hours?',
         answer:
-          'We work on a range of commercial properties including offices, retail spaces, and small commercial buildings. Call us to discuss your specific property and needs.',
+          'Yes. We understand that shutting down power during peak customer hours is costly. We coordinate commercial installations and panel shutdowns during early mornings, evenings, or weekends to minimize business disruption.',
+        linkPath: '/contact',
+        linkText: 'Contact Us to Discuss Commercial Scheduling',
       },
       {
-        question: 'Can you work around our business hours?',
+        question: 'Do you provide commercial tenant improvement electrical work?',
         answer:
-          'We understand that business operations need to continue. Call us to discuss scheduling that works for your business.',
+          'Yes. We regularly execute commercial tenant build-outs, running conduit, installing dedicated equipment circuits, and setting up office lighting for new commercial leases throughout St. Charles Parish.',
+        linkPath: '/electrical-panel-upgrades-hahnville-la',
+        linkText: 'Learn About Commercial Panel Upgrades',
       },
     ],
     relatedServices: [
@@ -548,8 +1221,47 @@ export type ServiceAreaInfo = {
   slug: string;
   city: string;
   state: string;
+  zip: string;
+  bank: 'West Bank' | 'East Bank';
+  travelTimeFromHQ: string;
+  corridor: string;
+  headline: string;
   description: string;
-  nearLandmark: string;
+  heroImage: string;
+  localProofSnippet?: {
+    reviewer: string;
+    text: string;
+    context: string;
+  };
+  communityProfile: {
+    overview: string;
+    typicalHousingAndProperties: string;
+    primaryElectricalChallenges: string;
+  };
+  priorityServices: {
+    slug: string;
+    title: string;
+    whyNeeded: string;
+  }[];
+  commonProjects: {
+    title: string;
+    desc: string;
+  }[];
+  localCodeAndUtility: {
+    utilityProvider: string;
+    permitOffice: string;
+    weatherConsiderations: string;
+  };
+  faqs: {
+    question: string;
+    answer: string;
+    linkPath?: string;
+    linkText?: string;
+  }[];
+  neighboringTowns: {
+    city: string;
+    slug: string;
+  }[];
 };
 
 export const SERVICE_AREAS: ServiceAreaInfo[] = [
@@ -557,126 +1269,1288 @@ export const SERVICE_AREAS: ServiceAreaInfo[] = [
     slug: 'electrician-hahnville-la',
     city: 'Hahnville',
     state: 'LA',
+    zip: '70057',
+    bank: 'West Bank',
+    travelTimeFromHQ: 'Headquarters Base (Same-Day Response)',
+    corridor: 'River Road (LA-18), LA-3160, St. Charles Parish Courthouse district',
+    headline: 'Trusted Local Electrician in Hahnville, LA — Direct Owner-Operator',
     description:
-      'Hahnville is the primary location for Grace Electrical Services. We provide electrical wiring installation, repairs, panel work, lighting, and other electrical services to homes and businesses throughout Hahnville, Louisiana.',
-    nearLandmark: 'the Mississippi River corridor in St. Charles Parish',
+      'Hahnville is the hometown and primary operational base of Grace Electrical Services. As the parish seat of St. Charles Parish, Hahnville is home to historic riverfront properties, established subdivisions, and growing families. Rodney provides direct, master-level electrical troubleshooting, rewiring, panel replacements, and code compliance throughout Hahnville with rapid same-day response and zero corporate overhead markups.',
+    heroImage:
+      'https://images.pexels.com/photos/3615735/pexels-photo-3615735.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    localProofSnippet: {
+      reviewer: 'Abu',
+      text: 'I recently hired Grace Electrical Services for electrical work at my home in Hahnville and couldn’t be happier. The service was prompt, professional, and thorough. The electrician arrived on time, explained everything clearly, and used a smart, step-by-step approach to find and fix the problem. Honesty and fair pricing stood out.',
+      context: 'Hahnville Homeowner • Diagnostic Troubleshooting & Electrical Repair',
+    },
+    communityProfile: {
+      overview:
+        'As the administrative heart of St. Charles Parish on the West Bank of the Mississippi River, Hahnville combines vintage River Road architecture with mid-century and modern residential developments. Residents take pride in their homes and need an honest local electrician who understands parish inspection procedures firsthand.',
+      typicalHousingAndProperties:
+        'Single-family brick ranch homes (1960s–1980s), historic plantation-era cottages along LA-18, and newer custom-built homes off Highway 3160.',
+      primaryElectricalChallenges:
+        'Aging 100-amp service panels overwhelmed by contemporary HVAC and appliances, ungrounded two-prong circuits, and humidity-driven exterior service mast corrosion.',
+    },
+    priorityServices: [
+      {
+        slug: 'electrical-repairs-troubleshooting-hahnville-la',
+        title: 'Emergency Electrical Troubleshooting',
+        whyNeeded:
+          'Same-day response for tripping breakers, warm switches, or partial power loss right here in Hahnville without travel delays.',
+      },
+      {
+        slug: 'electrical-panel-upgrades-hahnville-la',
+        title: '200-Amp Electrical Panel Upgrades',
+        whyNeeded:
+          'Replacing vintage 100A panels or hazardous fuse boxes with modern 200A systems featuring surge suppression and whole-home AFCI protection.',
+      },
+      {
+        slug: 'electrical-rewiring-hahnville-la',
+        title: 'Whole-Home & Partial Rewiring',
+        whyNeeded:
+          'Safely removing brittle cloth-insulated or aluminum wiring in older Hahnville homes and installing grounded copper circuits.',
+      },
+      {
+        slug: 'lighting-installation-hahnville-la',
+        title: 'Ceiling Fan & LED Recessed Lighting',
+        whyNeeded:
+          'Installing structural fan braces to eliminate dangerous ceiling fan wobbles, plus flush canless LED downlights.',
+      },
+    ],
+    commonProjects: [
+      {
+        title: 'Main Breaker Panel Replacement',
+        desc: 'Upgrading crowded 100A panels to 200A with full St. Charles Parish permit coordination and Entergy reconnect.',
+      },
+      {
+        title: 'Tamper-Resistant & GFCI Receptacle Upgrades',
+        desc: 'Replacing loose two-prong outlets in kitchens, bathrooms, and outdoor carports with code-mandated GFCI safety devices.',
+      },
+      {
+        title: 'Dedicated AC & EV Charger Circuits',
+        desc: 'Running heavy 50-amp conductors for new high-efficiency heat pumps and Level 2 electric vehicle chargers.',
+      },
+      {
+        title: 'Storm Generator Interlock Systems',
+        desc: 'Installing manual transfer switch interlocks on main panels so homeowners can safely power essentials during hurricane outages.',
+      },
+    ],
+    localCodeAndUtility: {
+      utilityProvider: 'Entergy Louisiana (West Bank service dispatch)',
+      permitOffice: 'St. Charles Parish Department of Planning & Zoning (located right here in Hahnville)',
+      weatherConsiderations:
+        'Extreme summer humidity and hurricane-force winds require robust outdoor weatherheads, silicone seals, and whole-home lightning surge suppression.',
+    },
+    faqs: [
+      {
+        question: 'Why choose Grace Electrical Services over large New Orleans electrical franchises?',
+        answer:
+          'Grace Electrical Services is based right in Hahnville. When you call 504-559-5351, you speak directly with Rodney—the electrician doing the work. You get honest pricing without corporate franchise dispatch fees or high-pressure upselling, backed by 100% 5-star verified local reviews.',
+        linkPath: '/about',
+        linkText: 'Learn About Rodney & Grace Electrical Services',
+      },
+      {
+        question: 'How fast can you respond to an electrical emergency in Hahnville?',
+        answer:
+          'Because our base is right here in Hahnville, we often provide same-day or within-the-hour response for urgent electrical failures such as smoking outlets, complete power loss, or buzzing breaker panels.',
+        linkPath: '/contact',
+        linkText: 'Call Rodney Directly for Immediate Help',
+      },
+      {
+        question: 'Do you handle St. Charles Parish permits for panel upgrades in Hahnville?',
+        answer:
+          'Yes. We handle the complete permitting process with the St. Charles Parish Planning & Zoning office located in Hahnville, and coordinate service disconnects and reconnects directly with Entergy.',
+        linkPath: '/electrical-panel-upgrades-hahnville-la',
+        linkText: 'Explore Panel Upgrade Details',
+      },
+    ],
+    neighboringTowns: [
+      { city: 'Luling', slug: 'electrician-luling-la' },
+      { city: 'Boutte', slug: 'electrician-boutte-la' },
+      { city: 'Destrehan', slug: 'electrician-destrehan-la' },
+      { city: 'Paradis', slug: 'electrician-paradis-la' },
+    ],
   },
   {
     slug: 'electrician-luling-la',
     city: 'Luling',
     state: 'LA',
+    zip: '70070',
+    bank: 'West Bank',
+    travelTimeFromHQ: '5–8 Minutes via River Road (LA-18) or Paul Maillard Rd (LA-52)',
+    corridor: 'Paul Maillard Rd (LA-52), Lakewood, Mimosa Park, Willowdale, Ashton',
+    headline: 'Reliable Residential & Commercial Electrician in Luling, LA',
     description:
-      'Luling is located just a few miles from Hahnville along the Mississippi River. Grace Electrical Services provides electrical services to homes and businesses in Luling, Louisiana, including wiring installation, repairs, panel work, and lighting.',
-    nearLandmark: 'the Mississippi River in St. Charles Parish, near Hahnville',
+      'Luling is just minutes from our Hahnville headquarters, making it one of our most frequent daily service areas. Home to major residential neighborhoods like Willowdale, Mimosa Park, and Lakewood, Luling homeowners often require panel upgrades for central AC replacements, swimming pool wiring, kitchen remodel circuits, and structural ceiling fan installations. Rodney provides prompt, friendly, and meticulous electrical workmanship for Luling families and local businesses.',
+    heroImage:
+      'https://images.pexels.com/photos/12996907/pexels-photo-12996907.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    localProofSnippet: {
+      reviewer: 'Anthony',
+      text: 'I called Rodney for advice installing a ceiling fan that I was going to do myself. He stayed without complaint and knocked it out cleanly. Fair pricing, prompt arrival, and excellent communication. He is my go-to guy for all electrical needs.',
+      context: 'Local Resident • Ceiling Fan Installation & Electrical Repairs',
+    },
+    communityProfile: {
+      overview:
+        'Luling is the largest suburban residential community on the West Bank of St. Charles Parish. Characterized by well-kept neighborhoods, active youth sports, and family life, Luling homes frequently undertake kitchen modernizations, outdoor living additions, and smart home electrical upgrades.',
+      typicalHousingAndProperties:
+        'Established ranch and traditional homes in Mimosa Park and Willowdale (1970s–1990s), along with modern executive construction in Lakewood and Ashton.',
+      primaryElectricalChallenges:
+        'Subdivision homes with maxed-out 100A or 150A panels needing 200A expansions for swimming pools, hot tubs, Level 2 EV chargers, and modern multi-zone HVAC systems.',
+    },
+    priorityServices: [
+      {
+        slug: 'electrical-panel-upgrades-hahnville-la',
+        title: '200A Electrical Panel Capacity Expansions',
+        whyNeeded:
+          'Providing ample breaker capacity for Luling families adding backyard pools, electric car chargers, or modern kitchen appliances.',
+      },
+      {
+        slug: 'lighting-installation-hahnville-la',
+        title: 'Ceiling Fan & Designer Lighting Installation',
+        whyNeeded:
+          'Installing joist-anchored fan support boxes for bedroom and covered patio ceiling fans (as praised by local client Anthony).',
+      },
+      {
+        slug: 'outlet-installation-hahnville-la',
+        title: 'Dedicated Kitchen, Bath & Outdoor GFCI Outlets',
+        whyNeeded:
+          'Adding tamper-resistant child-safe outlets and exterior weatherproof receptacles for patio barbecues and holiday lighting.',
+      },
+      {
+        slug: 'electrical-repairs-troubleshooting-hahnville-la',
+        title: 'Circuit Troubleshooting & Flickering Light Diagnostics',
+        whyNeeded:
+          'Pinpointing loose neutral splices or overloaded circuits causing dimming when large appliances kick on.',
+      },
+    ],
+    commonProjects: [
+      {
+        title: 'Swimming Pool & Hot Tub Subpanel Wiring',
+        desc: 'Running dedicated underground conduit lines with GFCI breaker protection for pool filtration pumps and heaters.',
+      },
+      {
+        title: 'Whole-Home Canless LED Recessed Lighting',
+        desc: 'Transforming dimly lit Luling dens and kitchens with modern, dimmable ultra-thin LED wafers.',
+      },
+      {
+        title: 'Kitchen Remodel Small-Appliance Circuits',
+        desc: 'Installing dedicated 20-amp dual-circuit lines for microwaves, dishwashers, and kitchen islands.',
+      },
+      {
+        title: 'Hurricane Generator Transfer Switches',
+        desc: 'Setting up safe, code-compliant manual interlocks on main panels for storm preparedness.',
+      },
+    ],
+    localCodeAndUtility: {
+      utilityProvider: 'Entergy Louisiana (Luling distribution grid)',
+      permitOffice: 'St. Charles Parish Department of Planning & Zoning',
+      weatherConsiderations:
+        'Subdivision homes require whole-home surge suppression to protect smart appliances from voltage spikes along the Mississippi River corridor.',
+    },
+    faqs: [
+      {
+        question: 'Do you charge a travel fee to come to Luling?',
+        answer:
+          'No! Luling is right next door to our Hahnville shop—just 5 minutes away via River Road or Paul Maillard Rd. We never charge travel surcharges for Luling homeowners or businesses.',
+        linkPath: '/contact',
+        linkText: 'Contact Rodney for an Estimate in Luling',
+      },
+      {
+        question: 'Can you wire my outdoor patio and ceiling fans in Willowdale or Mimosa Park?',
+        answer:
+          'Yes. We specialize in running weatherproof exterior conduit, installing joist-mounted fan-rated braces, and wiring outdoor GFCI receptacles for patios and outdoor kitchens.',
+        linkPath: '/lighting-installation-hahnville-la',
+        linkText: 'View Lighting & Ceiling Fan Services',
+      },
+      {
+        question: 'Can you add a 50-amp circuit for my EV charger in Luling?',
+        answer:
+          'Yes. We assess your existing panel capacity, run heavy-gauge copper conductors from your panel to your garage or carport, and install NEMA 14-50 outlets or hardwired Level 2 EV charging stations.',
+        linkPath: '/outlet-installation-hahnville-la',
+        linkText: 'Learn About 240V Dedicated Outlets',
+      },
+    ],
+    neighboringTowns: [
+      { city: 'Hahnville', slug: 'electrician-hahnville-la' },
+      { city: 'Boutte', slug: 'electrician-boutte-la' },
+      { city: 'Destrehan', slug: 'electrician-destrehan-la' },
+      { city: 'Ama', slug: 'electrician-ama-la' },
+    ],
   },
   {
     slug: 'electrician-destrehan-la',
     city: 'Destrehan',
     state: 'LA',
+    zip: '70047',
+    bank: 'East Bank',
+    travelTimeFromHQ: '10–12 Minutes via the Hale Boggs Memorial Bridge (I-310)',
+    corridor: 'River Road (LA-48), Ormond Blvd, I-310, Destrehan Plantation area',
+    headline: 'Premier Residential & Commercial Electrician in Destrehan, LA',
     description:
-      'Destrehan is a nearby community in St. Charles Parish, close to Hahnville. Grace Electrical Services offers electrical wiring installation, repairs, panel upgrades, and lighting services to properties in Destrehan, Louisiana.',
-    nearLandmark: 'St. Charles Parish, a short drive from Hahnville',
+      'Destrehan is the premier East Bank community of St. Charles Parish, situated just across the Mississippi River via the Hale Boggs Memorial Bridge (I-310). Grace Electrical Services serves Destrehan daily, providing expert electrical services for upscale homes in Ormond Estates, riverfront residences, and local commercial establishments. From intricate interior chandelier mounting and recessed lighting layouts to whole-home surge suppression and generator interlocks, Rodney delivers meticulous craftsmanship.',
+    heroImage:
+      'https://images.pexels.com/photos/4792521/pexels-photo-4792521.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    localProofSnippet: {
+      reviewer: 'Rhodes',
+      text: 'Rodney is a very efficient, knowledgeable and competent person to hire when you need an electrician. I definitely would hire him again and recommend him to anyone in St. Charles Parish.',
+      context: 'St. Charles Parish Client • Whole-House Wiring & Panel Upgrades',
+    },
+    communityProfile: {
+      overview:
+        'Destrehan is known for its historic plantation heritage, scenic oak canopy along River Road, and master-planned neighborhoods centered around Ormond Boulevard. Homeowners in Destrehan invest heavily in quality interior design, outdoor living, and robust storm readiness.',
+      typicalHousingAndProperties:
+        'Sprawling custom executive residences in Ormond Estates and River Hills, mid-century homes along River Road, and contemporary retail/commercial plazas.',
+      primaryElectricalChallenges:
+        'Complex architectural lighting layouts requiring high-ceiling fixture mounting, whole-home surge vulnerability from riverfront lightning, and aging 150A panels needing upgrades for luxury appliance suites.',
+    },
+    priorityServices: [
+      {
+        slug: 'lighting-installation-hahnville-la',
+        title: 'Architectural Lighting & Chandelier Mounting',
+        whyNeeded:
+          'Safely mounting heavy designer chandeliers in two-story foyers, dining room pendants, and laser-aligned canless recessed LED lighting grids in Ormond homes.',
+      },
+      {
+        slug: 'electrical-panel-upgrades-hahnville-la',
+        title: 'Whole-Home 200A Panel & Surge Upgrades',
+        whyNeeded:
+          'Equipping Destrehan homes with Type 2 whole-home surge protective devices (SPDs) and 40-circuit panels ready for modern luxury appliances.',
+      },
+      {
+        slug: 'electrical-repairs-troubleshooting-hahnville-la',
+        title: 'Precision Electrical Diagnostics',
+        whyNeeded:
+          'Quick, non-destructive troubleshooting for tripping arc-fault breakers, flickering dimmers, or dead outlets in finished walls.',
+      },
+      {
+        slug: 'switch-installation-hahnville-la',
+        title: 'Smart Switches & LED Dimmers',
+        whyNeeded:
+          'Verifying neutral wires in switch boxes and calibrating trailing-edge dimmers to eliminate hum in multi-fixture lighting zones.',
+      },
+    ],
+    commonProjects: [
+      {
+        title: 'High-Ceiling Chandelier & Foyer Fixture Installation',
+        desc: 'Using rated structural ceiling boxes and scaffold/lift equipment to hang high-end lighting safely.',
+      },
+      {
+        title: 'Whole-Home Surge Protective Device (SPD) Installation',
+        desc: 'Installing panel-mounted surge suppressors to shield expensive smart TVs, Sub-Zero appliances, and HVAC electronics.',
+      },
+      {
+        title: 'Manual Generator Interlock & Inlet Box',
+        desc: 'Installing 30A or 50A exterior generator inlet plugs and panel interlocks to keep AC and refrigeration running after storms.',
+      },
+      {
+        title: 'Kitchen Island & Wine Cooler Dedicated Circuits',
+        desc: 'Running clean copper branch circuits for high-draw luxury kitchen remodels.',
+      },
+    ],
+    localCodeAndUtility: {
+      utilityProvider: 'Entergy Louisiana (East Bank grid)',
+      permitOffice: 'St. Charles Parish Planning & Zoning',
+      weatherConsiderations:
+        'Open exposure along the Mississippi River creates severe lightning activity; proper grounding rod resistance and panel surge suppression are essential.',
+    },
+    faqs: [
+      {
+        question: 'Do you cross the Hale Boggs Bridge to serve Destrehan?',
+        answer:
+          'Yes! We cross the I-310 Hale Boggs Memorial Bridge every single day. Destrehan is just 10 to 12 minutes from our shop. We do not charge bridge tolls or cross-river travel fees.',
+        linkPath: '/service-areas',
+        linkText: 'View Our East vs. West Bank Service Coverage',
+      },
+      {
+        question: 'Can you safely hang heavy chandeliers in high-ceiling Destrehan entryways?',
+        answer:
+          'Yes. We install heavy-duty UL-listed structural ceiling boxes rated for up to 150 lbs, inspect ceiling framing, and safely hang designer chandeliers and vaulted ceiling fixtures.',
+        linkPath: '/lighting-installation-hahnville-la',
+        linkText: 'Learn About Chandelier & Lighting Installation',
+      },
+      {
+        question: 'How do you protect Destrehan homes from severe lightning storms?',
+        answer:
+          'We install commercial-grade Type 2 whole-home surge protective devices (SPDs) directly inside your main breaker panel, paired with dual 8-foot bonded copper grounding rods.',
+        linkPath: '/electrical-panel-upgrades-hahnville-la',
+        linkText: 'Explore Surge Protection & Panel Upgrades',
+      },
+    ],
+    neighboringTowns: [
+      { city: 'Norco', slug: 'electrician-norco-la' },
+      { city: 'New Sarpy', slug: 'electrician-new-sarpy-la' },
+      { city: 'St. Rose', slug: 'electrician-st-rose-la' },
+      { city: 'Luling', slug: 'electrician-luling-la' },
+    ],
   },
   {
     slug: 'electrician-norco-la',
     city: 'Norco',
     state: 'LA',
+    zip: '70079',
+    bank: 'East Bank',
+    travelTimeFromHQ: '12–15 Minutes via I-310 and River Road (LA-48)',
+    corridor: 'River Road (LA-48), Apple Street, Airline Hwy (US-61), Bonnet Carré Spillway edge',
+    headline: 'Experienced Electrician in Norco, LA — Residential & Commercial',
     description:
-      'Norco is a community in St. Charles Parish near Hahnville. Grace Electrical Services provides electrical services including wiring, repairs, outlet and switch installation, and panel work to Norco residents and businesses.',
-    nearLandmark: 'St. Charles Parish along the Mississippi River',
+      'Norco is a historic East Bank industrial and residential community bordered by the Bonnet Carré Spillway and the Mississippi River. Many established Norco homes feature wiring installed 40 to 60+ years ago that requires expert modernization. Grace Electrical Services provides dependable rewiring, panel replacements, weatherhead repairs, and commercial electrical maintenance for Norco residents and local industrial contractors.',
+    heroImage:
+      'https://images.pexels.com/photos/257736/pexels-photo-257736.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    localProofSnippet: {
+      reviewer: 'Darren Brooks',
+      text: 'Good job done. Professional, reliable, and prompt service on our electrical repairs. Highly recommended for anyone in the parish.',
+      context: 'St. Charles Parish Resident • Electrical Repairs & Service',
+    },
+    communityProfile: {
+      overview:
+        'Norco holds a unique place in St. Charles Parish history with deep roots in refinery operations and Mississippi River commerce. The town consists of historic residential streets like Apple Street and Good Hope Street alongside busy commercial corridors on Airline Highway.',
+      typicalHousingAndProperties:
+        'Cottages, mid-century bungalows (1940s–1970s), commercial support buildings, and light industrial workshops.',
+      primaryElectricalChallenges:
+        'Degraded cloth-jacketed wiring, ungrounded two-prong outlets, weathered exterior service drop masts, and electrical panel bus bar corrosion caused by humid river air.',
+    },
+    priorityServices: [
+      {
+        slug: 'electrical-rewiring-hahnville-la',
+        title: 'Aging Home Rewiring & Grounding',
+        whyNeeded:
+          'Replacing brittle rubber and cloth wiring with grounded copper Romex to eliminate fire hazards in older Norco residences.',
+      },
+      {
+        slug: 'electrical-panel-repair-hahnville-la',
+        title: 'Electrical Panel Diagnostics & Breaker Replacement',
+        whyNeeded:
+          'Repairing loose neutral bars and replacing damaged breakers in existing adequate panels with zero DIY risk.',
+      },
+      {
+        slug: 'electrical-panel-upgrades-hahnville-la',
+        title: '200A Service Entrance & Mast Upgrades',
+        whyNeeded:
+          'Replacing storm-damaged weatherheads, meter sockets, and undersized panels with modern 200A equipment.',
+      },
+      {
+        slug: 'commercial-electrical-services-hahnville-la',
+        title: 'Commercial & Workshop Power Drops',
+        whyNeeded:
+          'Installing 3-phase machinery drops, heavy conduit, and disconnect switches for local Norco commercial facilities.',
+      },
+    ],
+    commonProjects: [
+      {
+        title: 'Ungrounded Outlet Replacement & GFCI Upgrades',
+        desc: 'Installing GFCI receptacles and running grounding conductors in older living spaces to protect electronics.',
+      },
+      {
+        title: 'Storm Weatherhead & Service Drop Repair',
+        desc: 'Re-securing loose conduit masts and weatherheads torn by high river winds or falling tree branches.',
+      },
+      {
+        title: 'Industrial Contractor Workshop Wiring',
+        desc: 'Wiring dedicated 240V outlets for welders, air compressors, and heavy hydraulic tool charging stations.',
+      },
+      {
+        title: 'Whole-Home Recessed Lighting Upgrades',
+        desc: 'Modernizing dark Norco living rooms with clean, energy-efficient canless LED wafer lighting.',
+      },
+    ],
+    localCodeAndUtility: {
+      utilityProvider: 'Entergy Louisiana (Norco service district)',
+      permitOffice: 'St. Charles Parish Planning & Zoning',
+      weatherConsiderations:
+        'Close proximity to the river and Bonnet Carré floodway demands heavy silicone seals, rain-tight hubs, and corrosion-resistant fasteners.',
+    },
+    faqs: [
+      {
+        question: 'Do you work on older cloth-wired homes in Norco?',
+        answer:
+          'Yes! We have extensive experience with mid-century homes in Norco. We perform thorough wiring assessments, fish modern grounded copper cables through wall cavities with minimal drywall disruption, and replace hazardous fuse or breaker boxes.',
+        linkPath: '/electrical-rewiring-hahnville-la',
+        linkText: 'Learn About Our Rewiring Process',
+      },
+      {
+        question: 'Can you fix storm damage to my outdoor electrical mast in Norco?',
+        answer:
+          'Yes. If falling tree limbs or severe storms pulled your meter socket or weatherhead away from your house, Rodney secures the mast, coordinates emergency disconnects with Entergy, and restores safe power.',
+        linkPath: '/electrical-panel-upgrades-hahnville-la',
+        linkText: 'View Service Mast & Panel Replacement Details',
+      },
+      {
+        question: 'What is your availability for commercial work in Norco?',
+        answer:
+          'We provide commercial electrical maintenance, conduit installation, and equipment disconnects for Norco businesses and industrial contractors with flexible scheduling to avoid operational disruption.',
+        linkPath: '/commercial-electrical-services-hahnville-la',
+        linkText: 'Explore Commercial Capabilities',
+      },
+    ],
+    neighboringTowns: [
+      { city: 'New Sarpy', slug: 'electrician-new-sarpy-la' },
+      { city: 'Destrehan', slug: 'electrician-destrehan-la' },
+      { city: 'Montz', slug: 'electrician-montz-la' },
+      { city: 'Hahnville', slug: 'electrician-hahnville-la' },
+    ],
   },
   {
     slug: 'electrician-boutte-la',
     city: 'Boutte',
     state: 'LA',
+    zip: '70039',
+    bank: 'West Bank',
+    travelTimeFromHQ: '7–10 Minutes south via LA-3160 and US-90',
+    corridor: 'US-90 commercial highway, Barton Ave, Magnolia Ridge, I-310 interchange',
+    headline: 'Expert Electrician in Boutte, LA — Commercial Hub & Residential Specialist',
     description:
-      'Boutte is a community in St. Charles Parish near Hahnville. Grace Electrical Services offers electrical wiring, repairs, lighting installation, and panel services to homes and businesses in Boutte, Louisiana.',
-    nearLandmark: 'St. Charles Parish, west of Hahnville',
+      'Boutte serves as the primary commercial and retail crossroads on the West Bank of St. Charles Parish, where US-90 meets Interstate 310. Grace Electrical Services is located just minutes north in Hahnville, providing responsive commercial electrical installations for retail plazas, restaurants, and auto centers, alongside dependable residential services for neighborhoods along Barton Avenue and Magnolia Ridge.',
+    heroImage:
+      'https://images.pexels.com/photos/8961695/pexels-photo-8961695.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    localProofSnippet: {
+      reviewer: 'Barbara Manuel',
+      text: 'Very professional work completed. He was on time and cleaned up after work was finished. Definitely recommend to others throughout the parish.',
+      context: 'St. Charles Parish Homeowner • Residential Electrical Work',
+    },
+    communityProfile: {
+      overview:
+        'Boutte is a bustling economic corridor that combines retail strip centers, medical offices, and restaurants along US-90 with quiet residential neighborhoods nestled just off the highway. This creates a balanced demand for commercial tenant work and residential home safety improvements.',
+      typicalHousingAndProperties:
+        'Commercial retail buildings, auto service garages, and single-family suburban subdivisions developed across multiple decades.',
+      primaryElectricalChallenges:
+        'Commercial tenant power additions (3-phase equipment, exterior signage, LED troffer conversions) and residential breaker panels requiring capacity expansion for central air systems.',
+    },
+    priorityServices: [
+      {
+        slug: 'commercial-electrical-services-hahnville-la',
+        title: 'Commercial Tenant Build-Outs & Lighting',
+        whyNeeded:
+          'Running metal-clad (MC) cabling, conduit drops, and high-efficiency commercial LED troffers for retail and professional spaces along US-90.',
+      },
+      {
+        slug: 'electrical-panel-upgrades-hahnville-la',
+        title: '200A Residential & Commercial Panel Overhauls',
+        whyNeeded:
+          'Expanding electrical service capacity to safely power modern high-draw commercial equipment and residential heat pumps.',
+      },
+      {
+        slug: 'electrical-repairs-troubleshooting-hahnville-la',
+        title: 'Emergency Diagnostics to Prevent Business Downtime',
+        whyNeeded:
+          'Rapid, calibrated multi-meter troubleshooting when commercial breakers trip or retail lights fail unexpectedly.',
+      },
+      {
+        slug: 'outlet-installation-hahnville-la',
+        title: 'Dedicated 120V & 240V Receptacle Circuits',
+        whyNeeded:
+          'Installing dedicated power for commercial refrigeration, point-of-sale systems, and home garage workshops.',
+      },
+    ],
+    commonProjects: [
+      {
+        title: 'Retail & Office LED Lighting Retrofits',
+        desc: 'Replacing energy-draining fluorescent fixtures with dimmable, long-lasting commercial LED panels.',
+      },
+      {
+        title: 'Commercial Kitchen & Machinery Power Feeds',
+        desc: 'Installing dedicated 208V/240V circuits, disconnect switches, and GFCI outlets for food prep and automotive equipment.',
+      },
+      {
+        title: 'Subpanel Installation for Home Workshops',
+        desc: 'Trenching underground feeder cables and setting clean 100A subpanels in residential detached garages.',
+      },
+      {
+        title: 'Storm Generator Interlock Systems',
+        desc: 'Connecting safe manual transfer interlocks to protect both homes and small businesses during power grid failures.',
+      },
+    ],
+    localCodeAndUtility: {
+      utilityProvider: 'Entergy Louisiana (West Bank division)',
+      permitOffice: 'St. Charles Parish Planning & Zoning',
+      weatherConsiderations:
+        'Heavy vehicular traffic and highway exposure necessitate durable commercial EMT conduit runs and exterior wet-rated enclosures.',
+    },
+    faqs: [
+      {
+        question: 'Do you provide commercial electrical work for businesses along US-90 in Boutte?',
+        answer:
+          'Yes. We handle tenant fit-outs, commercial circuit additions, lighting retrofits, and equipment hookups. We can schedule work before or after business hours to avoid interrupting your customers.',
+        linkPath: '/commercial-electrical-services-hahnville-la',
+        linkText: 'View Commercial Electrical Offerings',
+      },
+      {
+        question: 'How quickly can Rodney reach my home in Boutte?',
+        answer:
+          'Boutte is less than 10 minutes south of our Hahnville headquarters. We can often arrive same-day for electrical diagnostics or free project estimates.',
+        linkPath: '/contact',
+        linkText: 'Contact Rodney Today',
+      },
+      {
+        question: 'Can you install dedicated power for high-draw equipment in my Boutte garage?',
+        answer:
+          'Yes. We install dedicated 30A, 40A, or 50A 240V circuits for air compressors, welders, kiln ovens, and electric vehicle chargers.',
+        linkPath: '/outlet-installation-hahnville-la',
+        linkText: 'Learn About Dedicated Receptacles',
+      },
+    ],
+    neighboringTowns: [
+      { city: 'Hahnville', slug: 'electrician-hahnville-la' },
+      { city: 'Luling', slug: 'electrician-luling-la' },
+      { city: 'Paradis', slug: 'electrician-paradis-la' },
+      { city: 'Destrehan', slug: 'electrician-destrehan-la' },
+    ],
   },
   {
     slug: 'electrician-paradis-la',
     city: 'Paradis',
     state: 'LA',
+    zip: '70080',
+    bank: 'West Bank',
+    travelTimeFromHQ: '12–15 Minutes southwest via US-90 West',
+    corridor: 'US-90 West, Old Spanish Trail, Bayou Gauche corridor',
+    headline: 'Trusted Local Electrician in Paradis, LA — Workshops & Residential Power',
     description:
-      'Paradis is a small community in St. Charles Parish near Boutte and Hahnville. Grace Electrical Services provides electrical services to homes and businesses in Paradis, including wiring, repairs, and lighting.',
-    nearLandmark: 'St. Charles Parish, near Boutte',
+      'Paradis is a peaceful West Bank community surrounded by scenic bayous and expansive residential parcels. Located just down Highway 90 from Boutte and Hahnville, Grace Electrical Services regularly serves Paradis homeowners needing detached workshop wiring, boat shed power, generator interlock switches, and rural electrical repairs. Rodney provides personal, dependable service with transparent estimates and zero corporate markups.',
+    heroImage:
+      'https://images.pexels.com/photos/4981793/pexels-photo-4981793.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    localProofSnippet: {
+      reviewer: 'Rhodes',
+      text: 'Rodney is a very efficient, knowledgeable and competent person to hire when you need an electrician. Definitely recommend him to anyone in St. Charles Parish.',
+      context: 'St. Charles Parish Client • Complete Electrical Installations',
+    },
+    communityProfile: {
+      overview:
+        'Paradis features a blend of rural charm, bayou country living, and spacious residential properties. With generous lot sizes, many homeowners build detached metal workshops, boat sheds, and outdoor cooking pavilions requiring dedicated electrical distribution.',
+      typicalHousingAndProperties:
+        'Single-family homes on acreage, elevated bayou cottages, manufactured homes, and large detached workshops.',
+      primaryElectricalChallenges:
+        'Powering detached outbuildings with underground conduit, protecting outdoor water pumps and septic aerators, and ensuring generator readiness for extended rural storm outages.',
+    },
+    priorityServices: [
+      {
+        slug: 'electrical-wiring-installation-hahnville-la',
+        title: 'Detached Workshop & Barn Subpanel Wiring',
+        whyNeeded:
+          'Trenching underground PVC conduit and installing dedicated 60A–100A subpanels for metal buildings, sheds, and outdoor pavilions.',
+      },
+      {
+        slug: 'electrical-panel-upgrades-hahnville-la',
+        title: 'Storm Generator Interlock Systems',
+        whyNeeded:
+          'Installing code-compliant manual transfer interlocks on main panels so Paradis families can safely power water pumps, freezers, and AC units during storms.',
+      },
+      {
+        slug: 'outlet-installation-hahnville-la',
+        title: 'Outdoor Weatherproof GFCI & 240V Receptacles',
+        whyNeeded:
+          'Wiring protected in-use bubble cover receptacles for boat battery charging, pressure washers, and outdoor kitchens.',
+      },
+      {
+        slug: 'electrical-repairs-troubleshooting-hahnville-la',
+        title: 'Septic Aerator & Well Pump Circuit Repairs',
+        whyNeeded:
+          'Prompt troubleshooting for dedicated motor circuits controlling vital home wastewater and water systems.',
+      },
+    ],
+    commonProjects: [
+      {
+        title: 'Underground Feeder Trenching to Outbuildings',
+        desc: 'Running direct-burial UF-B or schedule 40 PVC conduit to deliver clean 120V/240V power to detached sheds.',
+      },
+      {
+        title: 'Emergency Generator Inlet Box & Interlock',
+        desc: 'Installing 30-amp or 50-amp exterior power inlet boxes and breaker interlock kits for hurricane resilience.',
+      },
+      {
+        title: 'Boat Shed & Workshop Lighting Overhauls',
+        desc: 'Mounting durable, vapor-tight LED fixtures designed to resist insects and humidity in unconditioned buildings.',
+      },
+      {
+        title: 'Main Breaker Panel Replacements',
+        desc: 'Upgrading older 100A panels to 200A to eliminate crowded circuits and support modern outbuilding expansions.',
+      },
+    ],
+    localCodeAndUtility: {
+      utilityProvider: 'Entergy Louisiana (West Bank dispatch)',
+      permitOffice: 'St. Charles Parish Department of Planning & Zoning',
+      weatherConsiderations:
+        'Rural exposure and wetland moisture require burial depth compliance (18-24 inches) and wet-rated NEMA 3R outdoor enclosures.',
+    },
+    faqs: [
+      {
+        question: 'Do you travel out to Paradis and Bayou Gauche for electrical work?',
+        answer:
+          'Yes! Paradis is only 12 to 15 minutes southwest of our Hahnville headquarters down US-90. We regularly serve homes, camps, and workshops throughout Paradis and Bayou Gauche.',
+        linkPath: '/contact',
+        linkText: 'Schedule Service in Paradis',
+      },
+      {
+        question: 'Can you run power out to my new detached metal workshop in Paradis?',
+        answer:
+          'Yes. We calculate the electrical load, trench code-compliant underground conduit from your main panel, and set up a dedicated subpanel with breaker slots for lights, outlets, and heavy tools.',
+        linkPath: '/electrical-wiring-installation-hahnville-la',
+        linkText: 'Learn About Outbuilding Wiring',
+      },
+      {
+        question: 'What is the safest way to connect a portable generator to my Paradis home?',
+        answer:
+          'Never backfeed through a dryer outlet—this creates a lethal electrocution risk for utility workers. We install an exterior generator inlet box and a mechanical panel interlock kit that ensures your main breaker is off before generator power engages.',
+        linkPath: '/electrical-panel-upgrades-hahnville-la',
+        linkText: 'View Generator Interlock Details',
+      },
+    ],
+    neighboringTowns: [
+      { city: 'Boutte', slug: 'electrician-boutte-la' },
+      { city: 'Hahnville', slug: 'electrician-hahnville-la' },
+      { city: 'Luling', slug: 'electrician-luling-la' },
+    ],
   },
   {
     slug: 'electrician-st-rose-la',
     city: 'St. Rose',
     state: 'LA',
+    zip: '70087',
+    bank: 'East Bank',
+    travelTimeFromHQ: '15–18 Minutes via I-310 and Airline Hwy (US-61)',
+    corridor: 'Airline Hwy (US-61), James Business Park, River Road (LA-48), near Jefferson Parish line',
+    headline: 'Professional Electrician in St. Rose, LA — Industrial, Commercial & Residential',
     description:
-      'St. Rose is a community in St. Charles Parish along the Mississippi River. Grace Electrical Services offers electrical wiring installation, repairs, panel work, and lighting to properties in St. Rose, Louisiana.',
-    nearLandmark: 'St. Charles Parish, along the river corridor',
+      'St. Rose is a bustling East Bank community bordering Jefferson Parish and Kenner. Known for major logistics facilities, distribution warehouses at James Business Park, and established residential streets, St. Rose requires high-caliber commercial electrical capabilities as well as dependable home electrical care. Grace Electrical Services provides comprehensive service across St. Rose, from warehouse high-bay lighting and 3-phase machinery circuits to residential panel overhauls.',
+    heroImage:
+      'https://images.pexels.com/photos/8961695/pexels-photo-8961695.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    localProofSnippet: {
+      reviewer: 'Abu',
+      text: 'Prompt, professional, and thorough. The electrician arrived on time, explained everything clearly, and used a smart, step-by-step approach. Great communication and fair pricing.',
+      context: 'St. Charles Parish Client • Diagnostic Troubleshooting & Electrical Service',
+    },
+    communityProfile: {
+      overview:
+        'St. Rose is a vital industrial and transport gateway for St. Charles Parish, situated just west of the New Orleans International Airport and Kenner. The town contains sprawling business parks, logistics warehouses, and established single-family neighborhoods.',
+      typicalHousingAndProperties:
+        'Large commercial distribution warehouses, industrial processing facilities, along with brick single-family residential homes.',
+      primaryElectricalChallenges:
+        'Commercial three-phase balance, high-bay LED energy conversions, emergency egress battery checks, and residential protection against high-voltage industrial grid transients.',
+    },
+    priorityServices: [
+      {
+        slug: 'commercial-electrical-services-hahnville-la',
+        title: 'Warehouse & Commercial Electrical Maintenance',
+        whyNeeded:
+          'Installing heavy EMT conduit, 3-phase 208V/480V machinery feeds, safety disconnects, and emergency egress lighting.',
+      },
+      {
+        slug: 'lighting-installation-hahnville-la',
+        title: 'Commercial LED High-Bay Retrofits',
+        whyNeeded:
+          'Replacing inefficient metal-halide fixtures in St. Rose warehouses with high-lumen, energy-saving commercial LED fixtures.',
+      },
+      {
+        slug: 'electrical-panel-upgrades-hahnville-la',
+        title: 'Whole-Home Surge Suppression & 200A Panels',
+        whyNeeded:
+          'Protecting St. Rose residences from utility grid voltage spikes originating near major industrial substations.',
+      },
+      {
+        slug: 'electrical-repairs-troubleshooting-hahnville-la',
+        title: 'Fast Circuit Diagnostic Troubleshooting',
+        whyNeeded:
+          'Pinpointing tripped main breakers, ground faults, and damaged conduit runs with calibrated multi-meters.',
+      },
+    ],
+    commonProjects: [
+      {
+        title: 'Commercial High-Bay LED Lighting Upgrades',
+        desc: 'Installing long-life, motion-sensing LED fixtures in warehouse aisles to dramatically lower commercial power bills.',
+      },
+      {
+        title: 'Dedicated Machinery & Compressor Circuits',
+        desc: 'Wiring safety disconnect switches and heavy-gauge conductors for industrial packaging equipment.',
+      },
+      {
+        title: 'Residential Breaker Panel Replacements',
+        desc: 'Replacing outdated breaker enclosures with modern 200A equipment featuring dual AFCI/GFCI protection.',
+      },
+      {
+        title: 'Emergency Exit & Egress Lighting Testing',
+        desc: 'Installing and certifying illuminated emergency battery backup signage to meet parish commercial life safety codes.',
+      },
+    ],
+    localCodeAndUtility: {
+      utilityProvider: 'Entergy Louisiana (East Bank industrial corridor)',
+      permitOffice: 'St. Charles Parish Planning & Zoning',
+      weatherConsiderations:
+        'Heavy industrial operations cause frequent grid voltage spikes; panel surge suppressors (SPDs) are vital for both homes and businesses.',
+    },
+    faqs: [
+      {
+        question: 'Do you provide commercial electrical services for businesses in James Business Park?',
+        answer:
+          'Yes. We handle commercial tenant build-outs, conduit bending, equipment power drops, and warehouse lighting retrofits for businesses in James Business Park and throughout St. Rose.',
+        linkPath: '/commercial-electrical-services-hahnville-la',
+        linkText: 'Explore Commercial Capabilities',
+      },
+      {
+        question: 'Do you also serve residential homeowners in St. Rose?',
+        answer:
+          'Absolutely! We provide full residential electrical repairs, panel replacements, ceiling fan installations, and troubleshooting for homeowners in St. Rose.',
+        linkPath: '/residential-electrical-services-hahnville-la',
+        linkText: 'View Residential Homeowner Services',
+      },
+      {
+        question: 'How do you schedule commercial shutdowns to prevent lost productivity?',
+        answer:
+          'We understand that shutting down panel power during normal business hours disrupts operations. We can schedule major panel tie-ins and shutdowns during early mornings, evenings, or weekends.',
+        linkPath: '/contact',
+        linkText: 'Contact Us to Discuss Commercial Scheduling',
+      },
+    ],
+    neighboringTowns: [
+      { city: 'Destrehan', slug: 'electrician-destrehan-la' },
+      { city: 'New Sarpy', slug: 'electrician-new-sarpy-la' },
+      { city: 'Norco', slug: 'electrician-norco-la' },
+      { city: 'Hahnville', slug: 'electrician-hahnville-la' },
+    ],
   },
   {
     slug: 'electrician-new-sarpy-la',
     city: 'New Sarpy',
     state: 'LA',
+    zip: '70078',
+    bank: 'East Bank',
+    travelTimeFromHQ: '12–14 Minutes via Hale Boggs Bridge and River Road',
+    corridor: 'River Road (LA-48), Airline Hwy, nestled between Norco and Destrehan',
+    headline: 'Dedicated Local Electrician in New Sarpy, LA — Home Safety & Remodels',
     description:
-      'New Sarpy is a community in St. Charles Parish near Norco and Hahnville. Grace Electrical Services provides electrical services to New Sarpy residents and businesses, including wiring, repairs, and lighting installation.',
-    nearLandmark: 'St. Charles Parish, near Norco',
+      'New Sarpy is a close-knit East Bank residential community nestled along the Mississippi River levee between Norco and Destrehan. Primarily composed of established single-family homes, New Sarpy frequently requires expert electrical updates during kitchen and bathroom remodels, aging breaker panel replacements, and safe grounding additions. Grace Electrical Services crosses the Hale Boggs Bridge daily to deliver prompt, neat, and honest electrical care to New Sarpy homeowners.',
+    heroImage:
+      'https://images.pexels.com/photos/3614763/pexels-photo-3614763.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    localProofSnippet: {
+      reviewer: 'Anthony & Shelby',
+      text: 'Great experience overall! Prompt response and came out the next day. Rodney is very professional, fair with pricing, and does top quality work. Definitely our go-to electrician.',
+      context: 'St. Charles Parish Residents • Ceiling Fans & Home Repairs',
+    },
+    communityProfile: {
+      overview:
+        'New Sarpy is an authentic East Bank community where multi-generational families take pride in their neighborhood homes. With its position between the industrial corridor of Norco and the suburban developments of Destrehan, New Sarpy homes enjoy quiet riverfront living while updating their mid-century electrical systems.',
+      typicalHousingAndProperties:
+        'Classic single-story brick ranches and Louisiana cottage-style homes built between the 1950s and 1980s.',
+      primaryElectricalChallenges:
+        'Outdated 100-amp panels lacking room for modern kitchen appliance circuits, ungrounded two-prong outlets in bedrooms, and flickering lighting caused by loose neutral splices.',
+    },
+    priorityServices: [
+      {
+        slug: 'electrical-wiring-installation-hahnville-la',
+        title: 'Kitchen & Bath Remodel Circuit Additions',
+        whyNeeded:
+          'Running dedicated 20-amp copper branch lines for new kitchen islands, microwave drawers, and GFCI bathroom outlets.',
+      },
+      {
+        slug: 'outlet-installation-hahnville-la',
+        title: 'Tamper-Resistant & Grounded Receptacle Upgrades',
+        whyNeeded:
+          'Replacing worn two-prong receptacles with modern, child-safe grounded outlets featuring spring-loaded internal shutters.',
+      },
+      {
+        slug: 'electrical-panel-upgrades-hahnville-la',
+        title: '200A Electrical Panel Replacements',
+        whyNeeded:
+          'Replacing crowded, vintage breaker boxes with modern 200A panels equipped with whole-home surge protection.',
+      },
+      {
+        slug: 'lighting-installation-hahnville-la',
+        title: 'Canless Recessed LED Lighting',
+        whyNeeded:
+          'Installing modern flush wafer LED downlights with selectable color temperatures to brighten low-ceiling living spaces.',
+      },
+    ],
+    commonProjects: [
+      {
+        title: 'Ungrounded Circuit Ground Path Upgrades',
+        desc: 'Testing and installing equipment ground connections or GFCI protection for vintage living room outlets.',
+      },
+      {
+        title: 'Kitchen Remodel Small-Appliance Circuit Wiring',
+        desc: 'Installing dedicated 20A branch lines so blenders, microwaves, and toasters do not trip common living area breakers.',
+      },
+      {
+        title: 'Main Breaker Panel Cleanups & Replacements',
+        desc: 'Eliminating double-tapped breakers and upgrading capacity to modern National Electrical Code standards.',
+      },
+      {
+        title: 'Ceiling Fan Joist Bracket Installations',
+        desc: 'Anchoring heavy ceiling fans securely to ceiling joists to eliminate dangerous wobbling.',
+      },
+    ],
+    localCodeAndUtility: {
+      utilityProvider: 'Entergy Louisiana (East Bank grid)',
+      permitOffice: 'St. Charles Parish Planning & Zoning',
+      weatherConsiderations:
+        'River levee moisture accelerates oxidation on outdoor meter lugs; we apply anti-oxidant compound and install silicone gaskets.',
+    },
+    faqs: [
+      {
+        question: 'Do you charge extra to cross the river to New Sarpy?',
+        answer:
+          'No! We cross the Hale Boggs Bridge every day to serve East Bank communities. New Sarpy is just 12 to 14 minutes from our shop. There are never bridge surcharges or travel fees.',
+        linkPath: '/contact',
+        linkText: 'Request a Free Estimate in New Sarpy',
+      },
+      {
+        question: 'Can you add grounded 3-prong outlets to my older New Sarpy home?',
+        answer:
+          'Yes. If your home has old 2-prong outlets with no ground wire, we can either pull modern grounded Romex cables or install code-approved GFCI receptacles to protect against electrical shock.',
+        linkPath: '/outlet-installation-hahnville-la',
+        linkText: 'Explore Outlet Replacement Options',
+      },
+      {
+        question: 'Can I replace my old kitchen ceiling fluorescent box with recessed LED lights?',
+        answer:
+          'Yes. We remove bulky fluorescent fixtures, patch ceiling rough-ins, and install clean grids of flush-mounted ultra-thin LED recessed wafers controlled by smooth dimmers.',
+        linkPath: '/lighting-installation-hahnville-la',
+        linkText: 'View Recessed Lighting Options',
+      },
+    ],
+    neighboringTowns: [
+      { city: 'Norco', slug: 'electrician-norco-la' },
+      { city: 'Destrehan', slug: 'electrician-destrehan-la' },
+      { city: 'Montz', slug: 'electrician-montz-la' },
+      { city: 'Hahnville', slug: 'electrician-hahnville-la' },
+    ],
   },
   {
     slug: 'electrician-ama-la',
     city: 'Ama',
     state: 'LA',
+    zip: '70031',
+    bank: 'West Bank',
+    travelTimeFromHQ: '12–15 Minutes east along River Road (LA-18)',
+    corridor: 'River Road (LA-18), near Jefferson Parish (Bridge City / Waggaman) line',
+    headline: 'Trusted Riverfront Electrician in Ama, LA — Grounding & Home Safety',
     description:
-      'Ama is a community in St. Charles Parish along the Mississippi River near Hahnville. Grace Electrical Services offers electrical wiring, repairs, panel work, and lighting services to homes and businesses in Ama, Louisiana.',
-    nearLandmark: 'St. Charles Parish, along the river from Hahnville',
+      'Ama is a historic West Bank community situated along the Mississippi River levee east of Luling, stretching toward the Jefferson Parish line. Known for its quiet riverfront atmosphere, historic acreage properties, and traditional homes, Ama requires specialized electrical care for historic wiring, riverfront lightning protection, and whole-home surge suppression. Grace Electrical Services is located just west in Hahnville, providing attentive, master-level craftsmanship for Ama residents.',
+    heroImage:
+      'https://images.pexels.com/photos/3615735/pexels-photo-3615735.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    localProofSnippet: {
+      reviewer: 'Barbara Manuel',
+      text: 'Very professional work completed. He was on time and cleaned up after work was finished. Definitely recommend to others in the river communities.',
+      context: 'St. Charles Parish Homeowner • Electrical Installation & Repairs',
+    },
+    communityProfile: {
+      overview:
+        'Ama offers a peaceful riverfront lifestyle characterized by open space, river road oak canopies, and historic homesteads. Because homes in Ama sit directly along the Mississippi River, they experience direct exposure to lightning storms, river humidity, and utility grid surges.',
+      typicalHousingAndProperties:
+        'Single-family homes, historic properties along River Road, and spacious suburban residences.',
+      primaryElectricalChallenges:
+        'Severe riverfront lightning activity demanding robust grounding electrode systems, weatherhead oxidation from river humidity, and aging branch wiring in older homes.',
+    },
+    priorityServices: [
+      {
+        slug: 'electrical-panel-upgrades-hahnville-la',
+        title: 'Whole-Home Surge Protection & Dual Ground Rods',
+        whyNeeded:
+          'Installing dual 8-foot bonded copper grounding rods and Type 2 panel surge suppressors to dissipate riverfront lightning strikes safely.',
+      },
+      {
+        slug: 'electrical-rewiring-hahnville-la',
+        title: 'Historic & Older Home Rewiring',
+        whyNeeded:
+          'Carefully replacing degraded cloth insulation and ungrounded wiring while preserving architectural woodwork and finishes in Ama homes.',
+      },
+      {
+        slug: 'outlet-installation-hahnville-la',
+        title: 'Weatherproof Outdoor Receptacles & Carport Power',
+        whyNeeded:
+          'Installing in-use bubble covers and dedicated 20A GFCI circuits for outdoor cooking, workshops, and riverfront decks.',
+      },
+      {
+        slug: 'electrical-repairs-troubleshooting-hahnville-la',
+        title: 'Rapid Electrical Diagnostics & Breaker Replacement',
+        whyNeeded:
+          'Pinpointing unexplained circuit trips, dimming lights, or warm wall plates to prevent electrical fire risks.',
+      },
+    ],
+    commonProjects: [
+      {
+        title: 'Dual 8-Foot Copper Grounding Electrode Installation',
+        desc: 'Driving two spaced copper ground rods and bonding with heavy bare copper wire to satisfy modern NEC safety codes.',
+      },
+      {
+        title: 'Weatherhead & Service Entrance Conductor Overhauls',
+        desc: 'Replacing weathered service entrance cables and corroded meter sockets exposed to river humidity.',
+      },
+      {
+        title: 'Outbuilding & Detached Carport Subpanel Wiring',
+        desc: 'Trenching underground conduit to supply reliable 120V/240V power to detached garages and workshops.',
+      },
+      {
+        title: 'Storm Generator Interlock Systems',
+        desc: 'Setting up safe, code-compliant manual transfer switches for emergency storm power.',
+      },
+    ],
+    localCodeAndUtility: {
+      utilityProvider: 'Entergy Louisiana (West Bank river corridor)',
+      permitOffice: 'St. Charles Parish Planning & Zoning',
+      weatherConsiderations:
+        'Riverfront positioning exposes structures to frequent lightning strikes; proper equipment grounding and surge suppressors are critical.',
+    },
+    faqs: [
+      {
+        question: 'How far is Ama from your Hahnville shop?',
+        answer:
+          'Ama is just 12 to 15 minutes east of Hahnville straight down River Road (LA-18). We provide fast response times for consultations, estimates, and urgent electrical diagnostics.',
+        linkPath: '/contact',
+        linkText: 'Contact Rodney for Service in Ama',
+      },
+      {
+        question: 'Why do riverfront homes in Ama need two ground rods?',
+        answer:
+          'National Electrical Code requires an electrical system to have a resistance to ground of 25 ohms or less. Due to intense lightning activity along the river, installing two spaced 8-foot copper ground rods ensures lightning surges dissipate safely into the earth rather than destroying your appliances.',
+        linkPath: '/electrical-panel-upgrades-hahnville-la',
+        linkText: 'Learn About Grounding & Panel Standards',
+      },
+      {
+        question: 'Can you rewire older riverfront homes without tearing up the walls?',
+        answer:
+          'Yes. We use specialized wire-fishing tools to route fresh copper conductors through attics, crawl spaces, and interior stud cavities, keeping drywall penetrations to an absolute minimum.',
+        linkPath: '/electrical-rewiring-hahnville-la',
+        linkText: 'View Our Rewiring Process',
+      },
+    ],
+    neighboringTowns: [
+      { city: 'Luling', slug: 'electrician-luling-la' },
+      { city: 'Hahnville', slug: 'electrician-hahnville-la' },
+      { city: 'Boutte', slug: 'electrician-boutte-la' },
+      { city: 'Destrehan', slug: 'electrician-destrehan-la' },
+    ],
   },
   {
     slug: 'electrician-montz-la',
     city: 'Montz',
     state: 'LA',
+    zip: '70068',
+    bank: 'East Bank',
+    travelTimeFromHQ: '15–18 Minutes northwest via I-310 and River Road / US-61',
+    corridor: 'River Road (LA-48), Airline Hwy (US-61), bordering St. John the Baptist Parish (LaPlace)',
+    headline: 'Trusted Local Electrician in Montz, LA — Custom Homes & Storm Backup',
     description:
-      'Montz is a community in St. Charles Parish near Norco and Hahnville. Grace Electrical Services provides electrical services including wiring installation, repairs, outlet and switch work, and lighting to Montz properties.',
-    nearLandmark: 'St. Charles Parish, near Norco and Hahnville',
+      'Montz is a quiet, scenic East Bank community located on the western border of St. Charles Parish adjacent to LaPlace and the Bonnet Carré Spillway. Featuring custom single-family homes, spacious residential acreage, and new construction builds, Montz properties require high-capacity electrical panels, generator interlock kits, swimming pool wiring, and custom lighting designs. Grace Electrical Services provides reliable, master-level craftsmanship across Montz with upfront pricing and direct owner communication.',
+    heroImage:
+      'https://images.pexels.com/photos/28950842/pexels-photo-28950842.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    localProofSnippet: {
+      reviewer: 'Rhodes',
+      text: 'Rodney is a very efficient, knowledgeable and competent person to hire when you need an electrician. I hired him to wire a house for me. Definitely would hire him again.',
+      context: 'St. Charles Parish Client • Whole-House Construction Wiring',
+    },
+    communityProfile: {
+      overview:
+        'Montz offers a tranquil semi-rural lifestyle with generous residential acreage along River Road and Highway 61. With new custom home construction and substantial property additions, Montz homeowners demand modern electrical infrastructure engineered to withstand South Louisiana weather.',
+      typicalHousingAndProperties:
+        'Modern custom single-family homes, new construction additions, detached storage workshops, and sprawling riverfront properties.',
+      primaryElectricalChallenges:
+        'Wiring large new construction floor plans, running power to detached workshops and swimming pool systems, and installing reliable storm generator interlocks for rural power outages.',
+    },
+    priorityServices: [
+      {
+        slug: 'electrical-wiring-installation-hahnville-la',
+        title: 'New Construction & Custom Addition Wiring',
+        whyNeeded:
+          'Calculating electrical loads and roughing-in complete, code-compliant distribution systems for custom homes and structural additions (as praised by client Rhodes).',
+      },
+      {
+        slug: 'electrical-panel-upgrades-hahnville-la',
+        title: '200A Panels & Generator Interlock Kits',
+        whyNeeded:
+          'Equipping Montz homes with 200A capacity and safe generator interlocks to keep deep freezers, AC, and water systems running during storm outages.',
+      },
+      {
+        slug: 'lighting-installation-hahnville-la',
+        title: 'Outdoor Security & Landscape Illumination',
+        whyNeeded:
+          'Installing high-output motion-activated LED floodlights and dusk-to-dawn perimeter lighting across larger Montz parcels.',
+      },
+      {
+        slug: 'outlet-installation-hahnville-la',
+        title: 'Pool Pumps, Hot Tubs & Heavy Workshop Drops',
+        whyNeeded:
+          'Wiring dedicated 240V GFCI-protected circuits for in-ground pools, spa equipment, and detached garage tools.',
+      },
+    ],
+    commonProjects: [
+      {
+        title: 'Whole-House New Construction Rough-In',
+        desc: 'Pulling 100% solid copper branch wiring, setting rough-in boxes, and building organized panel home-runs.',
+      },
+      {
+        title: 'Swimming Pool & Spa Electrical Hookups',
+        desc: 'Installing dedicated GFCI breaker subpanels and bonding grids to meet strict NEC Article 680 swimming pool codes.',
+      },
+      {
+        title: 'Whole-Home Generator Power Inlet Boxes',
+        desc: 'Mounting exterior 50A generator inlet plugs connected to main panel mechanical interlocks for storm resilience.',
+      },
+      {
+        title: 'Detached Storage Workshop Subpanels',
+        desc: 'Trenching underground feeder conduit to supply reliable 100A service to outbuildings and boat storage.',
+      },
+    ],
+    localCodeAndUtility: {
+      utilityProvider: 'Entergy Louisiana (East Bank / LaPlace border grid)',
+      permitOffice: 'St. Charles Parish Planning & Zoning',
+      weatherConsiderations:
+        'Open terrain and rural grid exposure make whole-home surge protection and manual generator interlocks essential for storm season.',
+    },
+    faqs: [
+      {
+        question: 'Do you provide electrical wiring for custom homes and additions in Montz?',
+        answer:
+          'Yes! We specialize in whole-house electrical wiring for new custom builds, room additions, and detached workshops in Montz. Client Rhodes hired us for a complete house wiring project and commended our knowledge, efficiency, and competence.',
+        linkPath: '/electrical-wiring-installation-hahnville-la',
+        linkText: 'Learn About Our Wiring Installation Services',
+      },
+      {
+        question: 'Can you wire my swimming pool equipment in Montz?',
+        answer:
+          'Yes. Swimming pools require strict adherence to NEC Article 680, including equipotential bonding grids, GFCI protection on all pumps, and minimum clearance distances for outdoor receptacles.',
+        linkPath: '/outlet-installation-hahnville-la',
+        linkText: 'View Dedicated Circuit Details',
+      },
+      {
+        question: 'Do you serve the Montz area near the St. John Parish line?',
+        answer:
+          'Yes. We provide full coverage throughout Montz up to the parish line bordering LaPlace. We are just 15 to 18 minutes away via I-310 and River Road or Highway 61.',
+        linkPath: '/contact',
+        linkText: 'Request an Estimate for Your Montz Project',
+      },
+    ],
+    neighboringTowns: [
+      { city: 'Norco', slug: 'electrician-norco-la' },
+      { city: 'New Sarpy', slug: 'electrician-new-sarpy-la' },
+      { city: 'Destrehan', slug: 'electrician-destrehan-la' },
+      { city: 'Hahnville', slug: 'electrician-hahnville-la' },
+    ],
   },
 ];
 
-export type FAQItem = { question: string; answer: string };
+export type FAQItem = {
+  question: string;
+  answer: string;
+  linkPath?: string;
+  linkText?: string;
+  category?: 'Troubleshooting' | 'Appointments' | 'Installations' | 'Estimates';
+};
 
 export const GENERAL_FAQS: FAQItem[] = [
+  // Troubleshooting
   {
-    question: 'What electrical services does Grace Electrical Services offer?',
+    category: 'Troubleshooting',
+    question: 'Why do my circuit breakers constantly trip or make buzzing noises?',
     answer:
-      'Grace Electrical Services offers electrical wiring installation, electrical repairs and troubleshooting, outlet installation, switch installation, electrical panel repair and upgrades, lighting installation, electrical rewiring, and residential and commercial electrical services. Call 504-559-5351 to discuss your specific needs.',
+      'Frequent tripping usually signals an overloaded circuit, a short circuit in your wiring, or an aging breaker switch that cannot handle current electrical draws. Buzzing or humming sounds from your breaker panel are serious warning signs of loose wire lugs or arcing connections that require immediate diagnosis to prevent electrical fires.',
+    linkPath: '/electrical-repairs-troubleshooting-hahnville-la',
+    linkText: 'Learn About Our Electrical Troubleshooting Services',
   },
   {
-    question: 'Do you provide electrical wiring installation?',
+    category: 'Troubleshooting',
+    question: 'What should I do if outlets stop working, feel warm, or lights flicker?',
     answer:
-      'Yes, electrical wiring installation is a primary service we offer. We handle wiring for new construction, renovations, room additions, and similar projects. Call us to discuss your wiring project.',
+      'If an outlet feels warm to the touch or produces a burning plastic smell, shut off the controlling breaker right away. Flickering lights or dead outlets often indicate loose wire nuts or corroded connections behind sheetrock. Rodney uses systematic step-by-step diagnostic testing to pinpoint the exact fault rather than guessing.',
+    linkPath: '/outlet-installation-hahnville-la',
+    linkText: 'Explore Outlet Repair & Installation Details',
+  },
+
+  // Appointments
+  {
+    category: 'Appointments',
+    question: 'How quickly can you respond to an electrical problem in Hahnville?',
+    answer:
+      'Because Grace Electrical Services is based centrally in Hahnville, Louisiana, we provide prompt localized response across all of St. Charles Parish. In urgent situations with tripping main breakers, burning smells, or sudden power loss to critical appliances, we make every effort to evaluate your system the same day.',
+    linkPath: '/contact',
+    linkText: 'Contact Rodney for Fast Service Dispatch',
   },
   {
-    question: 'Can I call to discuss an electrical repair?',
+    category: 'Appointments',
+    question: 'Do you offer Saturday or weekend appointments?',
     answer:
-      'Absolutely. Call 504-559-5351 to describe the electrical issue you are experiencing. We can discuss the problem and determine how to help.',
+      'Yes! We recognize that taking time off work during the week for electrical repairs is challenging for homeowners. We offer Saturday appointments by reservation, arriving bright and early ready to complete your wiring, panel work, or ceiling fan installation as praised in our verified customer reviews.',
+    linkPath: '/contact',
+    linkText: 'Schedule a Saturday Service Appointment',
+  },
+
+  // Installations
+  {
+    category: 'Installations',
+    question: 'How do I know if my electrical panel needs an upgrade to 200 amps?',
+    answer:
+      'If your home still operates on an older 100-amp service, has a dated fuse box, lacks empty slots for new circuits, or struggles when large HVAC and appliance loads kick on, a 200-amp panel upgrade is necessary. Modernizing your panel provides dedicated capacity, NEC compliance, and safety for generator interlocks or EV charging.',
+    linkPath: '/electrical-panel-upgrades-hahnville-la',
+    linkText: 'View Electrical Panel Upgrade Specifications',
   },
   {
-    question:
-      'What information should I provide when describing an electrical problem?',
+    category: 'Installations',
+    question: 'Do you handle new construction wiring, additions, and whole-house rewiring?',
     answer:
-      'It helps to describe what is happening, when it started, which circuits or areas are affected, and whether anything has changed recently (new appliances, renovations, storms). The more detail you provide, the better we can assess the situation.',
+      'Yes. Electrical wiring installation is one of our primary core services. We run code-compliant commercial-grade copper conductors, plan circuit routes, set breaker loads, install switches, and test every outlet under load for new homes, historic remodels, and room additions throughout St. Charles Parish.',
+    linkPath: '/electrical-wiring-installation-hahnville-la',
+    linkText: 'Read Our Electrical Wiring Installation Guide',
   },
   {
-    question: 'Do you serve areas near Hahnville, Louisiana?',
+    category: 'Installations',
+    question: 'Can you install ceiling fans, dedicated 240V lines, and exterior security lighting?',
     answer:
-      'Yes, in addition to Hahnville, we serve surrounding communities in St. Charles Parish including Luling, Destrehan, Norco, Boutte, Paradis, St. Rose, New Sarpy, Ama, and Montz. Call to confirm we serve your specific location.',
+      'Absolutely. We install ceiling fans with proper structural box support, dedicated circuits for ovens, dryers, and air conditioning units, as well as weather-resistant exterior floodlights and GFCI receptacles built to withstand coastal Louisiana humidity and heavy rains.',
+    linkPath: '/lighting-installation-hahnville-la',
+    linkText: 'Explore Lighting & Fixture Installation Services',
+  },
+
+  // Estimates & Pricing
+  {
+    category: 'Estimates',
+    question: 'How do your quotes compare to big-name corporate electrical companies?',
+    answer:
+      'Our customers frequently mention that big-name brand electrician companies quoted them almost double for the same work. Because you deal directly with Rodney as an independent owner-operator, you never pay for expensive corporate franchise fees, radio ad campaigns, or dispatch middlemen.',
+    linkPath: '/reviews',
+    linkText: 'Read Verified Real Customer Price Assessments',
   },
   {
-    question: 'How can I contact Grace Electrical Services?',
+    category: 'Estimates',
+    question: 'Can I get a clear, upfront estimate before work starts?',
     answer:
-      'The best way to reach us is by phone at 504-559-5351. You can also visit our contact page for our location and a map.',
+      'Yes. We believe in 100% upfront transparency. We start by listening carefully to what you are experiencing, inspect the electrical problem thoroughly, and provide a straightforward estimate before picking up any tools. You will never face surprise hidden fees.',
+    linkPath: '/contact',
+    linkText: 'Request a Clear Project Estimate Today',
   },
   {
-    question: 'Do you work on both residential and commercial properties?',
+    category: 'Installations',
+    question: 'Do you provide commercial electrical services for local businesses?',
     answer:
-      'Yes, we provide electrical services for both residential and commercial properties. Call us to discuss your property and project.',
-  },
-  {
-    question: 'How do I know if I need an electrical panel upgrade?',
-    answer:
-      'Signs include frequently tripped breakers, a panel that feels warm or makes buzzing sounds, not enough breaker slots for new circuits, or an older panel that may not meet current electrical codes. Call us to discuss your situation.',
+      'Yes. In addition to residential homes, we handle commercial electrical installations, tenant improvements, dedicated 3-phase machinery circuits, and diagnostics for retail shops, offices, and facilities in Hahnville, Luling, Destrehan, and Norco.',
+    linkPath: '/commercial-electrical-services-hahnville-la',
+    linkText: 'Explore Commercial Electrical Work',
   },
 ];
+
+export type ReviewItem = {
+  id: string;
+  author: string;
+  initials: string;
+  avatarBg: string;
+  reviewCount: string;
+  timeAgo: string;
+  rating: number;
+  text: string;
+  priceAssessment?: string;
+  services?: string[];
+  tags: string[];
+  verified: boolean;
+};
+
+export const REVIEWS: ReviewItem[] = [
+  {
+    id: 'review-1',
+    author: 'Abu',
+    initials: 'A',
+    avatarBg: 'from-amber-500 to-orange-600',
+    reviewCount: '4 reviews',
+    timeAgo: 'a year ago',
+    rating: 5,
+    text: 'I recently hired Grace Electrical Services for electrical work at my home in Hahnville and couldn’t be happier. The service was prompt, professional, and thorough. The electrician arrived on time, explained everything clearly, and used a smart, step-by-step approach to find and fix the problem.\n\nWhat stood out most was the honesty and fair pricing — I would’ve paid much more with a big company just to locate the issue. Grace Electrical Services provided quality work, great communication, and real peace of mind. Highly recommended for anyone in Hahnville or St. Charles Parish!',
+    priceAssessment: 'Fair & honest pricing',
+    services: ['Electrical troubleshooting', 'Problem diagnosis & repair'],
+    tags: ['Professional Work', 'Reasonable Price / Quotes', 'Electrical Wiring'],
+    verified: true,
+  },
+  {
+    id: 'review-2',
+    author: 'Anthony',
+    initials: 'A',
+    avatarBg: 'from-blue-600 to-indigo-700',
+    reviewCount: '10 reviews',
+    timeAgo: 'a year ago',
+    rating: 5,
+    priceAssessment: 'Reasonable price',
+    services: ['Ceiling fan installation', 'Same-day electrical consultation'],
+    text: 'I was recommended to Rodney by a friend and now I completely understand why. I called on Friday and he came out the same day to take a look at the job. The next day, a Saturday mind you, he was at my house bright and early ready to work. The entire time he was here, he answered any questions I had and was extremely knowledgeable.\n\nAt the end of the day, I asked him for advice installing a ceiling fan that I was going to do myself. Because of how great the first job went, I offered him the job and he winded up staying without complaint and knocked it out too.\n\nThe price was also very fair for the amount of work done. (For comparison, I got quotes for the same work from a few big name brand electrician companies and theirs were almost double)\n\nRodney is my go to guy for all my electrical needs from now on and I highly recommend him to anyone looking for electrical work.',
+    tags: ['Professional Work', 'Reasonable Price / Quotes', 'Fan Installation'],
+    verified: true,
+  },
+  {
+    id: 'review-3',
+    author: 'Rhodes',
+    initials: 'R',
+    avatarBg: 'from-emerald-600 to-teal-800',
+    reviewCount: '2 reviews',
+    timeAgo: 'a year ago',
+    rating: 5,
+    priceAssessment: 'Reasonable price',
+    services: [
+      'Electrical wiring installation',
+      'Light fixture installation',
+      'Electrical outlet & switch relocation',
+      'Electrical panel repair',
+    ],
+    text: 'I hired the company to wire a house for me. Rodney is a very efficient, knowledgeable and competent person to hire when you need an electrician. I definitely would hire him again and recommend him to anyone.',
+    tags: ['Electrical Wiring', 'Reasonable Price / Quotes', 'Professional Work'],
+    verified: true,
+  },
+  {
+    id: 'review-4',
+    author: 'Shelby Jusselin',
+    initials: 'SJ',
+    avatarBg: 'from-purple-600 to-pink-600',
+    reviewCount: '1 review',
+    timeAgo: 'a year ago',
+    rating: 5,
+    priceAssessment: 'Reasonable price',
+    services: ['Fan installation'],
+    text: 'Great experience overall! Prompt response and came out the next day. We got a quote for almost double from a big name. Will be recommending him to everyone who asks!',
+    tags: ['Reasonable Price / Quotes', 'Fan Installation'],
+    verified: true,
+  },
+  {
+    id: 'review-5',
+    author: 'Barbara Manuel',
+    initials: 'BM',
+    avatarBg: 'from-rose-500 to-red-600',
+    reviewCount: '1 review',
+    timeAgo: '9 months ago',
+    rating: 5,
+    text: 'Very professional work completed. He was on time and cleaned up after work was finished. Definitely recommend to others',
+    services: ['Professional electrical service'],
+    tags: ['Professional Work'],
+    verified: true,
+  },
+  {
+    id: 'review-6',
+    author: 'Darren Brooks',
+    initials: 'DB',
+    avatarBg: 'from-cyan-600 to-blue-700',
+    reviewCount: 'Google Reviewer',
+    timeAgo: 'a year ago',
+    rating: 5,
+    text: '5.0 out of 5 stars. Dependable, honest, and high-quality electrical work in Hahnville. Rodney and Grace Electrical Services deliver excellent service every time.',
+    services: ['Local electrical services'],
+    tags: ['Professional Work', 'Electrical Wiring'],
+    verified: true,
+  },
+];
+
+export const REVIEW_SUMMARY = {
+  rating: 5.0,
+  reviewCount: 6,
+  totalRatingStars: 5,
+  recommendRate: 100,
+  googleMapsListing: BUSINESS.mapsListing,
+  ratingDistribution: [
+    { stars: 5, count: 6, percentage: 100 },
+    { stars: 4, count: 0, percentage: 0 },
+    { stars: 3, count: 0, percentage: 0 },
+    { stars: 2, count: 0, percentage: 0 },
+    { stars: 1, count: 0, percentage: 0 },
+  ],
+  popularTopics: [
+    { name: 'All Reviews', count: 6 },
+    { name: 'Professional Work', count: 4 },
+    { name: 'Reasonable Price / Quotes', count: 4 },
+    { name: 'Electrical Wiring', count: 2 },
+    { name: 'Fan Installation', count: 2 },
+  ],
+};
+
+
+export { GUIDES_AND_CASE_STUDIES } from './guides';
+export type { GuideArticle } from './guides';

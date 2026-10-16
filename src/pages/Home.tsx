@@ -24,13 +24,15 @@ import {
   Shield,
   Activity,
   Check,
+  Star,
 } from 'lucide-react';
 import { useSEO, BASE_URL } from '@/hooks/useSEO';
-import { BUSINESS, SERVICES, SERVICE_AREAS, GENERAL_FAQS } from '@/data/content';
+import { BUSINESS, SERVICES, SERVICE_AREAS, GENERAL_FAQS, REVIEWS } from '@/data/content';
 import ServiceCard from '@/components/ServiceCard';
 import LocationCard from '@/components/LocationCard';
 import CTABanner from '@/components/CTABanner';
 import FAQAccordion from '@/components/FAQAccordion';
+import ReviewsSection from '@/components/ReviewsSection';
 
 const iconMap: Record<string, React.ReactNode> = {
   Cable: <Cable className="w-5 h-5 text-navy-900" />,
@@ -50,11 +52,14 @@ const structuredData = {
   name: BUSINESS.name,
   telephone: BUSINESS.phone,
   url: BASE_URL,
-  areaServed: {
+  sameAs: [BUSINESS.mapsListing],
+  hasMap: BUSINESS.mapsListing,
+  priceRange: '$$',
+  areaServed: SERVICE_AREAS.map((a) => ({
     '@type': 'City',
-    name: BUSINESS.city,
-    addressRegion: 'LA',
-  },
+    name: a.city,
+    addressRegion: a.state,
+  })),
   address: {
     '@type': 'PostalAddress',
     addressLocality: BUSINESS.city,
@@ -62,13 +67,47 @@ const structuredData = {
     postalCode: BUSINESS.zip,
     addressCountry: 'US',
   },
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+      opens: '07:00',
+      closes: '18:00',
+    },
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Saturday'],
+      opens: '08:00',
+      closes: '15:00',
+    },
+  ],
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '5.0',
+    reviewCount: '6',
+    bestRating: '5',
+    worstRating: '1',
+  },
+  review: REVIEWS.map((r) => ({
+    '@type': 'Review',
+    author: {
+      '@type': 'Person',
+      name: r.author,
+    },
+    reviewRating: {
+      '@type': 'Rating',
+      ratingValue: r.rating.toString(),
+      bestRating: '5',
+    },
+    reviewBody: r.text,
+  })),
 };
 
 export default function Home() {
   useSEO({
-    title: 'Grace Electrical Services | Electrician & Wiring in Hahnville, LA',
+    title: 'Electrician in Hahnville, LA | Grace Electrical Services',
     description:
-      'Trusted electrical wiring installation, panel upgrades, repairs, and troubleshooting in Hahnville, Louisiana & St. Charles Parish. Call 504-559-5351 for prompt service.',
+      'Need an electrician in Hahnville, LA? Explore electrical wiring, repairs, outlets, lighting and panel services. Call Grace Electrical Services at (504) 559-5351.',
     canonicalPath: '/',
     structuredData,
   });
@@ -148,9 +187,20 @@ export default function Home() {
                 <MapPin className="w-3.5 h-3.5" />
                 Serving All of St. Charles Parish
               </span>
+              <Link
+                to="/reviews"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/10 hover:bg-white/20 text-white text-xs sm:text-sm font-semibold border border-white/25 transition-all backdrop-blur-sm"
+              >
+                <div className="flex items-center text-amber-400">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+                  ))}
+                </div>
+                <span>5.0 (6 Google Reviews)</span>
+              </Link>
             </div>
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6 tracking-tight">
-              Professional Electrical Wiring &amp; Repair Services in Hahnville, LA
+              Electrical Services in Hahnville, LA
             </h1>
             <p className="text-lg text-navy-200 leading-relaxed mb-8 max-w-xl">
               From new construction wiring and panel replacements to safety troubleshooting
@@ -162,8 +212,8 @@ export default function Home() {
                 <Phone className="w-5 h-5 fill-current" />
                 Call {BUSINESS.phone}
               </a>
-              <Link to="/services" className="btn-secondary text-lg px-8 py-4">
-                Explore All Services
+              <Link to="/contact" className="btn-secondary text-lg px-8 py-4 bg-white/10 text-white hover:bg-white/20 border-white/20">
+                Request Free Estimate
                 <ArrowRight className="w-5 h-5" />
               </Link>
             </div>
@@ -189,6 +239,23 @@ export default function Home() {
       <section className="bg-navy-900 border-y border-navy-800 py-6">
         <div className="container-page">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <Link to="/reviews" className="p-3 group block hover:bg-navy-800/50 rounded-xl transition-all">
+              <div className="font-display text-2xl md:text-3xl font-bold text-amber-400 mb-1 flex items-center justify-center gap-1">
+                <span>5.0</span>
+                <Star className="w-5 h-5 fill-amber-400 text-amber-400 inline" />
+              </div>
+              <p className="text-xs md:text-sm text-navy-300 font-medium group-hover:text-amber-400 transition-colors">
+                6 Verified Google Reviews
+              </p>
+            </Link>
+            <div className="p-3">
+              <div className="font-display text-2xl md:text-3xl font-bold text-white mb-1">
+                Direct
+              </div>
+              <p className="text-xs md:text-sm text-navy-300 font-medium">
+                Rodney • Owner &amp; Electrician
+              </p>
+            </div>
             <div className="p-3">
               <div className="font-display text-2xl md:text-3xl font-bold text-amber-400 mb-1">
                 100%
@@ -199,26 +266,10 @@ export default function Home() {
             </div>
             <div className="p-3">
               <div className="font-display text-2xl md:text-3xl font-bold text-white mb-1">
-                Direct
-              </div>
-              <p className="text-xs md:text-sm text-navy-300 font-medium">
-                Owner &amp; Electrician Contact
-              </p>
-            </div>
-            <div className="p-3">
-              <div className="font-display text-2xl md:text-3xl font-bold text-amber-400 mb-1">
                 10+
               </div>
               <p className="text-xs md:text-sm text-navy-300 font-medium">
-                Communities Served
-              </p>
-            </div>
-            <div className="p-3">
-              <div className="font-display text-2xl md:text-3xl font-bold text-white mb-1">
-                Residential &amp; Commercial
-              </div>
-              <p className="text-xs md:text-sm text-navy-300 font-medium">
-                Full-Service Electrical Work
+                St. Charles Parish Communities
               </p>
             </div>
           </div>
@@ -384,7 +435,7 @@ export default function Home() {
         <div className="absolute inset-0 opacity-10">
           <img
             src="https://images.pexels.com/photos/8488029/pexels-photo-8488029.jpeg?auto=compress&cs=tinysrgb&w=1920&h=800&dpr=1"
-            alt=""
+            alt="Electrical storm preparedness, surge protection, and generator equipment in Hahnville, LA"
             className="w-full h-full object-cover"
           />
         </div>
@@ -449,7 +500,8 @@ export default function Home() {
                   to="/electrical-panel-upgrades-hahnville-la"
                   className="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-amber-400 hover:gap-2 transition-all"
                 >
-                  Learn More <ArrowRight className="w-3.5 h-3.5" />
+                  <span>Explore Electrical Panel Upgrades</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
               </div>
 
@@ -463,7 +515,8 @@ export default function Home() {
                   to="/electrical-rewiring-hahnville-la"
                   className="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-electric-400 hover:gap-2 transition-all"
                 >
-                  Learn More <ArrowRight className="w-3.5 h-3.5" />
+                  <span>Explore Electrical Rewiring Services</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
               </div>
 
@@ -477,7 +530,8 @@ export default function Home() {
                   to="/outlet-installation-hahnville-la"
                   className="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-amber-400 hover:gap-2 transition-all"
                 >
-                  Learn More <ArrowRight className="w-3.5 h-3.5" />
+                  <span>Explore GFCI Outlet Installation</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
               </div>
 
@@ -491,7 +545,8 @@ export default function Home() {
                   to="/lighting-installation-hahnville-la"
                   className="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-electric-400 hover:gap-2 transition-all"
                 >
-                  Learn More <ArrowRight className="w-3.5 h-3.5" />
+                  <span>Explore Security Lighting Installation</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
               </div>
             </div>
@@ -662,6 +717,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Google Reviews Section */}
+      <ReviewsSection />
 
       {/* Service Areas Section */}
       <section className="section-padding bg-white">
