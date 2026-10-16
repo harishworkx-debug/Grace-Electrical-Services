@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+﻿import { Link } from 'react-router-dom';
 import {
   Phone,
   ArrowRight,
@@ -107,7 +107,7 @@ export default function Home() {
   useSEO({
     title: 'Electrician in Hahnville, LA | Grace Electrical Services',
     description:
-      'Need an electrician in Hahnville, LA? Explore electrical wiring, repairs, outlets, lighting and panel services. Call Grace Electrical Services at (504) 559-5351.',
+      'Need an electrician in Hahnville, LA? Explore electrical wiring, repairs, outlets, lighting and panel services. Call Grace Electrical Services at (504) 534-9620.',
     canonicalPath: '/',
     structuredData,
   });
@@ -253,7 +253,7 @@ export default function Home() {
                 Direct
               </div>
               <p className="text-xs md:text-sm text-navy-300 font-medium">
-                Rodney • Owner &amp; Electrician
+                Rodney â€¢ Owner &amp; Electrician
               </p>
             </div>
             <div className="p-3">
@@ -698,7 +698,7 @@ export default function Home() {
                 Root-Cause Diagnostics
               </h3>
               <p className="text-navy-300 text-sm leading-relaxed">
-                We don’t just swap breakers or reset outlets. We test circuit loads and
+                We donâ€™t just swap breakers or reset outlets. We test circuit loads and
                 wiring integrity to identify and fix the underlying issue permanently.
               </p>
             </div>
@@ -846,3 +846,4 @@ export default function Home() {
     </>
   );
 }
+

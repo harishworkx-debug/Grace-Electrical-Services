@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+﻿import { Link } from 'react-router-dom';
 import { Phone, ArrowRight, Home } from 'lucide-react';
 import { useSEO } from '@/hooks/useSEO';
 import { BUSINESS } from '@/data/content';
@@ -7,7 +7,7 @@ export default function NotFound() {
   useSEO({
     title: 'Page Not Found | Grace Electrical Services',
     description:
-      'The page you are looking for could not be found. Please visit our homepage or call Grace Electrical Services at 504-559-5351.',
+      'The page you are looking for could not be found. Please visit our homepage or call Grace Electrical Services at 504-534-9620.',
     canonicalPath: '/404',
   });
 
@@ -47,3 +47,4 @@ export default function NotFound() {
     </section>
   );
 }
+

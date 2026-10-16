@@ -1,4 +1,4 @@
-export type GuideArticle = {
+﻿export type GuideArticle = {
   id: string;
   category: 'Safety & Warnings' | 'Older Homes & Rewiring' | 'Troubleshooting' | 'Planning & Code' | 'Real Case Studies';
   title: string;
@@ -41,7 +41,7 @@ export const GUIDES_AND_CASE_STUDIES: GuideArticle[] = [
     imageAlt: 'Electrician inspecting residential circuit breaker panel bus bars in Hahnville, LA',
     keyTakeaways: [
       'Circuit breaker panels should operate in complete silence; buzzing or clicking indicates dangerous electrical arcing.',
-      'Never remove the dead-front metal cover yourself—240V main service lugs remain energized even with the main breaker off.',
+      'Never remove the dead-front metal cover yourselfâ€”240V main service lugs remain energized even with the main breaker off.',
       'Frequent tripping means a circuit is carrying near or above its maximum continuous load, or a breaker mechanism has weakened.',
       'Obsolete panels like Federal Pacific Electric (Stab-Lok) or Zinsco have documented failure rates and require complete replacement.',
     ],
@@ -50,7 +50,7 @@ export const GUIDES_AND_CASE_STUDIES: GuideArticle[] = [
         heading: 'Why Electrical Panels Degrade Over Time',
         paragraphs: [
           'Your electrical panel handles thousands of kilowatt-hours of electrical current each month. In South Louisiana, extreme summer humidity, seasonal temperature shifts, and heavy electrical demand from air conditioning accelerate oxidation on copper and aluminum bus bars.',
-          'Over decades, thermal expansion and contraction loosen terminal connections. Loose terminal screws create electrical resistance, which generates heat, which further loosens the connection—a destructive cycle that can ignite surrounding wall framing.',
+          'Over decades, thermal expansion and contraction loosen terminal connections. Loose terminal screws create electrical resistance, which generates heat, which further loosens the connectionâ€”a destructive cycle that can ignite surrounding wall framing.',
         ],
       },
       {
@@ -65,7 +65,7 @@ export const GUIDES_AND_CASE_STUDIES: GuideArticle[] = [
       {
         heading: 'Safe Next Steps: What You Should and Should NOT Do',
         paragraphs: [
-          'If you notice any of these signs, switch off the affected branch circuit breaker immediately. NEVER attempt to force a tripped breaker into the ON position if it immediately clicks back to center—forcing a tripped breaker overrides its internal safety trip latch and creates an immediate fire hazard.',
+          'If you notice any of these signs, switch off the affected branch circuit breaker immediately. NEVER attempt to force a tripped breaker into the ON position if it immediately clicks back to centerâ€”forcing a tripped breaker overrides its internal safety trip latch and creates an immediate fire hazard.',
           'CRITICAL SAFETY WARNING: Under no circumstances should a homeowner unscrew and remove the dead-front protective cover of an electrical panel. The main service entrance cables connected to the top lugs carry 240 volts of unfused utility current directly from Entergy and can cause fatal electrocution or an arc-flash explosion.',
         ],
       },
@@ -112,7 +112,7 @@ export const GUIDES_AND_CASE_STUDIES: GuideArticle[] = [
         heading: 'Non-Destructive Wire Fishing: How Modern Rewiring Works',
         paragraphs: [
           'A common misconception is that rewiring an older home requires gutting all your walls. In reality, an experienced electrician uses specialized fiberglass fish rods, flexible drill bits, and access through attics, crawl spaces, and baseboards to pull fresh non-metallic sheathed copper (NM-B Romex) conductors with minimal wall incisions.',
-          'We also offer phased rewiring—upgrading critical high-amperage areas like kitchens, bathrooms, and laundry rooms first to fit your family’s budget and schedule.',
+          'We also offer phased rewiringâ€”upgrading critical high-amperage areas like kitchens, bathrooms, and laundry rooms first to fit your familyâ€™s budget and schedule.',
         ],
       },
     ],
@@ -137,7 +137,7 @@ export const GUIDES_AND_CASE_STUDIES: GuideArticle[] = [
       'Circuit breakers are mechanical safety switches designed to trip under thermal overload or magnetic short circuits.',
       'A breaker that trips immediately upon reset indicates a dead short circuit, ground fault, or bad internal mechanism.',
       'A breaker that trips after 10 to 30 minutes usually indicates an overloaded branch circuit carrying more amps than rated.',
-      'Never replace a 15-amp breaker with a 20-amp breaker to stop tripping—this forces wall wiring to overheat and causes house fires.',
+      'Never replace a 15-amp breaker with a 20-amp breaker to stop trippingâ€”this forces wall wiring to overheat and causes house fires.',
     ],
     contentSections: [
       {
@@ -150,7 +150,7 @@ export const GUIDES_AND_CASE_STUDIES: GuideArticle[] = [
       {
         heading: 'Breaker Failure vs. Downstream Circuit Faults',
         paragraphs: [
-          'Symptoms of a Bad Breaker: If you unplug every appliance on the circuit and the breaker still trips with zero load, or if the switch handle feels spongy and refuses to click firmly into the ON position, the breaker’s internal mechanical spring has likely failed and requires replacement.',
+          'Symptoms of a Bad Breaker: If you unplug every appliance on the circuit and the breaker still trips with zero load, or if the switch handle feels spongy and refuses to click firmly into the ON position, the breakerâ€™s internal mechanical spring has likely failed and requires replacement.',
           'Symptoms of a Downstream Short Circuit: If the breaker trips instantaneously with an audible "pop" or flash, an ungrounded hot wire is touching a neutral wire or metal electrical box somewhere along the circuit path.',
           'Symptoms of an Overload: If the circuit operates normally for 15 minutes while running a refrigerator and microwave together before tripping, the cumulative current draw exceeds the 15A or 20A branch rating.',
         ],
@@ -161,7 +161,7 @@ export const GUIDES_AND_CASE_STUDIES: GuideArticle[] = [
           'Step 1: Unplug all appliances and turn off all wall switches powered by that circuit.',
           'Step 2: Firmly push the breaker switch all the way to OFF until it clicks, then push it to ON.',
           'Step 3: If it holds, plug in appliances one by one to identify which device triggers the trip.',
-          'Step 4: If the breaker trips immediately with nothing plugged in, leave it OFF and call Rodney at 504-559-5351 for systematic multi-meter diagnostic testing.',
+          'Step 4: If the breaker trips immediately with nothing plugged in, leave it OFF and call Rodney at 504-534-9620 for systematic multi-meter diagnostic testing.',
         ],
       },
     ],
@@ -238,7 +238,7 @@ export const GUIDES_AND_CASE_STUDIES: GuideArticle[] = [
       {
         heading: 'Step 1: Calculating Your Household Electrical Load',
         paragraphs: [
-          'Before running a single wire, Rodney calculates your property’s total connected load. We add up general lighting loads (3 volt-amps per square foot), dedicated small appliance branch circuits (minimum two 20A kitchen circuits), laundry circuits, and dedicated high-draw appliance loads (AC compressor, water heater, range, dryer, EV charger).',
+          'Before running a single wire, Rodney calculates your propertyâ€™s total connected load. We add up general lighting loads (3 volt-amps per square foot), dedicated small appliance branch circuits (minimum two 20A kitchen circuits), laundry circuits, and dedicated high-draw appliance loads (AC compressor, water heater, range, dryer, EV charger).',
           'This ensures your main breaker panel and incoming utility service conductors have sufficient ampacity to power your lifestyle without tripping.',
         ],
       },
@@ -246,7 +246,7 @@ export const GUIDES_AND_CASE_STUDIES: GuideArticle[] = [
         heading: 'Step 2: St. Charles Parish Permitting & Utility Coordination',
         paragraphs: [
           'Structural wiring projects and service upgrades require electrical permits from the St. Charles Parish Department of Planning & Zoning in Hahnville. As a licensed professional, Grace Electrical Services files all documentation, coordinates service disconnects and reconnects directly with Entergy, and attends municipal inspections.',
-          'Having work permitted and inspected protects your property’s resale value and guarantees compliance with homeowner insurance underwriting guidelines.',
+          'Having work permitted and inspected protects your propertyâ€™s resale value and guarantees compliance with homeowner insurance underwriting guidelines.',
         ],
       },
       {
@@ -267,7 +267,7 @@ export const GUIDES_AND_CASE_STUDIES: GuideArticle[] = [
     category: 'Real Case Studies',
     title: 'Real Project Case Studies: Issue, Work Undertaken & Verifiable Results',
     summary:
-      'Explore real-world case studies demonstrating Rodney’s systematic diagnostics, whole-house construction wiring, and structural ceiling fan installations across St. Charles Parish.',
+      'Explore real-world case studies demonstrating Rodneyâ€™s systematic diagnostics, whole-house construction wiring, and structural ceiling fan installations across St. Charles Parish.',
     readTime: '6 min read',
     author: 'Rodney (Master Electrician)',
     date: 'Verified Real Projects',
@@ -283,7 +283,7 @@ export const GUIDES_AND_CASE_STUDIES: GuideArticle[] = [
       {
         heading: 'Demonstrating Experience, Workmanship & Value Across St. Charles Parish',
         paragraphs: [
-          'At Grace Electrical Services, we believe homeowners deserve honest, verifiable proof of capability. Below are actual projects completed by Rodney across Hahnville, Luling, and surrounding parish towns—outlining the initial symptom, the diagnostic procedure, the actual repair or installation, and the long-term result.',
+          'At Grace Electrical Services, we believe homeowners deserve honest, verifiable proof of capability. Below are actual projects completed by Rodney across Hahnville, Luling, and surrounding parish townsâ€”outlining the initial symptom, the diagnostic procedure, the actual repair or installation, and the long-term result.',
         ],
       },
     ],
@@ -296,7 +296,7 @@ export const GUIDES_AND_CASE_STUDIES: GuideArticle[] = [
         workUndertaken:
           'Rodney performed systematic digital multi-meter testing along the branch circuit. Traced an intermittent open neutral and arcing wire backstabbed into an old receptacle. Converted all device splices to secure screw-torqued pigtails and tested circuit continuity under 15A continuous load.',
         result:
-          'Circuit fully stabilized with zero subsequent trips. Abu saved substantial money compared to corporate franchise estimates and praised Rodney’s honest, step-by-step approach.',
+          'Circuit fully stabilized with zero subsequent trips. Abu saved substantial money compared to corporate franchise estimates and praised Rodneyâ€™s honest, step-by-step approach.',
       },
       {
         client: 'Rhodes',
@@ -335,3 +335,4 @@ export const GUIDES_AND_CASE_STUDIES: GuideArticle[] = [
     secondaryServiceTitle: 'Repairs & Troubleshooting Services',
   },
 ];
+
