@@ -43,7 +43,9 @@ const areaSlugs = [
   ),
 ];
 
-const today = new Date().toISOString().split('T')[0];
+// Google Sitemap Guidelines: Only set lastmod when content is genuinely modified.
+// Do NOT auto-bump to current timestamp on every build.
+const CONTENT_LASTMOD = '2026-10-16';
 
 const coreRoutes = [
   { path: '', changefreq: 'weekly', priority: '1.0' },
@@ -62,17 +64,17 @@ let xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sit
 xml += `  <!-- Core Pages -->\n`;
 for (const route of coreRoutes) {
   const url = route.path ? `${domain}/${route.path}` : `${domain}/`;
-  xml += `  <url>\n    <loc>${url}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>${route.changefreq}</changefreq>\n    <priority>${route.priority}</priority>\n  </url>\n`;
+  xml += `  <url>\n    <loc>${url}</loc>\n    <lastmod>${CONTENT_LASTMOD}</lastmod>\n    <changefreq>${route.changefreq}</changefreq>\n    <priority>${route.priority}</priority>\n  </url>\n`;
 }
 
 xml += `\n  <!-- Electrical Service Pages (Hahnville, LA) -->\n`;
 for (const slug of serviceSlugs) {
-  xml += `  <url>\n    <loc>${domain}/${slug}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>0.8</priority>\n  </url>\n`;
+  xml += `  <url>\n    <loc>${domain}/${slug}</loc>\n    <lastmod>${CONTENT_LASTMOD}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>0.8</priority>\n  </url>\n`;
 }
 
 xml += `\n  <!-- Service Area Locations (St. Charles Parish, LA) -->\n`;
 for (const slug of areaSlugs) {
-  xml += `  <url>\n    <loc>${domain}/${slug}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>0.8</priority>\n  </url>\n`;
+  xml += `  <url>\n    <loc>${domain}/${slug}</loc>\n    <lastmod>${CONTENT_LASTMOD}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>0.8</priority>\n  </url>\n`;
 }
 
 xml += `</urlset>\n`;

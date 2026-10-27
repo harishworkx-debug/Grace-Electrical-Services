@@ -1,4 +1,4 @@
-﻿import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import {
   Phone,
   ArrowRight,
@@ -117,31 +117,43 @@ export default function Home() {
       icon: <AlertTriangle className="w-6 h-6 text-amber-500" />,
       title: 'Frequent Circuit Breaker Trips',
       desc: 'Breakers that trip constantly signal an overloaded circuit, a short circuit, or a failing breaker that needs professional diagnosis.',
+      link: '/electrical-repairs-troubleshooting-hahnville-la',
+      linkText: 'Electrical Repair & Troubleshooting',
     },
     {
       icon: <Flame className="w-6 h-6 text-red-500" />,
       title: 'Burning Smell or Warm Outlets',
       desc: 'Wall plates feeling warm or producing a faint burning plastic smell indicate dangerous arching and should be addressed immediately.',
+      link: '/outlet-installation-hahnville-la',
+      linkText: 'Outlet Installation & Replacement',
     },
     {
       icon: <Activity className="w-6 h-6 text-amber-500" />,
       title: 'Flickering or Dimming Lights',
       desc: 'Lights fluctuating when large appliances (like AC units or refrigerators) start up show voltage drops or wiring connectivity issues.',
+      link: '/lighting-installation-hahnville-la',
+      linkText: 'Lighting Installation',
     },
     {
       icon: <ShieldAlert className="w-6 h-6 text-electric-600" />,
       title: 'Outdated Fuse Boxes or 100A Panels',
       desc: 'Older properties with fuse boxes or undersized panels cannot handle modern power draws from computers, EVs, and modern appliances.',
+      link: '/electrical-panel-upgrades-hahnville-la',
+      linkText: 'Electrical Panel Upgrades',
     },
     {
       icon: <Zap className="w-6 h-6 text-amber-500" />,
       title: 'Buzzing or Crackling Panel Noises',
       desc: 'Electrical panels should operate silently. Humming, clicking, or buzzing sounds point to loose wire lugs or failing breaker connections.',
+      link: '/electrical-panel-repair-hahnville-la',
+      linkText: 'Electrical Panel Repair',
     },
     {
       icon: <Plug className="w-6 h-6 text-electric-600" />,
       title: 'Ungrounded 2-Prong Receptacles',
       desc: 'Old two-prong outlets lack crucial ground path protection, exposing valuable sensitive electronics and your family to shock hazards.',
+      link: '/electrical-wiring-installation-hahnville-la',
+      linkText: 'Electrical Wiring Installation',
     },
   ];
 
@@ -179,14 +191,20 @@ export default function Home() {
         <div className="container-page relative py-20 md:py-28">
           <div className="max-w-2xl animate-fade-in-up">
             <div className="flex flex-wrap items-center gap-2 mb-6">
-              <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-amber-500/20 text-amber-400 text-xs sm:text-sm font-semibold border border-amber-500/30">
+              <Link
+                to="/electrician-hahnville-la"
+                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-amber-500/20 hover:bg-amber-500/30 text-amber-400 text-xs sm:text-sm font-semibold border border-amber-500/30 transition-all"
+              >
                 <Zap className="w-4 h-4" fill="currentColor" />
                 Primary Hub: Hahnville, Louisiana 70057
-              </span>
-              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-electric-500/20 text-electric-300 text-xs sm:text-sm font-medium border border-electric-500/30">
+              </Link>
+              <Link
+                to="/service-areas"
+                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-electric-500/20 hover:bg-electric-500/30 text-electric-300 text-xs sm:text-sm font-medium border border-electric-500/30 transition-all"
+              >
                 <MapPin className="w-3.5 h-3.5" />
                 Serving All of St. Charles Parish
-              </span>
+              </Link>
               <Link
                 to="/reviews"
                 className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/10 hover:bg-white/20 text-white text-xs sm:text-sm font-semibold border border-white/25 transition-all backdrop-blur-sm"
@@ -394,17 +412,26 @@ export default function Home() {
             {warningSigns.map((item, idx) => (
               <div
                 key={idx}
-                className="p-6 rounded-2xl border border-navy-100 bg-white shadow-sm hover:shadow-md hover:border-amber-300 transition-all flex flex-col"
+                className="p-6 rounded-2xl border border-navy-100 bg-white shadow-sm hover:shadow-md hover:border-amber-300 transition-all flex flex-col justify-between"
               >
-                <div className="w-12 h-12 rounded-xl bg-navy-50 flex items-center justify-center mb-4">
-                  {item.icon}
+                <div>
+                  <div className="w-12 h-12 rounded-xl bg-navy-50 flex items-center justify-center mb-4">
+                    {item.icon}
+                  </div>
+                  <h3 className="font-display text-lg font-bold text-navy-900 mb-2">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm text-navy-600 leading-relaxed mb-4">
+                    {item.desc}
+                  </p>
                 </div>
-                <h3 className="font-display text-lg font-bold text-navy-900 mb-2">
-                  {item.title}
-                </h3>
-                <p className="text-sm text-navy-600 leading-relaxed flex-1">
-                  {item.desc}
-                </p>
+                <Link
+                  to={item.link}
+                  className="inline-flex items-center gap-1 text-xs font-bold text-electric-600 hover:text-electric-800 transition-colors pt-3 border-t border-slate-100"
+                >
+                  <span>Explore {item.linkText}</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
               </div>
             ))}
           </div>

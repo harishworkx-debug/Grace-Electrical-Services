@@ -30,17 +30,23 @@ export default function ServiceAreaDetail() {
 
   const isHahnvilleHQ = area.slug === 'electrician-hahnville-la';
 
-  const pageTitle = isHahnvilleHQ
-    ? 'Local Electrician in Hahnville, LA | Grace Electrical Services'
-    : `Electrician in ${area.city}, ${area.state} | Grace Electrical Services`;
+  const pageTitle =
+    area.seoTitle ||
+    (isHahnvilleHQ
+      ? 'Electrician in Hahnville, LA | Grace Electrical Services'
+      : `Electrician in ${area.city}, ${area.state} | Grace Electrical Services`);
 
-  const metaDescription = isHahnvilleHQ
-    ? 'Looking for a local electrician in Hahnville, LA? Explore local electrical repair, wiring, outlet, lighting and panel services from Grace Electrical Services.'
-    : `Looking for a licensed electrician in ${area.city}, ${area.state}? Grace Electrical Services provides professional wiring, panel upgrades, and repairs across St. Charles Parish.`;
+  const metaDescription =
+    area.metaDescription ||
+    (isHahnvilleHQ
+      ? 'Looking for a local electrician in Hahnville, LA? Explore local electrical repair, wiring, outlet, lighting and panel services from Grace Electrical Services.'
+      : `Looking for a licensed electrician in ${area.city}, ${area.state}? Grace Electrical Services provides professional wiring, panel upgrades, and repairs across St. Charles Parish.`);
 
-  const h1Heading = isHahnvilleHQ
-    ? 'Your Local Electrician in Hahnville, LA'
-    : `Licensed Electrician in ${area.city}, ${area.state}`;
+  const h1Heading =
+    area.h1Heading ||
+    (isHahnvilleHQ
+      ? 'Electrician Serving Hahnville, Louisiana'
+      : `Licensed Electrician in ${area.city}, ${area.state}`);
 
   useSEO({
     title: pageTitle,

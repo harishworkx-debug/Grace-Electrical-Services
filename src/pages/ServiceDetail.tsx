@@ -47,8 +47,12 @@ export default function ServiceDetail() {
 
   if (!service) return <Navigate to="/404" replace />;
 
+  const pageTitle =
+    service.seoTitle || `${service.title} in Hahnville, LA | Grace Electrical Services`;
+  const pageH1 = service.h1Heading || `${service.title} in ${BUSINESS.city}, LA`;
+
   useSEO({
-    title: `${service.title} in Hahnville, LA | Grace Electrical Services`,
+    title: pageTitle,
     description: service.description,
     canonicalPath: `/${service.slug}`,
     ogImage: service.heroImage,
@@ -115,7 +119,7 @@ export default function ServiceDetail() {
 
             {/* H1 Title */}
             <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold text-white mb-4 tracking-tight leading-tight">
-              {service.title} in {BUSINESS.city}, LA
+              {pageH1}
             </h1>
 
             {/* Intent-focused Introduction */}

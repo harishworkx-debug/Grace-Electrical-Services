@@ -1,4 +1,4 @@
-﻿export const BUSINESS = {
+export const BUSINESS = {
   name: 'Grace Electrical Services',
   phone: '504-534-9620',
   phoneLink: 'tel:+15045349620',
@@ -16,6 +16,8 @@ export type ServiceInfo = {
   slug: string;
   title: string;
   shortTitle: string;
+  seoTitle?: string;
+  h1Heading?: string;
   searchFocus: string;
   description: string;
   heroImage: string;
@@ -52,14 +54,14 @@ export const SERVICES: ServiceInfo[] = [
     shortTitle: 'Wiring Installation',
     searchFocus: 'Electrical wiring installation Hahnville LA',
     description:
-      'Need electrical wiring installation in Hahnville, LA? Explore wiring options, learn about the installation process and contact Grace Electrical Services for an estimate.',
+      'Planning an electrical installation or renovation in Hahnville, LA? Grace Electrical Services provides professional residential wiring installation, new circuits, and electrical wiring replacement. Call 504-534-9620.',
     heroImage:
       'https://images.pexels.com/photos/4981793/pexels-photo-4981793.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     heroAlt:
       'Electrician installing new copper electrical wiring wearing safety gear',
     icon: 'Cable',
     longDescription:
-      'Proper electrical wiring installation forms the backbone of any safe, functional home or commercial facility. In Hahnville, Louisiana, where high humidity and seasonal storms test electrical infrastructure, every wire run must be planned with precision. Grace Electrical Services provides comprehensive new and replacement wiring for residential construction, room additions, detached workshops, and major property renovations, ensuring your circuits strictly comply with National Electrical Code (NEC) guidelines and local St. Charles Parish building safety standards.',
+      "Planning an electrical installation or renovation in Hahnville, Louisiana? Grace Electrical Services provides comprehensive assistance for residential wiring projects, from planning new electrical wiring circuits to addressing damaged or outdated conductors. As a trusted local house wiring electrician, Rodney delivers code-compliant residential wiring installation and electrical wiring replacement for room additions, detached workshops, and renovations—ensuring every circuit strictly adheres to National Electrical Code (NEC) standards and St. Charles Parish safety guidelines.",
     problemsAddressed: [
       {
         title: 'New Construction & Structural Additions',
@@ -169,16 +171,18 @@ export const SERVICES: ServiceInfo[] = [
     slug: 'electrical-repairs-troubleshooting-hahnville-la',
     title: 'Electrical Repairs and Troubleshooting',
     shortTitle: 'Repairs & Troubleshooting',
-    searchFocus: 'Electrical repair and troubleshooting Hahnville LA',
+    seoTitle: 'Electrical Repair in Hahnville, LA | Grace Electrical Services',
+    h1Heading: 'Electrical Repair and Troubleshooting in Hahnville, LA',
+    searchFocus: 'Electrical repair Hahnville LA',
     description:
-      'Troubleshooting recurring breaker trips, flickering lights or loss of power in Hahnville, LA? Learn safe next steps and book diagnostic repair with Grace Electrical Services.',
+      'Experiencing flickering lights, tripping breakers, or dead outlets? Grace Electrical Services provides expert electrical repair in Hahnville, LA. Call 504-534-9620.',
     heroImage:
       'https://images.pexels.com/photos/257736/pexels-photo-257736.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     heroAlt:
       'Electrician diagnosing circuit breaker wiring issues with test equipment',
     icon: 'Wrench',
     longDescription:
-      'Electrical problems often emerge without warningâ€”a breaker that refuses to stay reset, lights that dim every time the air conditioner turns on, or wall outlets that feel unusually warm. In Hahnville, ignoring these warning signs can escalate from an inconvenience into a dangerous fire hazard. Grace Electrical Services provides systematic, root-cause troubleshooting. Rather than blindly resetting breakers or swapping parts, Rodney uses calibrated multi-meters and circuit tracing to pinpoint the exact failure point and resolve it safely.',
+      "Experiencing flickering lights, frequently tripping breakers or outlets that have stopped working? Grace Electrical Services helps customers in Hahnville discuss electrical problems and determine the right repair approach. Electrical faults can have several causes, so proper diagnosis is important before repairs begin. Whether you are dealing with a breaker keeps tripping when appliances start, need a flickering lights repair specialist, or require an outlet not working electrician, Rodney provides thorough multi-meter diagnostics and code-compliant electrical repair in Hahnville, LA as your local electrician for electrical problems. IMPORTANT SAFETY NOTE: If you notice smoke, sparks, or a persistent burning smell, immediately stop using affected equipment, shut off the circuit breaker, and seek urgent professional help by calling 504-534-9620.",
     problemsAddressed: [
       {
         title: 'Frequent Circuit Breaker Tripping',
@@ -287,15 +291,17 @@ export const SERVICES: ServiceInfo[] = [
     slug: 'outlet-installation-hahnville-la',
     title: 'Outlet Installation',
     shortTitle: 'Outlet Installation',
+    seoTitle: 'Electrical Outlet Installation in Hahnville, LA',
+    h1Heading: 'Electrical Outlet Installation in Hahnville, LA',
     searchFocus: 'Outlet installation Hahnville LA',
     description:
-      'Need outlet installation in Hahnville, LA? Explore tamper-resistant receptacles, outdoor GFCI outlets, dedicated appliance circuits, and request an estimate.',
+      'Need an additional outlet or GFCI outlet installation in Hahnville, LA? Grace Electrical Services provides code-compliant outlet replacement. Call 504-534-9620.',
     heroImage:
       'https://images.pexels.com/photos/4981794/pexels-photo-4981794.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     heroAlt: 'Electrician installing and wiring a tamper-resistant power outlet',
     icon: 'Plug',
     longDescription:
-      'Modern Louisiana households require safe, convenient access to electricity without relying on dangerous webs of extension cords. Whether you need to replace old ungrounded two-prong outlets with modern grounded receptacles, add life-saving GFCI protection in moisture-prone kitchens and baths, or install heavy-duty 240V dedicated lines for dryers and EV chargers, Grace Electrical Services provides code-compliant outlet installations in Hahnville. We ensure every outlet is properly grounded, securely mounted, and balanced across your homeâ€™s electrical circuits.',
+      "Need an additional outlet in your Hahnville home or want to replace a damaged receptacle? Grace Electrical Services can help you discuss outlet placement, electrical capacity and suitable installation options. Our team can assess your requirements and explain the next steps for your project. Whether you are planning a new electrical outlet installation during home renovations, need a reliable outlet replacement electrician to eliminate loose plugs, or require dedicated GFCI outlet installation in kitchens, bathrooms, and outdoor areas, Rodney ensures all additional power outlets are securely grounded and code-compliant per National Electrical Code (NEC) standards.",
     problemsAddressed: [
       {
         title: 'Dangerous 2-Prong Ungrounded Receptacles',
@@ -328,7 +334,7 @@ export const SERVICES: ServiceInfo[] = [
       {
         step: 3,
         title: 'Side-Screw Terminal Termination',
-        desc: 'Wiring line, neutral, and ground wires to heavy-duty side screwsâ€”avoiding unreliable push-in backstabs.',
+        desc: 'Wiring line, neutral, and ground wires to heavy-duty side screws—avoiding unreliable push-in backstabs.',
       },
       {
         step: 4,
@@ -339,7 +345,7 @@ export const SERVICES: ServiceInfo[] = [
     safetyAndCode: [
       {
         title: 'Service Limitations & Circuit Load Limits',
-        desc: 'Per NEC guidelines, continuous loads must not exceed 80% of a circuitâ€™s rating. If a circuit is near capacity, we run a new dedicated home-run rather than overloading existing wires.',
+        desc: 'Per NEC guidelines, continuous loads must not exceed 80% of a circuit’s rating. If a circuit is near capacity, we run a new dedicated home-run rather than overloading existing wires.',
       },
       {
         title: 'Tamper-Resistant (TR) Receptacles',
@@ -372,11 +378,18 @@ export const SERVICES: ServiceInfo[] = [
     ],
     faqs: [
       {
-        question: 'What is the difference between GFCI and AFCI outlets?',
+        question: 'Can a new outlet be added to an existing circuit?',
         answer:
-          'GFCI (Ground Fault Circuit Interrupter) outlets protect people from electric shock in wet areas like bathrooms and kitchens. AFCI (Arc Fault Circuit Interrupter) protection detects sparking wires behind walls to prevent electrical fires. Both are code-required in modern homes.',
+          'Yes, in many situations an additional outlet can be safely tapped into an existing branch circuit if the total load permits. Per the National Electrical Code, a general-purpose circuit should not exceed 80% continuous load capacity. If the existing circuit already powers heavy appliances or experiences breaker trips, Rodney will assess your panel and recommend a new dedicated circuit instead.',
         linkPath: '/electrical-repairs-troubleshooting-hahnville-la',
-        linkText: 'Learn About Circuit Safety & Troubleshooting',
+        linkText: 'Learn About Circuit Capacity & Diagnostics',
+      },
+      {
+        question: 'Where is GFCI protection required?',
+        answer:
+          'Under current National Electrical Code (NEC Article 210.8) standards, GFCI protection is required in all locations where water contact or moisture is present. This includes bathrooms, kitchens (all countertop receptacles), laundry areas, garages, crawl spaces, unfinished basements, and all outdoor receptacles. GFCIs cut power in milliseconds if an electrical fault is detected, preventing fatal electric shocks.',
+        linkPath: '/guides',
+        linkText: 'Read Our Code & Safety Planning Guides',
       },
       {
         question: 'Can you install a 50-amp outlet for an EV charger in my Hahnville garage?',
@@ -396,15 +409,17 @@ export const SERVICES: ServiceInfo[] = [
     slug: 'switch-installation-hahnville-la',
     title: 'Switch Installation',
     shortTitle: 'Switch Installation',
+    seoTitle: 'Light Switch Installation in Hahnville, LA',
+    h1Heading: 'Light Switch Installation and Replacement in Hahnville, LA',
     searchFocus: 'Light switch installation Hahnville LA',
     description:
-      'Need light switch installation in Hahnville, LA? Explore LED-compatible dimmers, 3-way hallway switches, and smart controls installed safely by Grace Electrical Services.',
+      'Looking for light switch installation or replacement in Hahnville, LA? Grace Electrical Services provides dimmer, smart switch, and 3-way switch solutions. Call 504-534-9620.',
     heroImage:
       'https://images.pexels.com/photos/12996907/pexels-photo-12996907.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     heroAlt: 'Modern wall rocker light switches and dimmers installed cleanly',
     icon: 'ToggleRight',
     longDescription:
-      'Light switches are among the most frequently used components in any building. When switches become loose, crackle when flipped, or fail to control fixtures properly, they present both an annoyance and a loose-connection fire risk. Grace Electrical Services installs and replaces all varieties of switches in Hahnville, Louisianaâ€”from standard rockers and smooth LED dimmers to multi-location 3-way/4-way setups and smart Wi-Fi switches. We ensure your switch boxes have adequate cubic capacity and proper neutral connections for seamless, quiet operation.',
+      "Looking to replace an old light switch or improve lighting control in your Hahnville home? Grace Electrical Services can help you explore suitable switch installation and replacement options. The right solution depends on your existing wiring, lighting fixtures and the type of control you need. Whether you need a standard light switch replacement for a loose or crackling rocker, professional dimmer switch installation calibrated for silent LED operation, or smart switch installation requiring neutral wire verification, Rodney delivers code-compliant electrical switch repair and wiring across St. Charles Parish. We evaluate box cubic-inch volume and conductor compatibility so your switches function safely for years to come.",
     problemsAddressed: [
       {
         title: 'Buzzing or Flickering LED Dimmers',
@@ -505,9 +520,11 @@ export const SERVICES: ServiceInfo[] = [
     slug: 'electrical-panel-repair-hahnville-la',
     title: 'Electrical Panel Repair',
     shortTitle: 'Panel Repair',
+    seoTitle: 'Electrical Panel Repair in Hahnville, LA',
+    h1Heading: 'Electrical Panel Repair in Hahnville, LA',
     searchFocus: 'Electrical panel repair Hahnville LA',
     description:
-      'Noticing buzzing panels or failing circuit breakers in Hahnville, LA? Learn warning signs, safe diagnostic steps, and expert panel repairs from Grace Electrical Services.',
+      'Breakers repeatedly tripping or hearing buzzing in your panel? Grace Electrical Services provides professional electrical panel repair in Hahnville, LA. Call 504-534-9620.',
     heroImage:
       'https://images.pexels.com/photos/32497160/pexels-photo-32497160.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     heroAlt:
@@ -515,13 +532,13 @@ export const SERVICES: ServiceInfo[] = [
     icon: 'ShieldAlert',
     distinctionNote: {
       alertType: 'warning',
-      title: 'Panel Repair vs. Panel Upgrade â€” Which Do You Need?',
-      text: 'Panel repair fixes specific componentsâ€”such as replacing a failing circuit breaker, tightening loose neutral bars, or eliminating moisture corrosionâ€”within an existing, code-compliant panel that already has sufficient capacity. If your panel is over 25 years old, has a low 100A capacity, lacks slots for additions, or is a hazardous fuse box, you need an Electrical Panel Upgrade instead.',
+      title: 'Panel Repair vs. Panel Upgrade — Which Do You Need?',
+      text: 'Panel repair fixes specific components—such as replacing a failing circuit breaker, tightening loose neutral bars, or eliminating moisture corrosion—within an existing, code-compliant panel that already has sufficient capacity. If your panel is over 25 years old, has a low 100A capacity, lacks slots for additions, or is a hazardous fuse box, you need an Electrical Panel Upgrade instead.',
       linkTo: '/electrical-panel-upgrades-hahnville-la',
       linkText: 'Learn About Full 200A Panel Upgrades',
     },
     longDescription:
-      'Your electrical panel is the central nervous system of your propertyâ€™s power distribution. When breakers trip repeatedly, panel enclosures make faint buzzing sounds, or lights fluctuate across multiple rooms, the issue often traces directly to the breaker panel. Grace Electrical Services provides thorough panel diagnostic inspections and repairs in Hahnville, Louisiana. We identify whether individual breakers have deteriorated, bus bar connections have loosened, or corrosion is causing resistanceâ€”restoring safe, reliable power distribution.',
+      "Electrical panel problems can affect the safe and reliable operation of your property's electrical system. If breakers repeatedly trip, you notice unusual heat or hear buzzing near a panel, seek a qualified electrical assessment. Grace Electrical Services can discuss your concerns and help determine whether repair or a broader evaluation may be needed. From systematic breaker panel troubleshooting and resolving persistent circuit breaker problems to thorough electrical panel inspection, Rodney identifies whether individual components can be safely repaired or if wear warrants an upgrade. If you need a trusted breaker keeps tripping electrician in Hahnville, LA, call 504-534-9620 for prompt, root-cause diagnosis. WARNING: Never open or remove the dead-front metal cover of an energized panel—main 240V utility lugs remain energized even when the main breaker is switched off.",
     problemsAddressed: [
       {
         title: 'Failing or Weakened Circuit Breakers',
@@ -629,9 +646,11 @@ export const SERVICES: ServiceInfo[] = [
     slug: 'electrical-panel-upgrades-hahnville-la',
     title: 'Electrical Panel Upgrades',
     shortTitle: 'Panel Upgrades',
+    seoTitle: 'Electrical Panel Upgrade in Hahnville, LA',
+    h1Heading: 'Electrical Panel Upgrades in Hahnville, LA',
     searchFocus: 'Electrical panel upgrade Hahnville LA',
     description:
-      'Planning an electrical panel upgrade in Hahnville, LA? Learn about upgrading to 200 amps for modern appliances, EV chargers, permits, and request an estimate.',
+      'Planning an electrical panel upgrade in Hahnville, LA? Grace Electrical Services provides 200-amp breaker panel replacement. Call 504-534-9620 for an assessment.',
     heroImage:
       'https://images.pexels.com/photos/28950842/pexels-photo-28950842.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     heroAlt:
@@ -639,13 +658,13 @@ export const SERVICES: ServiceInfo[] = [
     icon: 'Zap',
     distinctionNote: {
       alertType: 'info',
-      title: 'Panel Upgrade vs. Panel Repair â€” What Is the Difference?',
+      title: 'Panel Upgrade vs. Panel Repair — What Is the Difference?',
       text: 'A panel upgrade replaces your entire service entrance, meter enclosure, and main distribution panel to expand your total capacity (typically upgrading from an old 100-amp service to 200-amp capacity). This is required when adding heavy modern loads like EV chargers, heat pumps, or major home additions. If your panel already has adequate capacity but has an isolated tripped breaker, see Electrical Panel Repair.',
       linkTo: '/electrical-panel-repair-hahnville-la',
       linkText: 'View Component Panel Repair Services',
     },
     longDescription:
-      'Many homes in Hahnville and throughout St. Charles Parish were built decades ago with 60-amp or 100-amp electrical panels. Todayâ€™s households run central air conditioners, electric vehicle chargers, heat pumps, computers, and high-draw kitchen appliances that easily overwhelm older panels. An electrical panel upgrade replaces your outdated enclosure with a modern 200-amp service panel featuring full AFCI/GFCI protection, whole-home surge suppression, and dedicated space for backup generator interlocks. Grace Electrical Services manages the entire process from load calculations to Entergy utility coordination and parish inspection sign-off.',
+      "Adding major appliances, renovating your home or experiencing repeated electrical capacity problems may mean it is time to assess your electrical panel. Grace Electrical Services can discuss your property's electrical needs and help you understand the options for an appropriate panel upgrade. Whether you require a full breaker panel replacement from an outdated 100-amp service, a complete home electrical service upgrade for EV charging and HVAC, or an electrical capacity assessment per NEC Article 220, Rodney coordinates the entire process with St. Charles Parish inspectors and Entergy. Regarding electrical panel upgrade cost, pricing varies depending on total amperage, service mast condition, grounding electrode requirements, and utility meter location. We provide upfront, transparent estimates following an on-site inspection—avoiding blind fixed quotes without evaluating your actual electrical installation.",
     problemsAddressed: [
       {
         title: 'Undersized 100A or 60A Electrical Service',
@@ -751,16 +770,18 @@ export const SERVICES: ServiceInfo[] = [
     slug: 'lighting-installation-hahnville-la',
     title: 'Lighting Installation',
     shortTitle: 'Lighting Installation',
+    seoTitle: 'Lighting Installation in Hahnville, LA',
+    h1Heading: 'Indoor and Outdoor Lighting Installation in Hahnville, LA',
     searchFocus: 'Lighting installation Hahnville LA',
     description:
-      'Looking for lighting installation in Hahnville, LA? Explore recessed canless LEDs, structural ceiling fan braces, chandeliers, and outdoor security fixtures.',
+      'Looking for lighting installation in Hahnville, LA? Grace Electrical Services provides recessed LEDs, light fixtures, and outdoor lighting. Call 504-534-9620.',
     heroImage:
       'https://images.pexels.com/photos/4792521/pexels-photo-4792521.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     heroAlt:
       'Electrician installing modern recessed ceiling lighting in a renovated home',
     icon: 'Lightbulb',
     longDescription:
-      'Lighting dramatically shapes the comfort, security, and beauty of your property. Whether you are replacing old halogen cans with energy-efficient ultra-thin LED recessed wafers, mounting heavy chandeliers in vaulted entryways, adding exterior security floodlights, or installing structural ceiling fans for southern Louisiana summers, Grace Electrical Services provides expert installation. Rodney ensures all junction boxes are structurally rated, properly anchored to ceiling joists, and wired to smooth dimmer controls.',
+      "Improve the functionality and appearance of your property with thoughtfully planned lighting. Grace Electrical Services can help Hahnville customers explore lighting installation options for interior spaces and outdoor areas, with recommendations based on the property's layout and electrical requirements. From precision recessed lighting installation using energy-efficient canless wafers to safe light fixture installation for heavy dining chandeliers and ceiling fans, Rodney ensures every junction box is structurally rated and properly wired. If you need a trusted outdoor lighting electrician for floodlights or security illumination, or want modern LED lighting installation paired with flicker-free dimmer controls, we evaluate fixture compatibility and load capacity to deliver exceptional results.",
     problemsAddressed: [
       {
         title: 'Dark or Unevenly Lit Living Spaces',
@@ -868,16 +889,25 @@ export const SERVICES: ServiceInfo[] = [
     slug: 'electrical-rewiring-hahnville-la',
     title: 'Electrical Rewiring',
     shortTitle: 'Rewiring',
+    seoTitle: 'Home Electrical Rewiring in Hahnville, LA',
+    h1Heading: 'Electrical Rewiring Services in Hahnville, LA',
     searchFocus: 'Electrical rewiring Hahnville LA',
     description:
-      'Signs of aging cloth or ungrounded wiring in Hahnville, LA? Learn about partial versus whole-house rewiring, renovation safety, and request an assessment.',
+      'Signs of aging cloth or ungrounded wiring in Hahnville, LA? Grace Electrical Services provides partial and whole-house residential rewiring. Call 504-534-9620.',
     heroImage:
       'https://images.pexels.com/photos/3614763/pexels-photo-3614763.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     heroAlt:
       'Fresh copper Romex electrical wiring being pulled during home rewiring',
     icon: 'Cable',
     longDescription:
-      'Many older homes along the Mississippi River in St. Charles Parish still contain original electrical wiring installed 40 to 60+ years ago. Over decades, cloth-jacketed wiring degrades, rubber insulation becomes brittle, and older circuits lack vital equipment grounding paths. Grace Electrical Services specializes in partial and whole-house electrical rewiring in Hahnville, Louisiana. Rodney carefully plans wire pulls through attics, crawl spaces, and wall cavities to replace hazardous, fire-prone wiring with modern Romex copper circuits while minimizing impact on your walls and woodwork.',
+      "Older wiring, repeated electrical faults or a major renovation may justify a professional review of your home's electrical system. Grace Electrical Services can help property owners in Hahnville discuss rewiring requirements and understand the assessment, planning and installation stages involved. While not all older homes require complete rewiring—many properties benefit significantly from targeted partial rewiring in high-demand areas like kitchens and bathrooms—addressing brittle insulation and ungrounded circuits is critical. As an experienced house rewiring electrician, Rodney handles complex old house electrical wiring, code-compliant residential rewiring, and phased electrical wiring replacement. Using non-destructive wire fishing techniques through attics and crawl spaces, we modernize your circuits with minimal sheetrock disruption.",
+    realWorkExample: {
+      client: 'Rhodes',
+      location: 'St. Charles Parish, LA',
+      scope: 'Whole-house electrical wiring & circuit modernization',
+      quote:
+        'I hired Rodney to wire a house for me. He is a very efficient, knowledgeable and competent electrician to hire. Passed parish code inspections on the first walkthrough.',
+    },
     problemsAddressed: [
       {
         title: 'Brittle Cloth-Jacketed & Rubber Insulation',
@@ -983,9 +1013,11 @@ export const SERVICES: ServiceInfo[] = [
     slug: 'residential-electrical-services-hahnville-la',
     title: 'Residential Electrical Services',
     shortTitle: 'Residential Services',
+    seoTitle: 'Residential Electrician in Hahnville, LA | Grace Electrical Services',
+    h1Heading: 'Residential Electrical Services in Hahnville, LA',
     searchFocus: 'Residential electrician Hahnville LA',
     description:
-      'Looking for a trusted residential electrician in Hahnville, LA? Explore dedicated homeowner repairs, wiring, lighting, and child-safe panel upgrades by Rodney.',
+      'Need electrical work for your home in Hahnville, LA? Grace Electrical Services provides trusted residential repairs, wiring, and panel work. Call 504-534-9620.',
     heroImage:
       'https://images.pexels.com/photos/3615735/pexels-photo-3615735.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     heroAlt:
@@ -999,7 +1031,7 @@ export const SERVICES: ServiceInfo[] = [
       linkText: 'Visit the Overall Services Hub',
     },
     longDescription:
-      'Your home is your familyâ€™s sanctuary, and reliable electricity is essential for daily comfort, safety, and modern living. Grace Electrical Services is dedicated exclusively to delivering trusted, friendly, and code-compliant residential electrical work in Hahnville, Louisiana. As an independent local company owned and operated by Rodney, we treat your home with the care and respect of a good neighbor. From simple ceiling fan swaps and GFCI additions to emergency diagnostic troubleshooting and full 200-amp panel overhauls, we provide transparent quotes, on-time arrivals, and meticulous cleanup.',
+      "Need electrical work for your home in Hahnville, Louisiana? Grace Electrical Services helps homeowners explore electrical service options for repairs, wiring, lighting and other residential projects. Tell us about your property's needs so we can discuss the appropriate service and next steps. Serving as your direct local residential electrician in Hahnville, LA, Rodney provides comprehensive home electrical services—from urgent residential electrical repairs and breaker diagnostics to dedicated home wiring electrician solutions for kitchen additions, EV chargers, and 200A panel upgrades. This residential hub connects you directly to our detailed service pages so you can explore specialized solutions for your family's needs.",
     problemsAddressed: [
       {
         title: 'Home Electrical Safety & Code Inspections',
@@ -1108,16 +1140,18 @@ export const SERVICES: ServiceInfo[] = [
     slug: 'commercial-electrical-services-hahnville-la',
     title: 'Commercial Electrical Services',
     shortTitle: 'Commercial Services',
+    seoTitle: 'Commercial Electrician in Hahnville, LA | Grace Electrical Services',
+    h1Heading: 'Commercial Electrical Services in Hahnville, LA',
     searchFocus: 'Commercial electrician Hahnville LA',
     description:
-      'Need a commercial electrician in Hahnville or St. Charles Parish? Explore tenant build-outs, 3-phase machinery circuits, LED high-bays, and scheduled maintenance.',
+      'Need a commercial electrician in Hahnville, LA? Grace Electrical Services provides business electrical repairs, commercial lighting, and maintenance. Call 504-534-9620.',
     heroImage:
       'https://images.pexels.com/photos/8961695/pexels-photo-8961695.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     heroAlt:
       'Electrician pulling conduit cables on a commercial building site',
     icon: 'Building2',
     longDescription:
-      'Commercial electrical systems require specialized technical knowledge of high-voltage distribution, three-phase power, commercial building codes, and safety interlocks. When electrical issues arise in a commercial facility, every hour of downtime means lost revenue. Grace Electrical Services provides dependable commercial electrical services throughout Hahnville, Luling, Destrehan, Norco, and industrial corridor communities in St. Charles Parish. We work closely with business owners, property managers, and general contractors to execute tenant improvements, equipment connections, and lighting overhauls on time and on budget.',
+      "Electrical reliability is important for commercial properties and business operations. Grace Electrical Services can help Hahnville businesses discuss their electrical project requirements, from lighting and wiring to troubleshooting and other appropriate electrical work. Contact the team to discuss your property and project scope. Serving as your direct commercial electrician in Hahnville, LA, Rodney provides dependable commercial electrical repairs, business electrical installation for tenant improvements, energy-efficient commercial lighting installation, and scheduled commercial electrical maintenance. We understand that downtime costs revenue, which is why we coordinate flexible scheduling, safe job-site access, and strict commercial NEC code compliance to keep your facility operating safely.",
     problemsAddressed: [
       {
         title: 'Commercial Tenant Build-Outs & Remodels',
@@ -1222,6 +1256,9 @@ export type ServiceAreaInfo = {
   city: string;
   state: string;
   zip: string;
+  seoTitle?: string;
+  h1Heading?: string;
+  metaDescription?: string;
   bank: 'West Bank' | 'East Bank';
   travelTimeFromHQ: string;
   corridor: string;
@@ -1270,12 +1307,14 @@ export const SERVICE_AREAS: ServiceAreaInfo[] = [
     city: 'Hahnville',
     state: 'LA',
     zip: '70057',
+    seoTitle: 'Electrician in Hahnville, LA | Grace Electrical Services',
+    h1Heading: 'Electrician Serving Hahnville, Louisiana',
     bank: 'West Bank',
     travelTimeFromHQ: 'Headquarters Base (Same-Day Response)',
     corridor: 'River Road (LA-18), LA-3160, St. Charles Parish Courthouse district',
-    headline: 'Trusted Local Electrician in Hahnville, LA â€” Direct Owner-Operator',
+    headline: 'Trusted Local Electrician in Hahnville, LA — Direct Owner-Operator',
     description:
-      'Hahnville is the hometown and primary operational base of Grace Electrical Services. As the parish seat of St. Charles Parish, Hahnville is home to historic riverfront properties, established subdivisions, and growing families. Rodney provides direct, master-level electrical troubleshooting, rewiring, panel replacements, and code compliance throughout Hahnville with rapid same-day response and zero corporate overhead markups.',
+      "Looking for electrical services in Hahnville, Louisiana? Grace Electrical Services helps local property owners discuss electrical repairs, wiring, lighting, outlets and other project requirements. Whether you are planning an improvement or dealing with an electrical issue, contact our team to discuss your needs and the appropriate next steps. Rodney serves as your licensed electrical contractor in Hahnville, LA and dependable local electrician. From comprehensive home electrical services and 200A panel upgrades to code compliance, our hometown base provides prompt same-day response with zero travel surcharges.",
     heroImage:
       'https://images.pexels.com/photos/3615735/pexels-photo-3615735.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     localProofSnippet: {
@@ -1345,7 +1384,7 @@ export const SERVICE_AREAS: ServiceAreaInfo[] = [
       {
         question: 'Why choose Grace Electrical Services over large New Orleans electrical franchises?',
         answer:
-          'Grace Electrical Services is based right in Hahnville. When you call 504-534-9620, you speak directly with Rodneyâ€”the electrician doing the work. You get honest pricing without corporate franchise dispatch fees or high-pressure upselling, backed by 100% 5-star verified local reviews.',
+          'Grace Electrical Services is based right in Hahnville. When you call 504-534-9620, you speak directly with Rodney—the electrician doing the work. You get honest pricing without corporate franchise dispatch fees or high-pressure upselling, backed by 100% 5-star verified local reviews.',
         linkPath: '/about',
         linkText: 'Learn About Rodney & Grace Electrical Services',
       },
@@ -1376,12 +1415,14 @@ export const SERVICE_AREAS: ServiceAreaInfo[] = [
     city: 'Luling',
     state: 'LA',
     zip: '70070',
+    seoTitle: 'Electrician in Luling, LA | Grace Electrical Services',
+    h1Heading: 'Electrical Services for Customers in Luling, LA',
     bank: 'West Bank',
-    travelTimeFromHQ: '5â€“8 Minutes via River Road (LA-18) or Paul Maillard Rd (LA-52)',
+    travelTimeFromHQ: '5–8 Minutes via River Road (LA-18) or Paul Maillard Rd (LA-52)',
     corridor: 'Paul Maillard Rd (LA-52), Lakewood, Mimosa Park, Willowdale, Ashton',
     headline: 'Reliable Residential & Commercial Electrician in Luling, LA',
     description:
-      'Luling is just minutes from our Hahnville headquarters, making it one of our most frequent daily service areas. Home to major residential neighborhoods like Willowdale, Mimosa Park, and Lakewood, Luling homeowners often require panel upgrades for central AC replacements, swimming pool wiring, kitchen remodel circuits, and structural ceiling fan installations. Rodney provides prompt, friendly, and meticulous electrical workmanship for Luling families and local businesses.',
+      "Need an electrician serving Luling, Louisiana? Grace Electrical Services can help you discuss your residential or commercial electrical requirements, including electrical wiring, lighting, outlet installation and electrical repair in Luling, LA where offered. As your dedicated residential electrician in Luling, Rodney is just 5 to 8 minutes away across River Road (LA-18) and Paul Maillard Rd (LA-52), providing prompt troubleshooting and code-compliant installations. Contact the team to confirm service availability for your address and arrange a discussion about your project.",
     heroImage:
       'https://images.pexels.com/photos/12996907/pexels-photo-12996907.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     localProofSnippet: {
@@ -1482,12 +1523,14 @@ export const SERVICE_AREAS: ServiceAreaInfo[] = [
     city: 'Destrehan',
     state: 'LA',
     zip: '70047',
+    seoTitle: 'Electrician in Destrehan, LA | Grace Electrical Services',
+    h1Heading: 'Electrician Serving Destrehan, Louisiana',
     bank: 'East Bank',
-    travelTimeFromHQ: '10â€“12 Minutes via the Hale Boggs Memorial Bridge (I-310)',
+    travelTimeFromHQ: '10–12 Minutes via the Hale Boggs Memorial Bridge (I-310)',
     corridor: 'River Road (LA-48), Ormond Blvd, I-310, Destrehan Plantation area',
     headline: 'Premier Residential & Commercial Electrician in Destrehan, LA',
     description:
-      'Destrehan is the premier East Bank community of St. Charles Parish, situated just across the Mississippi River via the Hale Boggs Memorial Bridge (I-310). Grace Electrical Services serves Destrehan daily, providing expert electrical services for upscale homes in Ormond Estates, riverfront residences, and local commercial establishments. From intricate interior chandelier mounting and recessed lighting layouts to whole-home surge suppression and generator interlocks, Rodney delivers meticulous craftsmanship.',
+      "Looking for help with an electrical project in Destrehan, Louisiana? Grace Electrical Services can discuss electrical repairs, panel concerns, lighting improvements and other services the business offers. As your trusted electrical contractor in Destrehan, LA, Rodney provides specialized electrical panel repair, 200A service upgrades, and custom lighting installation in Destrehan, LA for homes in Ormond Estates and surrounding East Bank neighborhoods. Tell us about your property and the issue you are experiencing so we can discuss the appropriate next steps.",
     heroImage:
       'https://images.pexels.com/photos/4792521/pexels-photo-4792521.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     localProofSnippet: {
@@ -1588,12 +1631,14 @@ export const SERVICE_AREAS: ServiceAreaInfo[] = [
     city: 'Norco',
     state: 'LA',
     zip: '70079',
+    seoTitle: 'Electrician in Norco, LA | Grace Electrical Services',
+    h1Heading: 'Electrical Services in Norco, Louisiana',
     bank: 'East Bank',
-    travelTimeFromHQ: '12â€“15 Minutes via I-310 and River Road (LA-48)',
-    corridor: 'River Road (LA-48), Apple Street, Airline Hwy (US-61), Bonnet CarrÃ© Spillway edge',
-    headline: 'Experienced Electrician in Norco, LA â€” Residential & Commercial',
+    travelTimeFromHQ: '12–15 Minutes via I-310 and River Road (LA-48)',
+    corridor: 'River Road (LA-48), Apple Street, Airline Hwy (US-61), Bonnet Carré Spillway edge',
+    headline: 'Experienced Electrician in Norco, LA — Residential & Commercial',
     description:
-      'Norco is a historic East Bank industrial and residential community bordered by the Bonnet CarrÃ© Spillway and the Mississippi River. Many established Norco homes feature wiring installed 40 to 60+ years ago that requires expert modernization. Grace Electrical Services provides dependable rewiring, panel replacements, weatherhead repairs, and commercial electrical maintenance for Norco residents and local industrial contractors.',
+      "Need electrical service in Norco, Louisiana? Grace Electrical Services can help you discuss your property's electrical requirements, including repair, installation and upgrade options where offered. Serving the East Bank corridor as an experienced commercial electrician and residential contractor, Rodney delivers robust electrical panel upgrade and electrical repair in Norco, LA, including surge suppression against industrial grid transients. Contact the team to confirm service availability and explain whether your project involves a home, business or other property.",
     heroImage:
       'https://images.pexels.com/photos/257736/pexels-photo-257736.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     localProofSnippet: {
@@ -1694,12 +1739,14 @@ export const SERVICE_AREAS: ServiceAreaInfo[] = [
     city: 'Boutte',
     state: 'LA',
     zip: '70039',
+    seoTitle: 'Electrician in Boutte, LA | Grace Electrical Services',
+    h1Heading: 'Electrical Services in Boutte, Louisiana',
     bank: 'West Bank',
-    travelTimeFromHQ: '7â€“10 Minutes south via LA-3160 and US-90',
+    travelTimeFromHQ: '7–10 Minutes south via LA-3160 and US-90',
     corridor: 'US-90 commercial highway, Barton Ave, Magnolia Ridge, I-310 interchange',
-    headline: 'Expert Electrician in Boutte, LA â€” Commercial Hub & Residential Specialist',
+    headline: 'Expert Electrician in Boutte, LA — Commercial Hub & Residential Specialist',
     description:
-      'Boutte serves as the primary commercial and retail crossroads on the West Bank of St. Charles Parish, where US-90 meets Interstate 310. Grace Electrical Services is located just minutes north in Hahnville, providing responsive commercial electrical installations for retail plazas, restaurants, and auto centers, alongside dependable residential services for neighborhoods along Barton Avenue and Magnolia Ridge.',
+      "Planning electrical work in Boutte, Louisiana? Grace Electrical Services can discuss your property's electrical requirements and help you understand the available service options. From troubleshooting to planned wiring or lighting projects, the right approach depends on the condition of your electrical system and the work required. Rodney serves as your licensed electrical contractor and home electrician in Boutte, providing code-compliant commercial power drops, panel replacements, and electrical repair in Boutte, LA with zero travel surcharges.",
     heroImage:
       'https://images.pexels.com/photos/8961695/pexels-photo-8961695.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     localProofSnippet: {
@@ -1800,12 +1847,14 @@ export const SERVICE_AREAS: ServiceAreaInfo[] = [
     city: 'Paradis',
     state: 'LA',
     zip: '70080',
+    seoTitle: 'Electrician in Paradis, LA | Grace Electrical Services',
+    h1Heading: 'Electrical Services in Paradis, Louisiana',
     bank: 'West Bank',
-    travelTimeFromHQ: '12â€“15 Minutes southwest via US-90 West',
+    travelTimeFromHQ: '12–15 Minutes southwest via US-90 West',
     corridor: 'US-90 West, Old Spanish Trail, Bayou Gauche corridor',
-    headline: 'Trusted Local Electrician in Paradis, LA â€” Workshops & Residential Power',
+    headline: 'Trusted Local Electrician in Paradis, LA — Workshops & Residential Power',
     description:
-      'Paradis is a peaceful West Bank community surrounded by scenic bayous and expansive residential parcels. Located just down Highway 90 from Boutte and Hahnville, Grace Electrical Services regularly serves Paradis homeowners needing detached workshop wiring, boat shed power, generator interlock switches, and rural electrical repairs. Rodney provides personal, dependable service with transparent estimates and zero corporate markups.',
+      "Need to discuss electrical work for your property in Paradis, Louisiana? Grace Electrical Services can help you understand suitable options for electrical repairs, wiring, lighting and other available services. Serving along the West Bank US-90 and bayou corridor as your home wiring electrician and lighting electrician in Paradis, LA, Rodney provides storm-resilient electrical repair, boat shed subpanels, weatherhead restoration, and generator connections. Contact the team to confirm coverage and explain the work you need.",
     heroImage:
       'https://images.pexels.com/photos/4981793/pexels-photo-4981793.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     localProofSnippet: {
@@ -1905,12 +1954,14 @@ export const SERVICE_AREAS: ServiceAreaInfo[] = [
     city: 'St. Rose',
     state: 'LA',
     zip: '70087',
+    seoTitle: 'Electrician in St. Rose, LA | Grace Electrical Services',
+    h1Heading: 'Electrician Serving St. Rose, Louisiana',
     bank: 'East Bank',
-    travelTimeFromHQ: '15â€“18 Minutes via I-310 and Airline Hwy (US-61)',
+    travelTimeFromHQ: '15–18 Minutes via I-310 and Airline Hwy (US-61)',
     corridor: 'Airline Hwy (US-61), James Business Park, River Road (LA-48), near Jefferson Parish line',
-    headline: 'Professional Electrician in St. Rose, LA â€” Industrial, Commercial & Residential',
+    headline: 'Professional Electrician in St. Rose, LA — Industrial, Commercial & Residential',
     description:
-      'St. Rose is a bustling East Bank community bordering Jefferson Parish and Kenner. Known for major logistics facilities, distribution warehouses at James Business Park, and established residential streets, St. Rose requires high-caliber commercial electrical capabilities as well as dependable home electrical care. Grace Electrical Services provides comprehensive service across St. Rose, from warehouse high-bay lighting and 3-phase machinery circuits to residential panel overhauls.',
+      "Looking for an electrician serving St. Rose, Louisiana? Grace Electrical Services can help you discuss your electrical project, from troubleshooting and wiring to other available installation or repair services. Serving commercial logistics parks and residential neighborhoods as your dedicated electrical contractor in St. Rose, LA, Rodney handles heavy-duty electrical wiring in St. Rose, warehouse LED lighting, and commercial electrical panel repair. Share your requirements with the team to confirm whether your property is within the service area.",
     heroImage:
       'https://images.pexels.com/photos/8961695/pexels-photo-8961695.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     localProofSnippet: {
@@ -2011,18 +2062,20 @@ export const SERVICE_AREAS: ServiceAreaInfo[] = [
     city: 'New Sarpy',
     state: 'LA',
     zip: '70078',
+    seoTitle: 'Electrician in New Sarpy, LA | Grace Electrical Services',
+    h1Heading: 'Electrical Services in New Sarpy, Louisiana',
     bank: 'East Bank',
-    travelTimeFromHQ: '12â€“14 Minutes via Hale Boggs Bridge and River Road',
+    travelTimeFromHQ: '12–14 Minutes via Hale Boggs Bridge and River Road',
     corridor: 'River Road (LA-48), Airline Hwy, nestled between Norco and Destrehan',
-    headline: 'Dedicated Local Electrician in New Sarpy, LA â€” Home Safety & Remodels',
+    headline: 'Dedicated Local Electrician in New Sarpy, LA — Home Safety & Remodels',
     description:
-      'New Sarpy is a close-knit East Bank residential community nestled along the Mississippi River levee between Norco and Destrehan. Primarily composed of established single-family homes, New Sarpy frequently requires expert electrical updates during kitchen and bathroom remodels, aging breaker panel replacements, and safe grounding additions. Grace Electrical Services crosses the Hale Boggs Bridge daily to deliver prompt, neat, and honest electrical care to New Sarpy homeowners.',
+      'Searching for electrical services in New Sarpy, Louisiana? Grace Electrical Services can discuss electrical problems and planned installation projects, depending on the services available for your property. Serving as your trusted electrical contractor in New Sarpy, LA, Rodney provides diagnostic electrical repair in New Sarpy, home electrical services, and kitchen remodel branch circuits across East Bank residential neighborhoods. Contact the team to confirm coverage and explain your electrical requirements before arranging the next steps.',
     heroImage:
       'https://images.pexels.com/photos/3614763/pexels-photo-3614763.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     localProofSnippet: {
       reviewer: 'Anthony & Shelby',
       text: 'Great experience overall! Prompt response and came out the next day. Rodney is very professional, fair with pricing, and does top quality work. Definitely our go-to electrician.',
-      context: 'St. Charles Parish Residents â€¢ Ceiling Fans & Home Repairs',
+      context: 'St. Charles Parish Residents • Ceiling Fans & Home Repairs',
     },
     communityProfile: {
       overview:
@@ -2117,18 +2170,20 @@ export const SERVICE_AREAS: ServiceAreaInfo[] = [
     city: 'Ama',
     state: 'LA',
     zip: '70031',
+    seoTitle: 'Electrician in Ama, LA | Grace Electrical Services',
+    h1Heading: 'Electrical Services for Ama, Louisiana',
     bank: 'West Bank',
-    travelTimeFromHQ: '12â€“15 Minutes east along River Road (LA-18)',
+    travelTimeFromHQ: '12–15 Minutes east along River Road (LA-18)',
     corridor: 'River Road (LA-18), near Jefferson Parish (Bridge City / Waggaman) line',
-    headline: 'Trusted Riverfront Electrician in Ama, LA â€” Grounding & Home Safety',
+    headline: 'Trusted Riverfront Electrician in Ama, LA — Grounding & Home Safety',
     description:
-      'Ama is a historic West Bank community situated along the Mississippi River levee east of Luling, stretching toward the Jefferson Parish line. Known for its quiet riverfront atmosphere, historic acreage properties, and traditional homes, Ama requires specialized electrical care for historic wiring, riverfront lightning protection, and whole-home surge suppression. Grace Electrical Services is located just west in Hahnville, providing attentive, master-level craftsmanship for Ama residents.',
+      'Planning an electrical repair or installation in Ama, Louisiana? Grace Electrical Services can discuss your project\'s requirements and the electrical services available for your property. Whether you need help with wiring, lighting or another electrical issue, contact the team to confirm coverage and arrange the appropriate assessment. As an experienced electrical contractor in Ama, LA, Rodney specializes in grounded electrical wiring in Ama, riverfront lightning grounding rods, and residential electrical repair in Ama for historic and modern properties along River Road.',
     heroImage:
       'https://images.pexels.com/photos/3615735/pexels-photo-3615735.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     localProofSnippet: {
       reviewer: 'Barbara Manuel',
       text: 'Very professional work completed. He was on time and cleaned up after work was finished. Definitely recommend to others in the river communities.',
-      context: 'St. Charles Parish Homeowner â€¢ Electrical Installation & Repairs',
+      context: 'St. Charles Parish Homeowner • Electrical Installation & Repairs',
     },
     communityProfile: {
       overview:
@@ -2223,18 +2278,20 @@ export const SERVICE_AREAS: ServiceAreaInfo[] = [
     city: 'Montz',
     state: 'LA',
     zip: '70068',
+    seoTitle: 'Electrician in Montz, LA | Grace Electrical Services',
+    h1Heading: 'Electrical Services for Montz, Louisiana',
     bank: 'East Bank',
-    travelTimeFromHQ: '15â€“18 Minutes northwest via I-310 and River Road / US-61',
+    travelTimeFromHQ: '15–18 Minutes northwest via I-310 and River Road / US-61',
     corridor: 'River Road (LA-48), Airline Hwy (US-61), bordering St. John the Baptist Parish (LaPlace)',
-    headline: 'Trusted Local Electrician in Montz, LA â€” Custom Homes & Storm Backup',
+    headline: 'Trusted Local Electrician in Montz, LA — Custom Homes & Storm Backup',
     description:
-      'Montz is a quiet, scenic East Bank community located on the western border of St. Charles Parish adjacent to LaPlace and the Bonnet CarrÃ© Spillway. Featuring custom single-family homes, spacious residential acreage, and new construction builds, Montz properties require high-capacity electrical panels, generator interlock kits, swimming pool wiring, and custom lighting designs. Grace Electrical Services provides reliable, master-level craftsmanship across Montz with upfront pricing and direct owner communication.',
+      'Need help planning electrical work in Montz, Louisiana? Grace Electrical Services can discuss the electrical requirements of your property and the services available for your project. Contact the team to confirm service coverage and find out what information is needed to assess the work. As your dedicated residential electrician and electrical contractor in Montz, Rodney brings proven craftsmanship—like our full-house construction wiring project for local client Rhodes—for high-capacity panel upgrades, storm generator interlocks, and code-compliant electrical repair in Montz, LA.',
     heroImage:
       'https://images.pexels.com/photos/28950842/pexels-photo-28950842.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     localProofSnippet: {
       reviewer: 'Rhodes',
       text: 'Rodney is a very efficient, knowledgeable and competent person to hire when you need an electrician. I hired him to wire a house for me. Definitely would hire him again.',
-      context: 'St. Charles Parish Client â€¢ Whole-House Construction Wiring',
+      context: 'St. Charles Parish Client • Whole-House Construction Wiring',
     },
     communityProfile: {
       overview:
